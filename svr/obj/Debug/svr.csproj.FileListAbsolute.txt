@@ -1,0 +1,16 @@
+C:\Users\ErickAlejandro\Desktop\poiFinal\FCFM Groups\svr\bin\Debug\svr.exe.config
+C:\Users\ErickAlejandro\Desktop\poiFinal\FCFM Groups\svr\bin\Debug\svr.exe
+C:\Users\ErickAlejandro\Desktop\poiFinal\FCFM Groups\svr\bin\Debug\svr.pdb
+C:\Users\ErickAlejandro\Desktop\poiFinal\FCFM Groups\svr\bin\Debug\Data.dll
+C:\Users\ErickAlejandro\Desktop\poiFinal\FCFM Groups\svr\bin\Debug\Data.pdb
+C:\Users\ErickAlejandro\Desktop\poiFinal\FCFM Groups\svr\obj\Debug\svr.csprojResolveAssemblyReference.cache
+C:\Users\ErickAlejandro\Desktop\poiFinal\FCFM Groups\svr\obj\Debug\svr.exe
+C:\Users\ErickAlejandro\Desktop\poiFinal\FCFM Groups\svr\obj\Debug\svr.pdb
+D:\Desktop\poiFinal\FCFM Groups\svr\bin\Debug\svr.exe.config
+D:\Desktop\poiFinal\FCFM Groups\svr\bin\Debug\svr.exe
+D:\Desktop\poiFinal\FCFM Groups\svr\bin\Debug\svr.pdb
+D:\Desktop\poiFinal\FCFM Groups\svr\bin\Debug\Data.dll
+D:\Desktop\poiFinal\FCFM Groups\svr\bin\Debug\Data.pdb
+D:\Desktop\poiFinal\FCFM Groups\svr\obj\Debug\svr.csprojResolveAssemblyReference.cache
+D:\Desktop\poiFinal\FCFM Groups\svr\obj\Debug\svr.exe
+D:\Desktop\poiFinal\FCFM Groups\svr\obj\Debug\svr.pdb
