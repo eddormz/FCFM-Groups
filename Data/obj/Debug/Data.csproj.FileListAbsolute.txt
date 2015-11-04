@@ -7,3 +7,8 @@ D:\Desktop\poiFinal\FCFM Groups\Data\bin\Debug\Data.pdb
 D:\Desktop\poiFinal\FCFM Groups\Data\obj\Debug\Data.dll
 D:\Desktop\poiFinal\FCFM Groups\Data\obj\Debug\Data.pdb
 D:\Desktop\poiFinal\FCFM Groups\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+D:\Desktop\FCFM Groups\Data\bin\Debug\Data.dll
+D:\Desktop\FCFM Groups\Data\bin\Debug\Data.pdb
+D:\Desktop\FCFM Groups\Data\obj\Debug\Data.dll
+D:\Desktop\FCFM Groups\Data\obj\Debug\Data.pdb
+D:\Desktop\FCFM Groups\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache

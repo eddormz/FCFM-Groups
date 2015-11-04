@@ -45,3 +45,17 @@ D:\Desktop\poiFinal\FCFM Groups\FCFM Groups\bin\Debug\Data.dll
 D:\Desktop\poiFinal\FCFM Groups\FCFM Groups\bin\Debug\Data.pdb
 D:\Desktop\poiFinal\FCFM Groups\FCFM Groups\obj\Debug\FCFM Groups.exe
 D:\Desktop\poiFinal\FCFM Groups\FCFM Groups\obj\Debug\FCFM Groups.pdb
+D:\Desktop\FCFM Groups\FCFM Groups\bin\Debug\FCFM Groups.exe.config
+D:\Desktop\FCFM Groups\FCFM Groups\bin\Debug\FCFM Groups.exe
+D:\Desktop\FCFM Groups\FCFM Groups\bin\Debug\FCFM Groups.pdb
+D:\Desktop\FCFM Groups\FCFM Groups\bin\Debug\Data.dll
+D:\Desktop\FCFM Groups\FCFM Groups\bin\Debug\Data.pdb
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM Groups.csprojResolveAssemblyReference.cache
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.Form1.resources
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.log.resources
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.Persona.resources
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.Properties.Resources.resources
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.v_chat.resources
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM Groups.csproj.GenerateResource.Cache
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM Groups.exe
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM Groups.pdb

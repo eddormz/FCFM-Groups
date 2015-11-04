@@ -33,6 +33,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_cerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox3
@@ -65,18 +67,36 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.Location = new System.Drawing.Point(237, 1);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(31, 20);
+            this.btn_cerrar.TabIndex = 3;
+            this.btn_cerrar.Text = "X";
+            this.btn_cerrar.UseVisualStyleBackColor = true;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            // 
             // v_chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(280, 225);
+            this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.textBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "v_chat";
             this.Text = "v_chat";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.v_chat_FormClosed);
+            this.Load += new System.EventHandler(this.v_chat_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,5 +107,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btn_cerrar;
     }
 }

@@ -11,8 +11,8 @@ namespace svr
     class Program
     {
         static Socket svr;
-        static IPAddress ip = obtenerip();
-        static List<conectado> lista;
+        static IPAddress ip = IPAddress.Any;
+        static public List<conectado> lista;
 
 
         static void Main(string[] args)
@@ -29,9 +29,11 @@ namespace svr
         }
 
         public static void ON()
-        {
+        {   
+            
             while (true)
             {
+                Console.WriteLine("Proceso iniciado");
                 int readbytes;
                 while (true)
                 {
@@ -41,8 +43,9 @@ namespace svr
                         Socket cliente = svr.Accept();
                         byte[] entrando = new byte[cliente.SendBufferSize];
 
+                        Console.WriteLine("Servidor esperando");
                         readbytes = cliente.Receive(entrando);
-
+                        Console.WriteLine("Cliente conectado");
                         if (readbytes > 0)
                         {
                             Mensaje d = new Mensaje(entrando);
@@ -60,7 +63,6 @@ namespace svr
 
                                     conectado c = new conectado(cliente);
                                     c.nombre = nombre;
-                                    c.contrasenia = contra;
                                     c.id = result;
                                     lista.Add(c);
 

@@ -47,7 +47,10 @@ namespace FCFM_Groups
 
                 if (n.iduser > 0)
                 {
-                    Form1 form1 = new Form1(cliente, n.iduser);
+                      
+                    Form1 form1 = new Form1(cliente, n.iduser,txtUsuario.Text);
+                    form1.Show();
+                    Hide();
                 }
                 else
                 {

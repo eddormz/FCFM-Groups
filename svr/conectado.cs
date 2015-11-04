@@ -12,22 +12,22 @@ namespace svr
     {
         Socket cliente;
         public string nombre { set; get; }
-        public string contrasenia { set; get; }
         public int id { set; get; }
+        static public bool end = false;
 
         public conectado() { }
+
         public conectado(Socket c)
         {
             cliente = c;
-            escucharcliente();
+            Thread escuchar = new Thread(escucharcliente);
+            escuchar.Start();
 
         }
 
         public void escucharcliente() {
-            new Thread(() =>
-            {
                 int readbytes;
-                while (true)
+                while (cliente.Connected)
                 {
                     Thread.Sleep(10);
                     byte[] reciveBuffer = new byte[cliente.SendBufferSize];
@@ -42,12 +42,26 @@ namespace svr
                         switch (d.tipoo)
                         {
                             case Mensaje.tipo.mensaje:
-                                /*
                                 
-                                */
+                            
+                                foreach(conectado u in svr.Program.lista)
+                            {
+                                u.cliente.Send(d.toBytes());
+                            }
                             break;
 
                             case Mensaje.tipo.mensajeprivado:
+
+
+                                int result = 0; // <-----id destino
+                            
+                                        foreach(conectado u in svr.Program.lista)
+                                {
+                                    if (u.id == result)
+                                    {
+                                    u.cliente.Send(d.toBytes());
+                                    }
+                                }
 
                             break;
 
@@ -61,9 +75,7 @@ namespace svr
                     }
                    
                 }
-            }).Start();
-
+            }
 
         }
     }
-}
