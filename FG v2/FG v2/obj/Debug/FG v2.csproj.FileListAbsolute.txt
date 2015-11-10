@@ -1,0 +1,10 @@
+d:\documents\visual studio 2015\Projects\FG v2\FG v2\bin\Debug\FG v2.exe.config
+d:\documents\visual studio 2015\Projects\FG v2\FG v2\obj\Debug\FG_v2.Chat.resources
+d:\documents\visual studio 2015\Projects\FG v2\FG v2\obj\Debug\FG_v2.FG.resources
+d:\documents\visual studio 2015\Projects\FG v2\FG v2\obj\Debug\FG_v2.Properties.Resources.resources
+d:\documents\visual studio 2015\Projects\FG v2\FG v2\obj\Debug\FG v2.csproj.GenerateResource.Cache
+d:\documents\visual studio 2015\Projects\FG v2\FG v2\bin\Debug\FG v2.exe
+d:\documents\visual studio 2015\Projects\FG v2\FG v2\bin\Debug\FG v2.pdb
+d:\documents\visual studio 2015\Projects\FG v2\FG v2\obj\Debug\FG v2.exe
+d:\documents\visual studio 2015\Projects\FG v2\FG v2\obj\Debug\FG v2.pdb
+d:\documents\visual studio 2015\Projects\FG v2\FG v2\obj\Debug\FG_v2.conectado.resources
