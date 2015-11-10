@@ -13,6 +13,7 @@ namespace svr
         Socket cliente;
         public string nombre { set; get; }
         public int id { set; get; }
+        public string estado { set; get; }
         static public bool end = false;
 
         public conectado() { }
@@ -27,6 +28,7 @@ namespace svr
 
         public void escucharcliente() {
                 int readbytes;
+
                 while (cliente.Connected)
                 {
                     Thread.Sleep(10);
@@ -66,6 +68,12 @@ namespace svr
                             break;
 
                             case Mensaje.tipo.zumbido:
+
+                            break;
+
+                        case Mensaje.tipo.estado:
+
+                            estado = d.getMsj();
 
                             break;
 

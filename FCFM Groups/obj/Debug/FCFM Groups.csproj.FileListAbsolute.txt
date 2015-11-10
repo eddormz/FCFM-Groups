@@ -55,7 +55,9 @@ D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.Form1.resources
 D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.log.resources
 D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.Persona.resources
 D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.Properties.Resources.resources
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.Registrar.resources
 D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.v_chat.resources
 D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM Groups.csproj.GenerateResource.Cache
 D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM Groups.exe
 D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM Groups.pdb
+D:\Desktop\FCFM Groups\FCFM Groups\obj\Debug\FCFM_Groups.UserControl1.resources

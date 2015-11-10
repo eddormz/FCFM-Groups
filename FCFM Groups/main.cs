@@ -54,7 +54,7 @@ namespace FCFM_Groups
                     {
                         case Mensaje.tipo.mensaje:
 
-                            if (Application.OpenForms["todos"]!=null)
+                            if (!Application.OpenForms["todos"].IsDisposed)
                             {
                                     todos.MensajeLlego(d);
                             }
@@ -91,6 +91,7 @@ namespace FCFM_Groups
                 }
 
             }
+            MessageBox.Show("Socket no conectado");
         }
         
         private void instanciaEntrante(Mensaje d)
@@ -122,6 +123,42 @@ namespace FCFM_Groups
         }
 
         private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+                todos = new v_chat(conectado, email);
+                todos.MdiParent = this;
+                todos.Text = "Fcfm Groups";
+                todos.Show();
+
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            conectado.Disconnect(false);
+        }
+
+
+        private void nuevapublicacion()
+        {
+
+            UserControl1 s = new UserControl1();
+
+            this.Controls.Add(s);
+            this.Controls.Remove(s);
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            nuevapublicacion();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             
         }

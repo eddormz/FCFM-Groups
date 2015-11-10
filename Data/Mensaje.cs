@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
@@ -17,13 +12,20 @@ namespace Data
         #region datos usuario
 
             public int iduser = 0;
+            public int idDestino = 0;
             public string nombre = null;
             public string contrasenia = null;
             public IPAddress ip = null;
-        
+
         #endregion
 
-        String mensaje=null;
+        #region datos server
+       
+      //  List<conectado> lista;
+
+        #endregion
+
+        String mensaje =null;
         public tipo tipoo;
 
         public Mensaje() {}
@@ -66,7 +68,53 @@ namespace Data
             login,
             mensaje,
             mensajeprivado,
-            zumbido
+            zumbido,
+            estado
         }
     }
+
+    public class Publicacion
+    {
+
+        public String pub;
+        public int idgrupo;
+        public int idusuario;
+
+        public Publicacion(String publicacion, int idGrupo, int idUsuario)
+        {
+            this.pub= publicacion;
+            this.idgrupo = idGrupo;
+            this.idusuario = idUsuario;
+        }
+    }
+
+    public class Tarea
+    {
+
+         public String _tarea;
+         public bool status;
+         public int idGrupo;
+
+        public Tarea(String tarea, bool status, int idGrupo)
+        {
+            this._tarea = tarea;
+            this.status = status;
+            this.idGrupo = idGrupo;
+        }
+    }
+
+    public class Grupo
+    {
+
+         public String nombre;
+         public int idpertenencia;
+
+        public Grupo(String nombre, int idpertenencia)
+        {
+            this.nombre = nombre;
+            this.idpertenencia = idpertenencia;
+        }
+
+    }
+
 }

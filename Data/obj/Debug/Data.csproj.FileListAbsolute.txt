@@ -11,4 +11,3 @@ D:\Desktop\FCFM Groups\Data\bin\Debug\Data.dll
 D:\Desktop\FCFM Groups\Data\bin\Debug\Data.pdb
 D:\Desktop\FCFM Groups\Data\obj\Debug\Data.dll
 D:\Desktop\FCFM Groups\Data\obj\Debug\Data.pdb
-D:\Desktop\FCFM Groups\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache

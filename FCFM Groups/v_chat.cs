@@ -18,6 +18,7 @@ namespace FCFM_Groups
         Mensaje data;
         String nombre;
         
+        public v_chat() { }
 
         public v_chat(Socket local,String g)
         {
