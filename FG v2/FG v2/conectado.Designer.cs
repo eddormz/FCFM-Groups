@@ -28,37 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txt_nombreConectado = new System.Windows.Forms.Label();
+            this.pb_estatus = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_estatus)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // txt_nombreConectado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.txt_nombreConectado.AutoSize = true;
+            this.txt_nombreConectado.Location = new System.Drawing.Point(34, 10);
+            this.txt_nombreConectado.Name = "txt_nombreConectado";
+            this.txt_nombreConectado.Size = new System.Drawing.Size(44, 13);
+            this.txt_nombreConectado.TabIndex = 0;
+            this.txt_nombreConectado.Text = "Nombre";
             // 
-            // pictureBox1
+            // pb_estatus
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 28);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pb_estatus.Location = new System.Drawing.Point(3, 3);
+            this.pb_estatus.Name = "pb_estatus";
+            this.pb_estatus.Size = new System.Drawing.Size(25, 25);
+            this.pb_estatus.TabIndex = 1;
+            this.pb_estatus.TabStop = false;
             // 
             // conectado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pb_estatus);
+            this.Controls.Add(this.txt_nombreConectado);
             this.Name = "conectado";
-            this.Size = new System.Drawing.Size(190, 31);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Size = new System.Drawing.Size(175, 31);
+            this.Load += new System.EventHandler(this.conectado_Load);
+            this.DoubleClick += new System.EventHandler(this.conectado_DoubleClick);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_estatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -66,7 +68,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label txt_nombreConectado;
+        private System.Windows.Forms.PictureBox pb_estatus;
     }
 }

@@ -63,6 +63,16 @@ namespace FG_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FCFM {
+            get {
+                object obj = ResourceManager.GetObject("FCFM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Soyuz_TMA_18M_Mission_Patch {
             get {
                 object obj = ResourceManager.GetObject("Soyuz-TMA-18M-Mission-Patch", resourceCulture);

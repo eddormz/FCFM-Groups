@@ -1,0 +1,8 @@
+D:\Desktop\FCFM Groups\FG v2\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\Server.exe.config
+D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\Server.exe
+D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\Server.pdb
+D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\Data.dll
+D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\Data.pdb
+D:\Desktop\FCFM Groups\FG v2\Server\obj\Debug\Server.exe
+D:\Desktop\FCFM Groups\FG v2\Server\obj\Debug\Server.pdb

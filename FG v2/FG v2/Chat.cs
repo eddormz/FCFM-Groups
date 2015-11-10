@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Sockets;
+using Data;
 
 namespace FG_v2
 {
@@ -14,9 +16,15 @@ namespace FG_v2
     {
         public static int id;
         public bool cerrar;
+        public String tipo;
+        Socket local;
+        string correo;
+        Mensaje d;
 
-        public Chat()
+        public Chat(Socket c,String correo)
         {
+            local = c;
+            this.correo = correo;
             cerrar=false;
             InitializeComponent();
         }
@@ -24,6 +32,19 @@ namespace FG_v2
         public void btn_cerrar_Click(object sender, EventArgs e)
         {
             cerrar = true;
+        }
+
+        public void MensajeEntrando(Mensaje m)
+        {
+            d = m;
+        }
+
+        private void btn_enviar_Click(object sender, EventArgs e)
+        {
+            Mensaje h = new Mensaje();
+            h.tipoo = Mensaje.tipo.mensaje;
+            h.mensaje = correo + " " + txt_enviar.ToString();
+            local.Send(h.toBytes());
         }
     }
 }

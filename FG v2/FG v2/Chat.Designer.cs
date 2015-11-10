@@ -45,6 +45,7 @@
             this.txt_recibido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_recibido.Location = new System.Drawing.Point(3, 29);
             this.txt_recibido.Name = "txt_recibido";
+            this.txt_recibido.ReadOnly = true;
             this.txt_recibido.Size = new System.Drawing.Size(278, 207);
             this.txt_recibido.TabIndex = 0;
             this.txt_recibido.Text = "";
@@ -65,6 +66,7 @@
             this.btn_enviar.Size = new System.Drawing.Size(37, 37);
             this.btn_enviar.TabIndex = 2;
             this.btn_enviar.TabStop = false;
+            this.btn_enviar.Click += new System.EventHandler(this.btn_enviar_Click);
             // 
             // btn_emoticon
             // 

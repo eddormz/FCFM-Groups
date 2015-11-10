@@ -76,6 +76,7 @@
             this.Controls.Add(this.flp_conectados);
             this.Name = "FG";
             this.Text = "FG";
+            this.Load += new System.EventHandler(this.FG_Load);
             this.ResumeLayout(false);
 
         }
