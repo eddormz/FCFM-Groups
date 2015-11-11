@@ -21,3 +21,6 @@ D:\Desktop\FCFM Groups\FG v2\FG v2\obj\Debug\FG v2.csproj.GenerateResource.Cache
 D:\Desktop\FCFM Groups\FG v2\FG v2\obj\Debug\FG_v2.about.resources
 D:\Desktop\FCFM Groups\FG v2\FG v2\obj\Debug\FG_v2.inicio.resources
 D:\Desktop\FCFM Groups\FG v2\FG v2\obj\Debug\FG_v2.registrar.resources
+D:\Desktop\FCFM Groups\FG v2\FG v2\bin\Debug\Data.dll
+D:\Desktop\FCFM Groups\FG v2\FG v2\bin\Debug\Data.pdb
+D:\Desktop\FCFM Groups\FG v2\FG v2\obj\Debug\FG v2.csprojResolveAssemblyReference.cache

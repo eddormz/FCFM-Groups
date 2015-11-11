@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_recibido = new System.Windows.Forms.RichTextBox();
             this.txt_enviar = new System.Windows.Forms.RichTextBox();
             this.btn_enviar = new System.Windows.Forms.PictureBox();
             this.btn_emoticon = new System.Windows.Forms.PictureBox();
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
             this.btn_video = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btn_enviar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_emoticon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
@@ -95,6 +97,11 @@
             this.btn_video.TabIndex = 5;
             this.btn_video.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,5 +131,6 @@
         private System.Windows.Forms.PictureBox btn_emoticon;
         private System.Windows.Forms.PictureBox btn_cerrar;
         private System.Windows.Forms.PictureBox btn_video;
+        private System.Windows.Forms.Timer timer1;
     }
 }

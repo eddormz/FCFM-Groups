@@ -43,8 +43,17 @@ namespace FG_v2
         {
             Mensaje h = new Mensaje();
             h.tipoo = Mensaje.tipo.mensaje;
-            h.mensaje = correo + " " + txt_enviar.ToString();
+            h.mensaje = correo + ": " + txt_enviar.Text;
             local.Send(h.toBytes());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (d != null)
+            {
+                txt_recibido.Text += "\n" + d.mensaje;
+                d = null;
+            }
         }
     }
 }

@@ -13,12 +13,15 @@ using System.Windows.Forms;
 
 namespace FG_v2
 {
+    delegate void entrante(Mensaje d);
+
     public partial class FG : Form
     {
         List<Chat> Ventanas;
         private Socket conectado;
         private string email;
         private int id;
+        
 
         public FG()
         {
@@ -28,6 +31,7 @@ namespace FG_v2
 
         public FG(Socket cliente, int iduser, String nom)
         {
+            Ventanas = new List<Chat>();
             this.conectado = cliente;
             this.email = nom;
             this.id = iduser;
@@ -60,13 +64,22 @@ namespace FG_v2
                                 for (int i = 0; i < Ventanas.Count; i++) {
                                 if (Ventanas[i].tipo == "Publico")
                                 {
-
+                                    Ventanas[i].MensajeEntrando(d);
                                     exist = true;
                                 }
                                 }
                             if (!exist)
                             {
+                                try
+                                {
+                                    entrante dd = new entrante(newChat);
 
+                                    this.Invoke(dd, new object[] { d });
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Error al Crear Nuevo Chat, Intentelo Nuevamente");
+                                }
                             }
 
                             break;
@@ -88,9 +101,22 @@ namespace FG_v2
             MessageBox.Show("Socket no conectado");
         }
 
+        private void newChat(Mensaje d)
+        {
+            Chat s = new Chat(conectado, email);
+            s.tipo = "Publico";
+            s.MensajeEntrando(d);
+            if (flp_chats.Controls.Count < 3)
+            {
+                Ventanas.Add(s);
+                flp_chats.Controls.Add(s);
+            }
+        }
+
         private void test_Click(object sender, EventArgs e)
         {
-            Chat s = new Chat();
+            Chat s = new Chat(conectado,email);
+            s.tipo = "Publico";
             if (flp_chats.Controls.Count < 3){
                 Ventanas.Add(s);
                 flp_chats.Controls.Add(s);
@@ -100,17 +126,19 @@ namespace FG_v2
 
         private void clock_Tick(object sender, EventArgs e)
         {
-            for(int i=0; i<Ventanas.Count;i++)
+            if (Ventanas != null)
             {
-                if(Ventanas[i].cerrar== true){
-                    flp_chats.Controls.Remove(Ventanas[i]);
-                   Ventanas[i].Dispose();
-                    Ventanas.Remove(Ventanas[i]);
-                    
+                for (int i = 0; i < Ventanas.Count; i++)
+                {
+                    if (Ventanas[i].cerrar == true)
+                    {
+                        flp_chats.Controls.Remove(Ventanas[i]);
+                        Ventanas[i].Dispose();
+                        Ventanas.Remove(Ventanas[i]);
+
+                    }
                 }
             }
-
-
         }
 
         private void FG_Load(object sender, EventArgs e)

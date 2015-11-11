@@ -22,6 +22,7 @@ namespace FG_v2
         public inicio()
         {
             InitializeComponent();
+            cliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
 
         private void bt_In_Click(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace FG_v2
 
                 if (n.iduser > 0)
                 {
-                    FG main = new FG(cliente, n.iduser,tb_correo);
+                    FG main = new FG(cliente, n.iduser,tb_correo.Text);
                     main.Show();
                     Hide();
                 }
