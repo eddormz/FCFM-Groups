@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -14,6 +15,7 @@ using System.Windows.Forms;
 namespace FG_v2
 {
     delegate void entrante(Mensaje d);
+    delegate void actualizacion(lista_usuarios l);
 
     public partial class FG : Form
     {
@@ -21,12 +23,16 @@ namespace FG_v2
         private Socket conectado;
         private string email;
         private int id;
+
+
+
+        static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
         
+        static Socket actua;
 
         public FG()
         {
             InitializeComponent();
-            Ventanas = new List<Chat>();
         }
 
         public FG(Socket cliente, int iduser, String nom)
@@ -38,6 +44,14 @@ namespace FG_v2
             InitializeComponent();
             Thread cs = new Thread(escuchar);
             cs.Start();
+            actua= new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            actua.Connect(ip,1807);
+            Thread ac = new Thread(actualiza);
+            ac.Start();
+
+            
+
+
 
         }
 
@@ -99,6 +113,38 @@ namespace FG_v2
 
             }
             MessageBox.Show("Socket no conectado");
+        }
+
+        public void actualiza()
+        {
+            int readbytes;
+            while (true)
+            {
+                byte[] reciveBuffer = new byte[actua.SendBufferSize];
+
+                readbytes = actua.Receive(reciveBuffer);
+
+                if (readbytes > 0)
+                {
+                    lista_usuarios d = new lista_usuarios(reciveBuffer);
+
+                    actualizacion a = new actualizacion(actualiza2step);
+                    this.Invoke(a, new object[] { d });
+                }
+            }
+        }
+
+        public void actualiza2step(lista_usuarios d)
+        {
+            flp_conectados.Controls.Clear();
+            foreach (string[]i in d.lista)
+            {
+                if (int.Parse(i[1]) != this.id)
+                {
+                    c_conectado c = new c_conectado(i[0], int.Parse(i[1]), i[2]);
+                    flp_conectados.Controls.Add(c);
+                }
+            }
         }
 
         private void newChat(Mensaje d)

@@ -85,7 +85,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::FG_v2.Properties.Resources.FCFM;
+            this.pictureBox1.Image = Properties.Resources.FCFM;
             this.pictureBox1.Location = new System.Drawing.Point(72, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(145, 145);

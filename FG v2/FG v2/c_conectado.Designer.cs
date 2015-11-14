@@ -1,6 +1,6 @@
 ﻿namespace FG_v2
 {
-    partial class conectado
+    partial class c_conectado
     {
         /// <summary> 
         /// Required designer variable.

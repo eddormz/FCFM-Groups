@@ -13,25 +13,39 @@ namespace Server
     class _server
     {
         static Socket svr;
+        static Socket svr2;
         static IPAddress ip = IPAddress.Any;
         static public List<conectado> lista;
+        static public List<Socket> upl;
 
         static void Main(string[] args)
         {
+            upl = new List<Socket>();
             Console.WriteLine("Iniciando Servidor");
             svr = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            svr2 = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             lista = new List<conectado>();
             IPEndPoint ipe = new IPEndPoint(ip, 1806);
+            IPEndPoint ipe2 = new IPEndPoint(ip, 1807);
             svr.Bind(ipe);
+            svr2.Bind(ipe2);
 
             Thread escuchar = new Thread(ON);
             escuchar.Start();
+            //agregar a lista
+            Thread cl = new Thread(up_cl);
+            cl.Start();
+            //enviarlista
+            Thread u = new Thread(actualizacion);
+            u.Start();
         }
+
         public static void ON()
         {
 
             while (true)
             {
+                Thread.Sleep(10);
                 Console.WriteLine("Proceso iniciado");
                 int readbytes;
                 while (true)
@@ -58,11 +72,10 @@ namespace Server
 
                                 if (result > 0)
                                 {
-                                    /*insertar ip query*/
-
                                     conectado c = new conectado(cliente);
                                     c.nombre = nombre;
                                     c.id = result;
+                                    c.estado = "Conectado";
                                     lista.Add(c);
 
                                     d.iduser = result;
@@ -77,6 +90,43 @@ namespace Server
 
                     }
                     catch { }
+                }
+            }
+        }
+
+        public static void up_cl()
+        {
+            while (true)
+            {
+                Thread.Sleep(10);
+                svr2.Listen(0);
+                Socket cliente = svr2.Accept();
+                upl.Add(cliente);
+
+            }
+        }
+
+        public static void actualizacion()
+        {
+            while (true)
+            {
+                Thread.Sleep(1000);
+                List<string[]> sl = new List<string[]>();
+
+                foreach (conectado c in lista)
+                {
+                    string[] a = new string[3];
+                    a[0] = c.estado;
+                    a[1] = c.id.ToString();
+                    a[2] = c.nombre;
+                    sl.Add(a);
+                }
+
+                lista_usuarios l = new lista_usuarios();
+                l.lista = sl;
+                foreach (Socket i in upl)
+                {
+                    i.Send(l.toBytes());
                 }
             }
         }

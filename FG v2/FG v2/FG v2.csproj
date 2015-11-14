@@ -59,11 +59,11 @@
     <Compile Include="Chat.Designer.cs">
       <DependentUpon>Chat.cs</DependentUpon>
     </Compile>
-    <Compile Include="conectado.cs">
+    <Compile Include="c_conectado.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="conectado.Designer.cs">
-      <DependentUpon>conectado.cs</DependentUpon>
+    <Compile Include="c_conectado.Designer.cs">
+      <DependentUpon>c_conectado.cs</DependentUpon>
     </Compile>
     <Compile Include="FG.cs">
       <SubType>Form</SubType>
@@ -85,14 +85,20 @@
     <Compile Include="registrar.Designer.cs">
       <DependentUpon>registrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="c_Publicacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="c_Publicacion.Designer.cs">
+      <DependentUpon>c_Publicacion.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chat.resx">
       <DependentUpon>Chat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="conectado.resx">
-      <DependentUpon>conectado.cs</DependentUpon>
+    <EmbeddedResource Include="c_conectado.resx">
+      <DependentUpon>c_conectado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FG.resx">
       <DependentUpon>FG.cs</DependentUpon>
@@ -113,6 +119,9 @@
     <EmbeddedResource Include="registrar.resx">
       <DependentUpon>registrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="c_Publicacion.resx">
+      <DependentUpon>c_Publicacion.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,9 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Soyuz-TMA-18M-Mission-Patch.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FCFM.png" />
