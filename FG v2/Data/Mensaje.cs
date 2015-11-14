@@ -67,7 +67,8 @@ namespace Data
             mensaje,
             mensajeprivado,
             zumbido,
-            estado
+            estado,
+            video
         }
     }
 }

@@ -34,6 +34,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -64,6 +88,18 @@
     </Compile>
     <Compile Include="c_conectado.Designer.cs">
       <DependentUpon>c_conectado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="c_desplegar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="c_desplegar.Designer.cs">
+      <DependentUpon>c_desplegar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="c_video.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="c_video.Designer.cs">
+      <DependentUpon>c_video.cs</DependentUpon>
     </Compile>
     <Compile Include="FG.cs">
       <SubType>Form</SubType>
@@ -99,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="c_conectado.resx">
       <DependentUpon>c_conectado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="c_desplegar.resx">
+      <DependentUpon>c_desplegar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="c_video.resx">
+      <DependentUpon>c_video.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FG.resx">
       <DependentUpon>FG.cs</DependentUpon>

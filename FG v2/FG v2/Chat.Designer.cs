@@ -38,14 +38,6 @@
             this.btn_video = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.p_icons = new System.Windows.Forms.Panel();
-            this.btn_angel = new System.Windows.Forms.PictureBox();
-            this.btn_angry = new System.Windows.Forms.PictureBox();
-            this.btn_confused = new System.Windows.Forms.PictureBox();
-            this.btn_cool = new System.Windows.Forms.PictureBox();
-            this.btn_sad = new System.Windows.Forms.PictureBox();
-            this.btn_grin = new System.Windows.Forms.PictureBox();
-            this.btn_devil = new System.Windows.Forms.PictureBox();
-            this.btn_crying = new System.Windows.Forms.PictureBox();
             this.btn_dissa = new System.Windows.Forms.PictureBox();
             this.btn_sot = new System.Windows.Forms.PictureBox();
             this.btn_wink = new System.Windows.Forms.PictureBox();
@@ -54,19 +46,19 @@
             this.btn_surprised = new System.Windows.Forms.PictureBox();
             this.btn_smile = new System.Windows.Forms.PictureBox();
             this.btn_shy = new System.Windows.Forms.PictureBox();
+            this.btn_sad = new System.Windows.Forms.PictureBox();
+            this.btn_grin = new System.Windows.Forms.PictureBox();
+            this.btn_devil = new System.Windows.Forms.PictureBox();
+            this.btn_crying = new System.Windows.Forms.PictureBox();
+            this.btn_cool = new System.Windows.Forms.PictureBox();
+            this.btn_confused = new System.Windows.Forms.PictureBox();
+            this.btn_angry = new System.Windows.Forms.PictureBox();
+            this.btn_angel = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn_enviar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_emoticon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_video)).BeginInit();
             this.p_icons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_angel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_angry)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_confused)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_cool)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_sad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_grin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_devil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_crying)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_dissa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_sot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_wink)).BeginInit();
@@ -75,6 +67,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_surprised)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_smile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_shy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_sad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_grin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_devil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_crying)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_cool)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_confused)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_angry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_angel)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_recibido
@@ -142,6 +142,7 @@
             // 
             // p_icons
             // 
+            this.p_icons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p_icons.Controls.Add(this.btn_dissa);
             this.p_icons.Controls.Add(this.btn_sot);
             this.p_icons.Controls.Add(this.btn_wink);
@@ -163,86 +164,6 @@
             this.p_icons.Size = new System.Drawing.Size(125, 127);
             this.p_icons.TabIndex = 6;
             this.p_icons.Visible = false;
-            // 
-            // btn_angel
-            // 
-            this.btn_angel.Image = ((System.Drawing.Image)(resources.GetObject("btn_angel.Image")));
-            this.btn_angel.Location = new System.Drawing.Point(3, 3);
-            this.btn_angel.Name = "btn_angel";
-            this.btn_angel.Size = new System.Drawing.Size(25, 25);
-            this.btn_angel.TabIndex = 0;
-            this.btn_angel.TabStop = false;
-            this.btn_angel.Click += new System.EventHandler(this.btn_angel_Click);
-            // 
-            // btn_angry
-            // 
-            this.btn_angry.Image = ((System.Drawing.Image)(resources.GetObject("btn_angry.Image")));
-            this.btn_angry.Location = new System.Drawing.Point(34, 3);
-            this.btn_angry.Name = "btn_angry";
-            this.btn_angry.Size = new System.Drawing.Size(25, 25);
-            this.btn_angry.TabIndex = 1;
-            this.btn_angry.TabStop = false;
-            this.btn_angry.Click += new System.EventHandler(this.btn_angry_Click);
-            // 
-            // btn_confused
-            // 
-            this.btn_confused.Image = ((System.Drawing.Image)(resources.GetObject("btn_confused.Image")));
-            this.btn_confused.Location = new System.Drawing.Point(65, 3);
-            this.btn_confused.Name = "btn_confused";
-            this.btn_confused.Size = new System.Drawing.Size(25, 25);
-            this.btn_confused.TabIndex = 2;
-            this.btn_confused.TabStop = false;
-            this.btn_confused.Click += new System.EventHandler(this.btn_confused_Click);
-            // 
-            // btn_cool
-            // 
-            this.btn_cool.Image = ((System.Drawing.Image)(resources.GetObject("btn_cool.Image")));
-            this.btn_cool.Location = new System.Drawing.Point(95, 3);
-            this.btn_cool.Name = "btn_cool";
-            this.btn_cool.Size = new System.Drawing.Size(25, 25);
-            this.btn_cool.TabIndex = 3;
-            this.btn_cool.TabStop = false;
-            this.btn_cool.Click += new System.EventHandler(this.btn_cool_Click);
-            // 
-            // btn_sad
-            // 
-            this.btn_sad.Image = ((System.Drawing.Image)(resources.GetObject("btn_sad.Image")));
-            this.btn_sad.Location = new System.Drawing.Point(95, 34);
-            this.btn_sad.Name = "btn_sad";
-            this.btn_sad.Size = new System.Drawing.Size(25, 25);
-            this.btn_sad.TabIndex = 7;
-            this.btn_sad.TabStop = false;
-            this.btn_sad.Click += new System.EventHandler(this.btn_sad_Click);
-            // 
-            // btn_grin
-            // 
-            this.btn_grin.Image = ((System.Drawing.Image)(resources.GetObject("btn_grin.Image")));
-            this.btn_grin.Location = new System.Drawing.Point(65, 34);
-            this.btn_grin.Name = "btn_grin";
-            this.btn_grin.Size = new System.Drawing.Size(25, 25);
-            this.btn_grin.TabIndex = 6;
-            this.btn_grin.TabStop = false;
-            this.btn_grin.Click += new System.EventHandler(this.btn_grin_Click);
-            // 
-            // btn_devil
-            // 
-            this.btn_devil.Image = ((System.Drawing.Image)(resources.GetObject("btn_devil.Image")));
-            this.btn_devil.Location = new System.Drawing.Point(34, 34);
-            this.btn_devil.Name = "btn_devil";
-            this.btn_devil.Size = new System.Drawing.Size(25, 25);
-            this.btn_devil.TabIndex = 5;
-            this.btn_devil.TabStop = false;
-            this.btn_devil.Click += new System.EventHandler(this.btn_devil_Click);
-            // 
-            // btn_crying
-            // 
-            this.btn_crying.Image = ((System.Drawing.Image)(resources.GetObject("btn_crying.Image")));
-            this.btn_crying.Location = new System.Drawing.Point(3, 34);
-            this.btn_crying.Name = "btn_crying";
-            this.btn_crying.Size = new System.Drawing.Size(25, 25);
-            this.btn_crying.TabIndex = 4;
-            this.btn_crying.TabStop = false;
-            this.btn_crying.Click += new System.EventHandler(this.btn_crying_Click);
             // 
             // btn_dissa
             // 
@@ -324,6 +245,86 @@
             this.btn_shy.TabStop = false;
             this.btn_shy.Click += new System.EventHandler(this.btn_shy_Click);
             // 
+            // btn_sad
+            // 
+            this.btn_sad.Image = ((System.Drawing.Image)(resources.GetObject("btn_sad.Image")));
+            this.btn_sad.Location = new System.Drawing.Point(95, 34);
+            this.btn_sad.Name = "btn_sad";
+            this.btn_sad.Size = new System.Drawing.Size(25, 25);
+            this.btn_sad.TabIndex = 7;
+            this.btn_sad.TabStop = false;
+            this.btn_sad.Click += new System.EventHandler(this.btn_sad_Click);
+            // 
+            // btn_grin
+            // 
+            this.btn_grin.Image = ((System.Drawing.Image)(resources.GetObject("btn_grin.Image")));
+            this.btn_grin.Location = new System.Drawing.Point(65, 34);
+            this.btn_grin.Name = "btn_grin";
+            this.btn_grin.Size = new System.Drawing.Size(25, 25);
+            this.btn_grin.TabIndex = 6;
+            this.btn_grin.TabStop = false;
+            this.btn_grin.Click += new System.EventHandler(this.btn_grin_Click);
+            // 
+            // btn_devil
+            // 
+            this.btn_devil.Image = ((System.Drawing.Image)(resources.GetObject("btn_devil.Image")));
+            this.btn_devil.Location = new System.Drawing.Point(34, 34);
+            this.btn_devil.Name = "btn_devil";
+            this.btn_devil.Size = new System.Drawing.Size(25, 25);
+            this.btn_devil.TabIndex = 5;
+            this.btn_devil.TabStop = false;
+            this.btn_devil.Click += new System.EventHandler(this.btn_devil_Click);
+            // 
+            // btn_crying
+            // 
+            this.btn_crying.Image = ((System.Drawing.Image)(resources.GetObject("btn_crying.Image")));
+            this.btn_crying.Location = new System.Drawing.Point(3, 34);
+            this.btn_crying.Name = "btn_crying";
+            this.btn_crying.Size = new System.Drawing.Size(25, 25);
+            this.btn_crying.TabIndex = 4;
+            this.btn_crying.TabStop = false;
+            this.btn_crying.Click += new System.EventHandler(this.btn_crying_Click);
+            // 
+            // btn_cool
+            // 
+            this.btn_cool.Image = ((System.Drawing.Image)(resources.GetObject("btn_cool.Image")));
+            this.btn_cool.Location = new System.Drawing.Point(95, 3);
+            this.btn_cool.Name = "btn_cool";
+            this.btn_cool.Size = new System.Drawing.Size(25, 25);
+            this.btn_cool.TabIndex = 3;
+            this.btn_cool.TabStop = false;
+            this.btn_cool.Click += new System.EventHandler(this.btn_cool_Click);
+            // 
+            // btn_confused
+            // 
+            this.btn_confused.Image = ((System.Drawing.Image)(resources.GetObject("btn_confused.Image")));
+            this.btn_confused.Location = new System.Drawing.Point(65, 3);
+            this.btn_confused.Name = "btn_confused";
+            this.btn_confused.Size = new System.Drawing.Size(25, 25);
+            this.btn_confused.TabIndex = 2;
+            this.btn_confused.TabStop = false;
+            this.btn_confused.Click += new System.EventHandler(this.btn_confused_Click);
+            // 
+            // btn_angry
+            // 
+            this.btn_angry.Image = ((System.Drawing.Image)(resources.GetObject("btn_angry.Image")));
+            this.btn_angry.Location = new System.Drawing.Point(34, 3);
+            this.btn_angry.Name = "btn_angry";
+            this.btn_angry.Size = new System.Drawing.Size(25, 25);
+            this.btn_angry.TabIndex = 1;
+            this.btn_angry.TabStop = false;
+            this.btn_angry.Click += new System.EventHandler(this.btn_angry_Click);
+            // 
+            // btn_angel
+            // 
+            this.btn_angel.Image = ((System.Drawing.Image)(resources.GetObject("btn_angel.Image")));
+            this.btn_angel.Location = new System.Drawing.Point(3, 3);
+            this.btn_angel.Name = "btn_angel";
+            this.btn_angel.Size = new System.Drawing.Size(25, 25);
+            this.btn_angel.TabIndex = 0;
+            this.btn_angel.TabStop = false;
+            this.btn_angel.Click += new System.EventHandler(this.btn_angel_Click);
+            // 
             // Chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,14 +345,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_video)).EndInit();
             this.p_icons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_angel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_angry)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_confused)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_cool)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_sad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_grin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_devil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_crying)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_dissa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_sot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_wink)).EndInit();
@@ -360,6 +353,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_surprised)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_smile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_shy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_sad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_grin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_devil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_crying)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_cool)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_confused)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_angry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_angel)).EndInit();
             this.ResumeLayout(false);
 
         }

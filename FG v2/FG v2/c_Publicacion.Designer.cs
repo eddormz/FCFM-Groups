@@ -51,6 +51,7 @@
             this.btn_enviar.TabIndex = 1;
             this.btn_enviar.Text = "Publicar";
             this.btn_enviar.UseVisualStyleBackColor = true;
+            this.btn_enviar.Click += new System.EventHandler(this.btn_enviar_Click);
             // 
             // btn_addfile
             // 
@@ -60,14 +61,14 @@
             this.btn_addfile.TabIndex = 2;
             this.btn_addfile.TabStop = false;
             // 
-            // UserControl1
+            // c_Publicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn_addfile);
             this.Controls.Add(this.btn_enviar);
             this.Controls.Add(this.Publicacion);
-            this.Name = "UserControl1";
+            this.Name = "c_Publicacion";
             this.Size = new System.Drawing.Size(525, 150);
             ((System.ComponentModel.ISupportInitialize)(this.btn_addfile)).EndInit();
             this.ResumeLayout(false);

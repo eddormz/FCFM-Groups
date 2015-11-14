@@ -23,7 +23,8 @@ namespace FG_v2
         public String tipo;
         Socket local;
         string correo;
-       
+        c_video c;
+
         private Hashtable emoticons;
 
         public Chat(Socket c,String correo)
@@ -178,12 +179,14 @@ namespace FG_v2
 
         private void btn_video_Click(object sender, EventArgs e)
         {
-
+            
+            c =new c_video(local, id);
+            ParentForm.Controls.Add(c);
         }
 
         private void btn_emoticon_Click(object sender, EventArgs e)
         {
-            p_icons.Visible = true;
+            p_icons.Visible = !p_icons.Visible;
         }
 
         private void btn_tonge_Click(object sender, EventArgs e)

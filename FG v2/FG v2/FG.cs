@@ -24,6 +24,8 @@ namespace FG_v2
         private string email;
         private int id;
 
+        EventHandler u;
+
 
 
         static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
@@ -103,6 +105,13 @@ namespace FG_v2
                             break;
 
                         case Mensaje.tipo.zumbido:
+
+                            break;
+
+                        case Mensaje.tipo.video:
+
+                            c_video c = new c_video(d.ip);
+                            this.Controls.Add(c);
 
                             break;
 
