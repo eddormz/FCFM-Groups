@@ -20,11 +20,10 @@ namespace FG_v2
     public partial class FG : Form
     {
         List<Chat> Ventanas;
-        private Socket conectado;
+        static public Socket conectado;
         private string email;
         private int id;
-
-        EventHandler u;
+        bool hilo = true;
 
 
 
@@ -40,7 +39,7 @@ namespace FG_v2
         public FG(Socket cliente, int iduser, String nom)
         {
             Ventanas = new List<Chat>();
-            this.conectado = cliente;
+            conectado = cliente;
             this.email = nom;
             this.id = iduser;
             InitializeComponent();
@@ -61,7 +60,7 @@ namespace FG_v2
         {
             int readbytes;
 
-            while (conectado.Connected)
+            while (hilo)
             {
                 Thread.Sleep(10);
                 byte[] reciveBuffer = new byte[conectado.SendBufferSize];
@@ -127,13 +126,13 @@ namespace FG_v2
         public void actualiza()
         {
             int readbytes;
-            while (true)
+            while (hilo)
             {
                 byte[] reciveBuffer = new byte[actua.SendBufferSize];
 
                 readbytes = actua.Receive(reciveBuffer);
 
-                if (readbytes > 0)
+                if (readbytes > 0&&hilo==true)
                 {
                     lista_usuarios d = new lista_usuarios(reciveBuffer);
 
@@ -193,12 +192,43 @@ namespace FG_v2
 
                     }
                 }
+                if (Ventanas.Count > 0)
+                {
+                    flp_chats.Visible = true;
+                }
+                else
+                {
+                    flp_chats.Visible = false;
+                }
+            }
+            else
+            {
+                flp_chats.Visible = false;
             }
         }
 
         private void FG_Load(object sender, EventArgs e)
         {
+           
+
+            for (int i = 0; i < 10; i++)
+            {
+                c_desplegar c = new c_desplegar("nombre"+i, "Toda la publicacion aqui", 1);
+
+                for (int j = 0; j < 10; j++)
+                {
+                    Label l = new Label();
+                    l.Text = "comentario"+j;
+                    c.flp_comentarios.Controls.Add(l);
+                }
+                flp_publicacion.Controls.Add(c);
+            } 
             
+        }
+
+        private void FG_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            hilo = false;
         }
     }
 }

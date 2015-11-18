@@ -184,6 +184,8 @@ namespace FG_v2
             ParentForm.Controls.Add(c);
         }
 
+
+
         private void btn_emoticon_Click(object sender, EventArgs e)
         {
             p_icons.Visible = !p_icons.Visible;

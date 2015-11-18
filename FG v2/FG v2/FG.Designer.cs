@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.flp_conectados = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_chats = new System.Windows.Forms.FlowLayoutPanel();
-            this.test = new System.Windows.Forms.Button();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.flp_publicacion = new System.Windows.Forms.FlowLayoutPanel();
+            this.test = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flp_conectados
@@ -48,10 +48,26 @@
             // 
             this.flp_chats.BackColor = System.Drawing.Color.Transparent;
             this.flp_chats.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flp_chats.Location = new System.Drawing.Point(179, 379);
+            this.flp_chats.Location = new System.Drawing.Point(177, 380);
             this.flp_chats.Name = "flp_chats";
             this.flp_chats.Size = new System.Drawing.Size(905, 316);
             this.flp_chats.TabIndex = 1;
+            // 
+            // clock
+            // 
+            this.clock.Enabled = true;
+            this.clock.Tick += new System.EventHandler(this.clock_Tick);
+            // 
+            // flp_publicacion
+            // 
+            this.flp_publicacion.AutoScroll = true;
+            this.flp_publicacion.BackColor = System.Drawing.Color.Transparent;
+            this.flp_publicacion.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flp_publicacion.Location = new System.Drawing.Point(304, 58);
+            this.flp_publicacion.Name = "flp_publicacion";
+            this.flp_publicacion.Size = new System.Drawing.Size(596, 638);
+            this.flp_publicacion.TabIndex = 2;
+            this.flp_publicacion.WrapContents = false;
             // 
             // test
             // 
@@ -62,18 +78,6 @@
             this.test.Text = "Boton de Prueba";
             this.test.UseVisualStyleBackColor = true;
             this.test.Click += new System.EventHandler(this.test_Click);
-            // 
-            // clock
-            // 
-            this.clock.Enabled = true;
-            this.clock.Tick += new System.EventHandler(this.clock_Tick);
-            // 
-            // flp_publicacion
-            // 
-            this.flp_publicacion.Location = new System.Drawing.Point(304, 58);
-            this.flp_publicacion.Name = "flp_publicacion";
-            this.flp_publicacion.Size = new System.Drawing.Size(596, 638);
-            this.flp_publicacion.TabIndex = 2;
             // 
             // FG
             // 
@@ -89,6 +93,7 @@
             this.Name = "FG";
             this.Text = "FG";
             this.TransparencyKey = System.Drawing.Color.Maroon;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FG_FormClosed);
             this.Load += new System.EventHandler(this.FG_Load);
             this.ResumeLayout(false);
 
@@ -98,8 +103,8 @@
 
         private System.Windows.Forms.FlowLayoutPanel flp_conectados;
         private System.Windows.Forms.FlowLayoutPanel flp_chats;
-        private System.Windows.Forms.Button test;
         private System.Windows.Forms.Timer clock;
         private System.Windows.Forms.FlowLayoutPanel flp_publicacion;
+        private System.Windows.Forms.Button test;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+
 namespace Server
 {
     class _server
@@ -17,6 +18,8 @@ namespace Server
         static IPAddress ip = IPAddress.Any;
         static public List<conectado> lista;
         static public List<Socket> upl;
+        static public string final = "no";
+        static public bool server = true;
 
         static void Main(string[] args)
         {
@@ -38,17 +41,24 @@ namespace Server
             //enviarlista
             Thread u = new Thread(actualizacion);
             u.Start();
+            while (final=="no")
+            {
+                final = Console.ReadLine();
+                if (final == "end")
+                {
+                    end();
+                }
+            }
+
+            Console.WriteLine("END");
         }
 
         public static void ON()
         {
-
-            while (true)
-            {
                 Thread.Sleep(10);
                 Console.WriteLine("Proceso iniciado");
                 int readbytes;
-                while (true)
+                while (server)
                 {
                     try
                     {
@@ -91,12 +101,11 @@ namespace Server
                     }
                     catch { }
                 }
-            }
         }
 
         public static void up_cl()
         {
-            while (true)
+            while (server)
             {
                 Thread.Sleep(10);
                 svr2.Listen(0);
@@ -108,27 +117,41 @@ namespace Server
 
         public static void actualizacion()
         {
-            while (true)
+            int cantidad = 0;
+            while (server)
             {
-                Thread.Sleep(1000);
                 List<string[]> sl = new List<string[]>();
-
-                foreach (conectado c in lista)
+                if (lista.Count!=cantidad)
                 {
-                    string[] a = new string[3];
-                    a[0] = c.estado;
-                    a[1] = c.id.ToString();
-                    a[2] = c.nombre;
-                    sl.Add(a);
+                    cantidad = lista.Count;
+                    foreach (conectado c in lista)
+                    {
+                        string[] a = new string[3];
+                        a[0] = c.estado;
+                        a[1] = c.id.ToString();
+                        a[2] = c.nombre;
+                        sl.Add(a);
+                    }
+
+                    lista_usuarios l = new lista_usuarios();
+                    l.lista = sl;
+                    foreach (Socket i in upl)
+                    {
+                        i.Send(l.toBytes());
+                    }
                 }
 
-                lista_usuarios l = new lista_usuarios();
-                l.lista = sl;
-                foreach (Socket i in upl)
-                {
-                    i.Send(l.toBytes());
-                }
             }
+        }
+
+        public static void end()
+        {
+            foreach(conectado i in lista)
+            {
+                i.end = false;
+            }
+
+            server = false;
         }
     }
 }

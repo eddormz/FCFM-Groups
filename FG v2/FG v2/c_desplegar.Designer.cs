@@ -28,21 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flp_comentarios = new System.Windows.Forms.FlowLayoutPanel();
             this.nombre = new System.Windows.Forms.Label();
             this.publicacion = new System.Windows.Forms.Label();
             this.input_publicacion = new System.Windows.Forms.RichTextBox();
             this.btn_Publicar = new System.Windows.Forms.PictureBox();
+            this.flp_comentarios = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Publicar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // flp_comentarios
-            // 
-            this.flp_comentarios.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flp_comentarios.Location = new System.Drawing.Point(14, 86);
-            this.flp_comentarios.Name = "flp_comentarios";
-            this.flp_comentarios.Size = new System.Drawing.Size(520, 61);
-            this.flp_comentarios.TabIndex = 0;
             // 
             // nombre
             // 
@@ -80,6 +72,16 @@
             this.btn_Publicar.TabStop = false;
             this.btn_Publicar.Click += new System.EventHandler(this.btn_Publicar_Click);
             // 
+            // flp_comentarios
+            // 
+            this.flp_comentarios.AutoScroll = true;
+            this.flp_comentarios.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flp_comentarios.Location = new System.Drawing.Point(14, 86);
+            this.flp_comentarios.Name = "flp_comentarios";
+            this.flp_comentarios.Size = new System.Drawing.Size(520, 61);
+            this.flp_comentarios.TabIndex = 0;
+            this.flp_comentarios.WrapContents = false;
+            // 
             // c_desplegar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -98,11 +100,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flp_comentarios;
         private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.Label publicacion;
         private System.Windows.Forms.RichTextBox input_publicacion;
         private System.Windows.Forms.PictureBox btn_Publicar;
+        public System.Windows.Forms.FlowLayoutPanel flp_comentarios;
     }
 }

@@ -15,7 +15,7 @@ namespace Server
         public string nombre { set; get; }
         public int id { set; get; }
         public string estado { set; get; }
-        static public bool end = false;
+        public bool end = false;
 
         public conectado() { }
 
@@ -31,7 +31,7 @@ namespace Server
         {
             int readbytes;
 
-            while (cliente.Connected)
+            while (!end)
             {
                 Thread.Sleep(10);
                 byte[] reciveBuffer = new byte[cliente.SendBufferSize];
