@@ -61,7 +61,7 @@
             // flp_publicacion
             // 
             this.flp_publicacion.AutoScroll = true;
-            this.flp_publicacion.BackColor = System.Drawing.Color.Transparent;
+            this.flp_publicacion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flp_publicacion.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp_publicacion.Location = new System.Drawing.Point(304, 58);
             this.flp_publicacion.Name = "flp_publicacion";

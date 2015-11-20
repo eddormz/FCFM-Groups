@@ -31,6 +31,7 @@
             this.Publicacion = new System.Windows.Forms.RichTextBox();
             this.btn_enviar = new System.Windows.Forms.Button();
             this.btn_addfile = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.btn_addfile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +61,11 @@
             this.btn_addfile.Size = new System.Drawing.Size(82, 32);
             this.btn_addfile.TabIndex = 2;
             this.btn_addfile.TabStop = false;
+            this.btn_addfile.Click += new System.EventHandler(this.btn_addfile_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // c_Publicacion
             // 
@@ -80,5 +86,6 @@
         private System.Windows.Forms.RichTextBox Publicacion;
         private System.Windows.Forms.Button btn_enviar;
         private System.Windows.Forms.PictureBox btn_addfile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

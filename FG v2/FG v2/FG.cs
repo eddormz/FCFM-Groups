@@ -209,7 +209,8 @@ namespace FG_v2
 
         private void FG_Load(object sender, EventArgs e)
         {
-           
+            c_Publicacion p = new c_Publicacion();
+            flp_publicacion.Controls.Add(p);
 
             for (int i = 0; i < 10; i++)
             {
