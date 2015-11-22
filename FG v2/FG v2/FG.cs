@@ -128,16 +128,22 @@ namespace FG_v2
             int readbytes;
             while (hilo)
             {
-                byte[] reciveBuffer = new byte[actua.SendBufferSize];
+                try {
+                    byte[] reciveBuffer = new byte[actua.SendBufferSize];
 
-                readbytes = actua.Receive(reciveBuffer);
+                    readbytes = actua.Receive(reciveBuffer);
 
-                if (readbytes > 0&&hilo==true)
+                    if (readbytes > 0 && hilo == true)
+                    {
+                        lista_usuarios d = new lista_usuarios(reciveBuffer);
+
+                        actualizacion a = new actualizacion(actualiza2step);
+                        this.Invoke(a, new object[] { d });
+                    }
+                }
+                catch
                 {
-                    lista_usuarios d = new lista_usuarios(reciveBuffer);
-
-                    actualizacion a = new actualizacion(actualiza2step);
-                    this.Invoke(a, new object[] { d });
+                    hilo = false; 
                 }
             }
         }
