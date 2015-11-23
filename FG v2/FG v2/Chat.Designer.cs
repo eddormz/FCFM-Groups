@@ -338,6 +338,7 @@
             // 
             // descry
             // 
+            this.descry.Image = global::FG_v2.Properties.Resources.padlock114;
             this.descry.Location = new System.Drawing.Point(212, 286);
             this.descry.Name = "descry";
             this.descry.Size = new System.Drawing.Size(25, 25);
@@ -347,6 +348,7 @@
             // 
             // encry
             // 
+            this.encry.Image = global::FG_v2.Properties.Resources.padlock46;
             this.encry.Location = new System.Drawing.Point(181, 286);
             this.encry.Name = "encry";
             this.encry.Size = new System.Drawing.Size(25, 25);
@@ -367,7 +369,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::FG_v2.Properties.Resources.chatNuevo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.clave);
             this.Controls.Add(this.encry);
