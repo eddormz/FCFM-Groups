@@ -47,7 +47,9 @@ namespace Data
             this.contrasenia = d.contrasenia;
             this.ip = d.ip;
             this.mensaje = d.mensaje;
+            this.idDestino = d.idDestino;
             this.tipoo = d.tipoo;
+            this.idGrupo = d.idGrupo;
 
             ms.Close();
         }

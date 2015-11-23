@@ -27,7 +27,7 @@ namespace FG_v2
             this.id = id;
             this.nombre = nombre;
             this.estado = estado;
-            txt_nombreConectado.Text = this.nombre;
+            txt_nombreConectado.Text = this.nombre+" - "+id;
 
             if (this.estado == "Conectado")
             {

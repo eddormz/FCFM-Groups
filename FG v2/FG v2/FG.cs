@@ -18,6 +18,7 @@ namespace FG_v2
     delegate void entrante(Mensaje d);
     delegate void actualizacion(lista_usuarios l);
     delegate void SetZumbido(bool q);
+    delegate void iniciarVideo(IPAddress ip);
 
     public partial class FG : Form
     {
@@ -160,8 +161,10 @@ namespace FG_v2
 
                         case Mensaje.tipo.video:
 
-                            c_video c = new c_video(d.ip);
-                            this.Controls.Add(c);
+                            
+
+                            iniciarVideo a = new iniciarVideo(vvf);
+                            this.Invoke(a, new object[] { d.ip });
 
                             break;
 
@@ -172,6 +175,12 @@ namespace FG_v2
 
             }
             MessageBox.Show("Socket no conectado");
+        }
+
+        public void vvf(IPAddress i)
+        {
+            c_video c = new c_video(i);
+            this.Controls.Add(c);
         }
 
         public void actualiza()
@@ -298,8 +307,11 @@ namespace FG_v2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            c_video c = new c_video(conectado, int.Parse(textBox1.Text));
+            int N = int.Parse(textBox1.Text);
+
+            c_video c = new c_video(conectado,N);
             c.BringToFront();
+            flp_publicacion.SendToBack();
             Controls.Add(c);
             
         }

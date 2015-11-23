@@ -46,31 +46,36 @@ namespace FG_v2
 
         public c_video(Socket c,int i)
         {
-            InitializeComponent();
-           vc = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            IPEndPoint ipe = new IPEndPoint(IPAddress.Any, 1818);
-            vc.Bind(ipe);
+            try {
+                InitializeComponent();
+                vc = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                IPEndPoint ipe = new IPEndPoint(IPAddress.Any, 1818);
+                vc.Bind(ipe);
 
-            Dispo = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo x in Dispo)
-            {
-                comboBox1.Items.Add(x.Name);
+                Dispo = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+                foreach (FilterInfo x in Dispo)
+                {
+                    comboBox1.Items.Add(x.Name);
+                }
+                comboBox1.SelectedIndex = 0;
+                fuente = new VideoCaptureDevice(Dispo[comboBox1.SelectedIndex].MonikerString);
+                //INICIALIZAR EL CONTROL 
+                vSP.VideoSource = fuente;
+                vSP.Start();
+
+                Mensaje m = new Mensaje();
+                m.tipoo = Mensaje.tipo.video;
+                m.idDestino = i;
+                IPAddress ip = funciones.obtenerip();
+                m.ip = ip;
+                c.Send(m.toBytes());
+                Thread h = new Thread(video);
+                h.Start();
             }
-            comboBox1.SelectedIndex = 0;
-            fuente = new VideoCaptureDevice(Dispo[comboBox1.SelectedIndex].MonikerString);
-            //INICIALIZAR EL CONTROL 
-            vSP.VideoSource = fuente;
-            vSP.Start();
+            catch(Exception F)
+            {
 
-            Mensaje m=new Mensaje();
-            m.tipoo = Mensaje.tipo.video;
-            m.idDestino = i;
-            IPAddress ip= funciones.obtenerip();
-            m.ip = ip;
-            c.Send(m.toBytes());
-            Thread h = new Thread(video);
-            h.Start();
-
+            }
 
 
         }
