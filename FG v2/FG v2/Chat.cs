@@ -55,7 +55,7 @@ namespace FG_v2
             }
             catch
             {
-                MessageBox.Show("Error al Escribir mensaje en archivo, Intentelo Nuevamente");
+                MessageBox.Show("Error al Escribir mensaje in chat, Intentelo Nuevamente");
             }
 
         }

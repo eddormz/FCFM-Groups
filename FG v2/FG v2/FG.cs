@@ -81,6 +81,7 @@ namespace FG_v2
                     {
                         case Mensaje.tipo.mensaje:
                             bool exist = false;
+
                                 for (int i = 0; i < Ventanas.Count; i++) {
                                 if (Ventanas[i].tipo == "Publico")
                                 {
@@ -135,7 +136,7 @@ namespace FG_v2
                                     }
                                     catch
                                     {
-                                        MessageBox.Show("Error al Crear Nuevo Chat, Intentelo Nuevamente");
+                                        MessageBox.Show("Error al Crear zumb Chat, Intentelo Nuevamente");
                                     }
                                 }
 
