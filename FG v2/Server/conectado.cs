@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Data;
-using baseDatos;
 
 namespace Server
 {
@@ -58,11 +57,11 @@ namespace Server
             //int idGrupop = 1;
             //task.getTarea(idGrupop);
 
-            BDTarea task = new BDTarea();
-            int idGrupop = 1;
-            Tarea tarea = new Tarea();
-            tarea.idGrupo = idGrupop;
-            tarea.status =true;
+            //BDTarea task = new BDTarea();
+            //int idGrupop = 1;
+            //Tarea tarea = new Tarea();
+            //tarea.idGrupo = idGrupop;
+            //tarea.status =true;
 
 
             while (!end)
@@ -88,11 +87,11 @@ namespace Server
                                 u.cliente.Send(d.toBytes());
                             }
 
-                                BDArchivos archi = new BDArchivos();
-                                Archivo archivos = new Archivo();
-                                archivos.pathArchivo = "path";
-                                archivos.idMensaje = 2;
-                                archi.agregarArchivo(archivos);
+                                //BDArchivos archi = new BDArchivos();
+                                //Archivo archivos = new Archivo();
+                                //archivos.pathArchivo = "path";
+                                //archivos.idMensaje = 2;
+                                //archi.agregarArchivo(archivos);
 
                                 break;
 
@@ -109,11 +108,11 @@ namespace Server
                                 }
                             }
 
-                                BDArchivos archi2 = new BDArchivos();
-                                Archivo archivos2 = new Archivo();
-                                archivos2.pathArchivo = "path";
-                                archivos2.idMensaje = 1;
-                                archi2.agregarArchivo(archivos2);
+                                //BDArchivos archi2 = new BDArchivos();
+                                //Archivo archivos2 = new Archivo();
+                                //archivos2.pathArchivo = "path";
+                                //archivos2.idMensaje = 1;
+                                //archi2.agregarArchivo(archivos2);
 
                                 break;
 
@@ -128,13 +127,13 @@ namespace Server
 
                         case Data.Mensaje.tipo.registrar:
 
-                                Usuario usua = new Usuario();
-                                usua.correo = d.nombre;
-                                usua.contrasenia = d.contrasenia;
-                                usua.idGrupo = 1;//d.idGrupo;
+                                //Usuario usua = new Usuario();
+                                //usua.correo = d.nombre;
+                                //usua.contrasenia = d.contrasenia;
+                                //usua.idGrupo = 1;//d.idGrupo;
 
-                                BDUsuarios usuario = new BDUsuarios();
-                                usuario.agregarUsuario(usua);
+                                //BDUsuarios usuario = new BDUsuarios();
+                                //usuario.agregarUsuario(usua);
 
                                 break;
 

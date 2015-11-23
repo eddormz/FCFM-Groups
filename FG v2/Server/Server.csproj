@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="baseDatos">
-      <HintPath>..\baseDatos\bin\Debug\baseDatos.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="baseDatos.cs" />
     <Compile Include="conectado.cs" />
     <Compile Include="_server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

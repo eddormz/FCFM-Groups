@@ -15,10 +15,6 @@ C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\obj\Debug\Server.exe
 C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\obj\Debug\Server.pdb
 C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\Server.exe
 C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\Server.pdb
-C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\baseDatos.dll
 C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\Data.dll
-C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\EntityFramework.dll
 C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\Data.pdb
-C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\baseDatos.pdb
-C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\EntityFramework.xml
 C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache

@@ -7,7 +7,6 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using baseDatos;
 
 
 namespace Server
@@ -60,8 +59,8 @@ namespace Server
                 Console.WriteLine("Proceso iniciado");
                 int readbytes;
 
-            BDGrupos grupo = new BDGrupos();
-            List<Grupo> gpo = grupo.obtenerGrupos();
+            //BDGrupos grupo = new BDGrupos();
+            //List<Grupo> gpo = grupo.obtenerGrupos();
 
 
             while (server)
@@ -84,9 +83,9 @@ namespace Server
                             string contra = d.contrasenia;
                             string ipuser = d.ip.ToString();
 
-                            BDUsuarios usua = new BDUsuarios();
+                            DataSourcePOIData dspoi = new DataSourcePOIData();
 
-                            int result = usua.inicioSesion(nombre, contra);
+                            int result = dspoi.iniciarSesion(nombre, contra);
 
                             if (result > 0)
                             {
@@ -102,17 +101,17 @@ namespace Server
                             }
 
                         }
-                        else if(d.tipoo == Data.Mensaje.tipo.registrar)
-                        {
-                            Usuario usar = new Usuario();
-                            usar.correo = d.nombre;
-                            usar.contrasenia = d.contrasenia;
-                            usar.idGrupo = 1;//d.idGrupo;
+                        //else if(d.tipoo == Data.Mensaje.tipo.registrar)
+                        //{
+                        //    Usuario usar = new Usuario();
+                        //    usar.correo = d.nombre;
+                        //    usar.contrasenia = d.contrasenia;
+                        //    usar.idGrupo = 1;//d.idGrupo;
 
-                            BDUsuarios usua = new BDUsuarios();
-                            usua.agregarUsuario(usar);
-                            cliente.Disconnect(false);
-                        }
+                        //    BDUsuarios usua = new BDUsuarios();
+                        //    usua.agregarUsuario(usar);
+                        //    cliente.Disconnect(false);
+                        //}
 
                         }
 
