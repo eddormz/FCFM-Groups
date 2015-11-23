@@ -21,7 +21,7 @@ namespace FG_v2
         Socket vc;
         public c_video() { }
         Image v_i;
-        bool proceso;
+        bool proceso=true;
 
         public c_video(IPAddress ip)
         {
@@ -91,12 +91,20 @@ namespace FG_v2
                 readbytes = s.Receive(entrando);
                 if (readbytes > 0)
                 {
-                    MemoryStream ms = new MemoryStream(entrando);
-                    v_cliente.Image = Image.FromStream(ms);
-                    Image i = v_i;
-                    i.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-                    s.Send(ms.ToArray());
-                    ms.Close();
+                    Mensaje M = new Mensaje(entrando);
+
+                    if (M.tipoo == Mensaje.tipo.imagen)
+                    {
+
+                        MemoryStream ms = M.MM;
+                        v_cliente.Image = Image.FromStream(ms);
+                        Image i = v_i;
+                        i.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+
+                        M.MM = ms;
+                        vc.Send(M.toBytes());
+                        ms.Close();
+                    }
                 }
             }
         }
@@ -108,15 +116,28 @@ namespace FG_v2
             byte[] entrando = new byte[vc.SendBufferSize];
             while (proceso)
             {
-                readbytes = vc.Receive(entrando);
-                if (readbytes > 0)
+                try {
+                    readbytes = vc.Receive(entrando);
+                    if (readbytes > 0)
+                    {
+                        Mensaje M=new Mensaje(entrando);
+
+                        if (M.tipoo == Mensaje.tipo.imagen) {
+
+                            MemoryStream ms = M.MM;
+                            v_cliente.Image = Image.FromStream(ms);
+                            Image i = v_i;
+                            i.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+
+                            M.MM = ms;
+                            vc.Send(M.toBytes());
+                            ms.Close();
+                        }
+                    }
+                }
+                catch(Exception e)
                 {
-                    MemoryStream ms = new MemoryStream(entrando);
-                    v_cliente.Image = Image.FromStream(ms);
-                    Image i = v_i;
-                    i.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-                    vc.Send(ms.ToArray());
-                    ms.Close();
+
                 }
             }
         }

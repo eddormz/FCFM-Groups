@@ -140,12 +140,12 @@ namespace FG_v2
                                 }
 
                                 #region Zumbido
-                                bool a = true;
+                                
                                 try
                                 {
                                     SetZumbido dd = new SetZumbido(zumbido);
 
-                                    this.Invoke(dd, new object[] { a });
+                                    this.Invoke(dd, new object[] { true });
                                 }
                                 catch
                                 {

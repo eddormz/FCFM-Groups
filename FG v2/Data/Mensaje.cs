@@ -21,7 +21,7 @@ namespace Data
         public string contrasenia { set; get; }
         public IPAddress ip { set; get; }
         public int idGrupo { set; get; }
-
+        public MemoryStream MM { set; get; }
         #endregion
 
         #region datos server
@@ -50,7 +50,7 @@ namespace Data
             this.idDestino = d.idDestino;
             this.tipoo = d.tipoo;
             this.idGrupo = d.idGrupo;
-
+            this.MM = d.MM;
             ms.Close();
         }
 
@@ -71,7 +71,8 @@ namespace Data
             mensajeprivado,
             zumbido,
             estado,
-            video
+            video,
+            imagen
         }
     }
 }
