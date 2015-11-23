@@ -51,10 +51,16 @@
     <Compile Include="Archivo.cs">
       <DependentUpon>poi.tt</DependentUpon>
     </Compile>
+    <Compile Include="BDArchivos.cs" />
+    <Compile Include="BDMensajes.cs" />
+    <Compile Include="BDPublicacion.cs" />
+    <Compile Include="BDTarea.cs" />
     <Compile Include="BDUsuarios.cs" />
+    <Compile Include="BDUsuarioSubGrupo.cs" />
     <Compile Include="Grupo.cs">
       <DependentUpon>poi.tt</DependentUpon>
     </Compile>
+    <Compile Include="BDGrupos.cs" />
     <Compile Include="Mensaje.cs">
       <DependentUpon>poi.tt</DependentUpon>
     </Compile>

@@ -19,7 +19,7 @@ namespace FG_v2
         string contra;
         string idgrupo;
 
-        public registrar(Socket c, String correo, String contra, String )
+        public registrar(Socket c)
         {
             local = c;
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace FG_v2
             h.tipoo = Mensaje.tipo.registrar;
             h.nombre = tb_correo.Text;
             h.contrasenia = tb_correo.Text;
-            h.idGrupo = cb_carrera.SelectedValue.ToString();
+            h.idGrupo = Convert.ToInt32(cb_carrera.SelectedValue);
             local.Send(h.toBytes());
 
            /* //ejemplo

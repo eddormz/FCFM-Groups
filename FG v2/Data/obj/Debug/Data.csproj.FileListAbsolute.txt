@@ -3,3 +3,8 @@ D:\Desktop\FCFM Groups\FG v2\Data\bin\Debug\Data.pdb
 D:\Desktop\FCFM Groups\FG v2\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 D:\Desktop\FCFM Groups\FG v2\Data\obj\Debug\Data.dll
 D:\Desktop\FCFM Groups\FG v2\Data\obj\Debug\Data.pdb
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Data\bin\Debug\Data.dll
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Data\bin\Debug\Data.pdb
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Data\obj\Debug\Data.dll
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Data\obj\Debug\Data.pdb

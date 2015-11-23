@@ -6,3 +6,11 @@ D:\Desktop\FCFM Groups\FG v2\baseDatos\bin\Debug\EntityFramework.xml
 D:\Desktop\FCFM Groups\FG v2\baseDatos\obj\Debug\baseDatos.csprojResolveAssemblyReference.cache
 D:\Desktop\FCFM Groups\FG v2\baseDatos\obj\Debug\baseDatos.dll
 D:\Desktop\FCFM Groups\FG v2\baseDatos\obj\Debug\baseDatos.pdb
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\baseDatos\bin\Debug\baseDatos.dll.config
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\baseDatos\bin\Debug\baseDatos.dll
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\baseDatos\bin\Debug\baseDatos.pdb
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\baseDatos\bin\Debug\EntityFramework.dll
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\baseDatos\bin\Debug\EntityFramework.xml
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\baseDatos\obj\Debug\baseDatos.csprojResolveAssemblyReference.cache
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\baseDatos\obj\Debug\baseDatos.dll
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\baseDatos\obj\Debug\baseDatos.pdb

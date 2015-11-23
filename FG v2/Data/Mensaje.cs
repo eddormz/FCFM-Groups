@@ -20,7 +20,7 @@ namespace Data
         public string nombre { set; get; }
         public string contrasenia { set; get; }
         public IPAddress ip { set; get; }
-        public string idGrupo { set; get; }
+        public int idGrupo { set; get; }
 
         #endregion
 
