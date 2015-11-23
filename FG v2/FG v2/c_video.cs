@@ -83,6 +83,9 @@ namespace FG_v2
 
         }
 
+
+
+
         private void video()
         {
             vc.Listen(0);
@@ -96,6 +99,7 @@ namespace FG_v2
                 try
                 {
                     Mensaje M = new Mensaje();
+                    M.tipoo = Mensaje.tipo.imagen;
                             MemoryStream ms = new MemoryStream();
                             Image i = v_i;
                             i.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
@@ -113,16 +117,16 @@ namespace FG_v2
 
         private void videosend()
         {
-            byte[] entrando = new byte[s.SendBufferSize];
+            byte[] en = new byte[s.SendBufferSize];
             int readbytes;
             while (true)
             {
                 try
                 {
-                    readbytes = s.Receive(entrando);
+                    readbytes = s.Receive(en);
                     if (readbytes > 0)
                     {
-                        Mensaje M = new Mensaje(entrando);
+                        Mensaje M = new Mensaje(en);
 
                         if (M.tipoo == Mensaje.tipo.imagen)
                         {
@@ -162,6 +166,9 @@ namespace FG_v2
                 }
             }
         }
+
+
+
 
         private FilterInfoCollection Dispo;
         private VideoCaptureDevice fuente;
