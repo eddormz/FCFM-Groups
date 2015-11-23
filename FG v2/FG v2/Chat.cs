@@ -53,7 +53,7 @@ namespace FG_v2
 
                 this.Invoke(dd, new object[] { m.mensaje });
             }
-            catch
+            catch(Exception x)
             {
                 MessageBox.Show("Error al Escribir mensaje in chat, Intentelo Nuevamente");
             }

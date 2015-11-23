@@ -226,11 +226,12 @@ namespace FG_v2
         {
             Chat s = new Chat(conectado, email);
             s.tipo = "Publico";
-            s.MensajeEntrando(d);
+            
             if (flp_chats.Controls.Count < 3)
             {
                 Ventanas.Add(s);
                 flp_chats.Controls.Add(s);
+                s.MensajeEntrando(d);
             }
         }
 

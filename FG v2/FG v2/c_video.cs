@@ -117,7 +117,7 @@ namespace FG_v2
 
         private void videosend()
         {
-            byte[] en = new byte[s.SendBufferSize];
+            byte[] en = new byte[8400];
             int readbytes;
             while (true)
             {

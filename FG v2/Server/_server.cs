@@ -49,7 +49,7 @@ namespace Server
                     end();
                 }
             }
-
+            
             Console.WriteLine("END");
         }
 
@@ -159,6 +159,7 @@ namespace Server
                 i.end = false;
             }
 
+            
             server = false;
         }
     }
