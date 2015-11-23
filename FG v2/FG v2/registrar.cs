@@ -16,5 +16,10 @@ namespace FG_v2
         {
             InitializeComponent();
         }
+
+        private void bt_In_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

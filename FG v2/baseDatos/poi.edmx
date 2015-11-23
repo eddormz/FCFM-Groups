@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="POIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Archivo">
+          <Key>
+            <PropertyRef Name="idArchivo" />
+          </Key>
+          <Property Name="idArchivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pathArchivo" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="idPublicacion" Type="int" />
+          <Property Name="idMensaje" Type="int" />
+        </EntityType>
+        <EntityType Name="Grupo">
+          <Key>
+            <PropertyRef Name="idGrupo" />
+          </Key>
+          <Property Name="idGrupo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreGrupo" Type="varchar" MaxLength="200" />
+          <Property Name="nombreSubGrupo" Type="varchar" MaxLength="200" />
+          <Property Name="idPertenencia" Type="int" />
+        </EntityType>
+        <EntityType Name="Mensajes">
+          <Key>
+            <PropertyRef Name="idMensaje" />
+          </Key>
+          <Property Name="idMensaje" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="path" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="idEnvia" Type="int" Nullable="false" />
+          <Property Name="idRecibe" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Publicacion">
+          <Key>
+            <PropertyRef Name="idPublicacion" />
+          </Key>
+          <Property Name="idPublicacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="publicacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idGrupo" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tarea">
+          <Key>
+            <PropertyRef Name="idTarea" />
+          </Key>
+          <Property Name="idTarea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tarea" Type="varchar" MaxLength="350" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="idGrupo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="contrasenia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idGrupo" Type="int" Nullable="false" />
+          <Property Name="ip" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuarioSubGrupo">
+          <Key>
+            <PropertyRef Name="idUsuarioSubGrupo" />
+          </Key>
+          <Property Name="idUsuarioSubGrupo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idGrupo" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Archivo_Mensaje">
+          <End Role="Mensajes" Type="Self.Mensajes" Multiplicity="0..1" />
+          <End Role="Archivo" Type="Self.Archivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mensajes">
+              <PropertyRef Name="idMensaje" />
+            </Principal>
+            <Dependent Role="Archivo">
+              <PropertyRef Name="idMensaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Archivo_Publicacion">
+          <End Role="Publicacion" Type="Self.Publicacion" Multiplicity="0..1" />
+          <End Role="Archivo" Type="Self.Archivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publicacion">
+              <PropertyRef Name="idPublicacion" />
+            </Principal>
+            <Dependent Role="Archivo">
+              <PropertyRef Name="idPublicacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mensaje_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Mensajes" Type="Self.Mensajes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Mensajes">
+              <PropertyRef Name="idEnvia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mensaje_Usuario1">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Mensajes" Type="Self.Mensajes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Mensajes">
+              <PropertyRef Name="idRecibe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Publicacion_Grupo">
+          <End Role="Grupo" Type="Self.Grupo" Multiplicity="1" />
+          <End Role="Publicacion" Type="Self.Publicacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="idGrupo" />
+            </Principal>
+            <Dependent Role="Publicacion">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Publicacion_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Publicacion" Type="Self.Publicacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Publicacion">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarea_Grupo">
+          <End Role="Grupo" Type="Self.Grupo" Multiplicity="1" />
+          <End Role="Tarea" Type="Self.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="idGrupo" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Grupo">
+          <End Role="Grupo" Type="Self.Grupo" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="idGrupo" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioSubGrupo_Grupo">
+          <End Role="Grupo" Type="Self.Grupo" Multiplicity="1" />
+          <End Role="UsuarioSubGrupo" Type="Self.UsuarioSubGrupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="idGrupo" />
+            </Principal>
+            <Dependent Role="UsuarioSubGrupo">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioSubGrupo_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="UsuarioSubGrupo" Type="Self.UsuarioSubGrupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioSubGrupo">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="POIModelStoreContainer">
+          <EntitySet Name="Archivo" EntityType="Self.Archivo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Grupo" EntityType="Self.Grupo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mensajes" EntityType="Self.Mensajes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Publicacion" EntityType="Self.Publicacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tarea" EntityType="Self.Tarea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuarioSubGrupo" EntityType="Self.UsuarioSubGrupo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Archivo_Mensaje" Association="Self.FK_Archivo_Mensaje">
+            <End Role="Mensajes" EntitySet="Mensajes" />
+            <End Role="Archivo" EntitySet="Archivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Archivo_Publicacion" Association="Self.FK_Archivo_Publicacion">
+            <End Role="Publicacion" EntitySet="Publicacion" />
+            <End Role="Archivo" EntitySet="Archivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mensaje_Usuario" Association="Self.FK_Mensaje_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Mensajes" EntitySet="Mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mensaje_Usuario1" Association="Self.FK_Mensaje_Usuario1">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Mensajes" EntitySet="Mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Publicacion_Grupo" Association="Self.FK_Publicacion_Grupo">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Publicacion" EntitySet="Publicacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Publicacion_Usuario" Association="Self.FK_Publicacion_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Publicacion" EntitySet="Publicacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarea_Grupo" Association="Self.FK_Tarea_Grupo">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Grupo" Association="Self.FK_Usuario_Grupo">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioSubGrupo_Grupo" Association="Self.FK_UsuarioSubGrupo_Grupo">
+            <End Role="Grupo" EntitySet="Grupo" />
+            <End Role="UsuarioSubGrupo" EntitySet="UsuarioSubGrupo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioSubGrupo_Usuario" Association="Self.FK_UsuarioSubGrupo_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioSubGrupo" EntitySet="UsuarioSubGrupo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="POIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="POIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Archivoes" EntityType="POIModel.Archivo" />
+          <EntitySet Name="Grupoes" EntityType="POIModel.Grupo" />
+          <EntitySet Name="Mensajes" EntityType="POIModel.Mensaje" />
+          <EntitySet Name="Publicacions" EntityType="POIModel.Publicacion" />
+          <EntitySet Name="Tareas" EntityType="POIModel.Tarea" />
+          <EntitySet Name="Usuarios" EntityType="POIModel.Usuario" />
+          <EntitySet Name="UsuarioSubGrupoes" EntityType="POIModel.UsuarioSubGrupo" />
+          <AssociationSet Name="FK_Archivo_Mensaje" Association="POIModel.FK_Archivo_Mensaje">
+            <End Role="Mensaje" EntitySet="Mensajes" />
+            <End Role="Archivo" EntitySet="Archivoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Archivo_Publicacion" Association="POIModel.FK_Archivo_Publicacion">
+            <End Role="Publicacion" EntitySet="Publicacions" />
+            <End Role="Archivo" EntitySet="Archivoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Publicacion_Grupo" Association="POIModel.FK_Publicacion_Grupo">
+            <End Role="Grupo" EntitySet="Grupoes" />
+            <End Role="Publicacion" EntitySet="Publicacions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarea_Grupo" Association="POIModel.FK_Tarea_Grupo">
+            <End Role="Grupo" EntitySet="Grupoes" />
+            <End Role="Tarea" EntitySet="Tareas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Grupo" Association="POIModel.FK_Usuario_Grupo">
+            <End Role="Grupo" EntitySet="Grupoes" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioSubGrupo_Grupo" Association="POIModel.FK_UsuarioSubGrupo_Grupo">
+            <End Role="Grupo" EntitySet="Grupoes" />
+            <End Role="UsuarioSubGrupo" EntitySet="UsuarioSubGrupoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mensaje_Usuario" Association="POIModel.FK_Mensaje_Usuario">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Mensaje" EntitySet="Mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mensaje_Usuario1" Association="POIModel.FK_Mensaje_Usuario1">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Mensaje" EntitySet="Mensajes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Publicacion_Usuario" Association="POIModel.FK_Publicacion_Usuario">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Publicacion" EntitySet="Publicacions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioSubGrupo_Usuario" Association="POIModel.FK_UsuarioSubGrupo_Usuario">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="UsuarioSubGrupo" EntitySet="UsuarioSubGrupoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Archivo">
+          <Key>
+            <PropertyRef Name="idArchivo" />
+          </Key>
+          <Property Name="idArchivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pathArchivo" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="idPublicacion" Type="Int32" />
+          <Property Name="idMensaje" Type="Int32" />
+          <NavigationProperty Name="Mensaje" Relationship="POIModel.FK_Archivo_Mensaje" FromRole="Archivo" ToRole="Mensaje" />
+          <NavigationProperty Name="Publicacion" Relationship="POIModel.FK_Archivo_Publicacion" FromRole="Archivo" ToRole="Publicacion" />
+        </EntityType>
+        <EntityType Name="Grupo">
+          <Key>
+            <PropertyRef Name="idGrupo" />
+          </Key>
+          <Property Name="idGrupo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreGrupo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="nombreSubGrupo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="idPertenencia" Type="Int32" />
+          <NavigationProperty Name="Publicacions" Relationship="POIModel.FK_Publicacion_Grupo" FromRole="Grupo" ToRole="Publicacion" />
+          <NavigationProperty Name="Tareas" Relationship="POIModel.FK_Tarea_Grupo" FromRole="Grupo" ToRole="Tarea" />
+          <NavigationProperty Name="Usuarios" Relationship="POIModel.FK_Usuario_Grupo" FromRole="Grupo" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioSubGrupoes" Relationship="POIModel.FK_UsuarioSubGrupo_Grupo" FromRole="Grupo" ToRole="UsuarioSubGrupo" />
+        </EntityType>
+        <EntityType Name="Mensaje">
+          <Key>
+            <PropertyRef Name="idMensaje" />
+          </Key>
+          <Property Name="idMensaje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="path" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="idEnvia" Type="Int32" Nullable="false" />
+          <Property Name="idRecibe" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Archivoes" Relationship="POIModel.FK_Archivo_Mensaje" FromRole="Mensaje" ToRole="Archivo" />
+          <NavigationProperty Name="Usuario" Relationship="POIModel.FK_Mensaje_Usuario" FromRole="Mensaje" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario1" Relationship="POIModel.FK_Mensaje_Usuario1" FromRole="Mensaje" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Publicacion">
+          <Key>
+            <PropertyRef Name="idPublicacion" />
+          </Key>
+          <Property Name="idPublicacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="publicacion1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idGrupo" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Archivoes" Relationship="POIModel.FK_Archivo_Publicacion" FromRole="Publicacion" ToRole="Archivo" />
+          <NavigationProperty Name="Grupo" Relationship="POIModel.FK_Publicacion_Grupo" FromRole="Publicacion" ToRole="Grupo" />
+          <NavigationProperty Name="Usuario" Relationship="POIModel.FK_Publicacion_Usuario" FromRole="Publicacion" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Tarea">
+          <Key>
+            <PropertyRef Name="idTarea" />
+          </Key>
+          <Property Name="idTarea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tarea1" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="idGrupo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Grupo" Relationship="POIModel.FK_Tarea_Grupo" FromRole="Tarea" ToRole="Grupo" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreUsuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="contrasenia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idGrupo" Type="Int32" Nullable="false" />
+          <Property Name="ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Grupo" Relationship="POIModel.FK_Usuario_Grupo" FromRole="Usuario" ToRole="Grupo" />
+          <NavigationProperty Name="Mensajes" Relationship="POIModel.FK_Mensaje_Usuario" FromRole="Usuario" ToRole="Mensaje" />
+          <NavigationProperty Name="Mensajes1" Relationship="POIModel.FK_Mensaje_Usuario1" FromRole="Usuario" ToRole="Mensaje" />
+          <NavigationProperty Name="Publicacions" Relationship="POIModel.FK_Publicacion_Usuario" FromRole="Usuario" ToRole="Publicacion" />
+          <NavigationProperty Name="UsuarioSubGrupoes" Relationship="POIModel.FK_UsuarioSubGrupo_Usuario" FromRole="Usuario" ToRole="UsuarioSubGrupo" />
+        </EntityType>
+        <EntityType Name="UsuarioSubGrupo">
+          <Key>
+            <PropertyRef Name="idUsuarioSubGrupo" />
+          </Key>
+          <Property Name="idUsuarioSubGrupo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="idGrupo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Grupo" Relationship="POIModel.FK_UsuarioSubGrupo_Grupo" FromRole="UsuarioSubGrupo" ToRole="Grupo" />
+          <NavigationProperty Name="Usuario" Relationship="POIModel.FK_UsuarioSubGrupo_Usuario" FromRole="UsuarioSubGrupo" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="FK_Archivo_Mensaje">
+          <End Type="POIModel.Mensaje" Role="Mensaje" Multiplicity="0..1" />
+          <End Type="POIModel.Archivo" Role="Archivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mensaje">
+              <PropertyRef Name="idMensaje" />
+            </Principal>
+            <Dependent Role="Archivo">
+              <PropertyRef Name="idMensaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Archivo_Publicacion">
+          <End Type="POIModel.Publicacion" Role="Publicacion" Multiplicity="0..1" />
+          <End Type="POIModel.Archivo" Role="Archivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publicacion">
+              <PropertyRef Name="idPublicacion" />
+            </Principal>
+            <Dependent Role="Archivo">
+              <PropertyRef Name="idPublicacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Publicacion_Grupo">
+          <End Type="POIModel.Grupo" Role="Grupo" Multiplicity="1" />
+          <End Type="POIModel.Publicacion" Role="Publicacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="idGrupo" />
+            </Principal>
+            <Dependent Role="Publicacion">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarea_Grupo">
+          <End Type="POIModel.Grupo" Role="Grupo" Multiplicity="1" />
+          <End Type="POIModel.Tarea" Role="Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="idGrupo" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Grupo">
+          <End Type="POIModel.Grupo" Role="Grupo" Multiplicity="1" />
+          <End Type="POIModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="idGrupo" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioSubGrupo_Grupo">
+          <End Type="POIModel.Grupo" Role="Grupo" Multiplicity="1" />
+          <End Type="POIModel.UsuarioSubGrupo" Role="UsuarioSubGrupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupo">
+              <PropertyRef Name="idGrupo" />
+            </Principal>
+            <Dependent Role="UsuarioSubGrupo">
+              <PropertyRef Name="idGrupo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mensaje_Usuario">
+          <End Type="POIModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="POIModel.Mensaje" Role="Mensaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Mensaje">
+              <PropertyRef Name="idEnvia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mensaje_Usuario1">
+          <End Type="POIModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="POIModel.Mensaje" Role="Mensaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Mensaje">
+              <PropertyRef Name="idRecibe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Publicacion_Usuario">
+          <End Type="POIModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="POIModel.Publicacion" Role="Publicacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Publicacion">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioSubGrupo_Usuario">
+          <End Type="POIModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="POIModel.UsuarioSubGrupo" Role="UsuarioSubGrupo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioSubGrupo">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="POIModelStoreContainer" CdmEntityContainer="POIEntities">
+          <EntitySetMapping Name="Archivoes">
+            <EntityTypeMapping TypeName="POIModel.Archivo">
+              <MappingFragment StoreEntitySet="Archivo">
+                <ScalarProperty Name="idMensaje" ColumnName="idMensaje" />
+                <ScalarProperty Name="idPublicacion" ColumnName="idPublicacion" />
+                <ScalarProperty Name="pathArchivo" ColumnName="pathArchivo" />
+                <ScalarProperty Name="idArchivo" ColumnName="idArchivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grupoes">
+            <EntityTypeMapping TypeName="POIModel.Grupo">
+              <MappingFragment StoreEntitySet="Grupo">
+                <ScalarProperty Name="idPertenencia" ColumnName="idPertenencia" />
+                <ScalarProperty Name="nombreSubGrupo" ColumnName="nombreSubGrupo" />
+                <ScalarProperty Name="nombreGrupo" ColumnName="nombreGrupo" />
+                <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mensajes">
+            <EntityTypeMapping TypeName="POIModel.Mensaje">
+              <MappingFragment StoreEntitySet="Mensajes">
+                <ScalarProperty Name="idRecibe" ColumnName="idRecibe" />
+                <ScalarProperty Name="idEnvia" ColumnName="idEnvia" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="idMensaje" ColumnName="idMensaje" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Publicacions">
+            <EntityTypeMapping TypeName="POIModel.Publicacion">
+              <MappingFragment StoreEntitySet="Publicacion">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+                <ScalarProperty Name="publicacion1" ColumnName="publicacion" />
+                <ScalarProperty Name="idPublicacion" ColumnName="idPublicacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tareas">
+            <EntityTypeMapping TypeName="POIModel.Tarea">
+              <MappingFragment StoreEntitySet="Tarea">
+                <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="tarea1" ColumnName="tarea" />
+                <ScalarProperty Name="idTarea" ColumnName="idTarea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="POIModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioSubGrupoes">
+            <EntityTypeMapping TypeName="POIModel.UsuarioSubGrupo">
+              <MappingFragment StoreEntitySet="UsuarioSubGrupo">
+                <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idUsuarioSubGrupo" ColumnName="idUsuarioSubGrupo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

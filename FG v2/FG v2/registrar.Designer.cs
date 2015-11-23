@@ -45,6 +45,7 @@
             this.bt_In.TabIndex = 9;
             this.bt_In.Text = "Entrar";
             this.bt_In.UseVisualStyleBackColor = true;
+            this.bt_In.Click += new System.EventHandler(this.bt_In_Click);
             // 
             // txt_contra
             // 

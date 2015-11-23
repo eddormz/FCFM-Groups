@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="POIModelStoreContainer" CdmEntityContainer="POIEntities">
+    <EntitySetMapping Name="Archivoes">
+      <EntityTypeMapping TypeName="POIModel.Archivo">
+        <MappingFragment StoreEntitySet="Archivo">
+          <ScalarProperty Name="idMensaje" ColumnName="idMensaje" />
+          <ScalarProperty Name="idPublicacion" ColumnName="idPublicacion" />
+          <ScalarProperty Name="pathArchivo" ColumnName="pathArchivo" />
+          <ScalarProperty Name="idArchivo" ColumnName="idArchivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grupoes">
+      <EntityTypeMapping TypeName="POIModel.Grupo">
+        <MappingFragment StoreEntitySet="Grupo">
+          <ScalarProperty Name="idPertenencia" ColumnName="idPertenencia" />
+          <ScalarProperty Name="nombreSubGrupo" ColumnName="nombreSubGrupo" />
+          <ScalarProperty Name="nombreGrupo" ColumnName="nombreGrupo" />
+          <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mensajes">
+      <EntityTypeMapping TypeName="POIModel.Mensaje">
+        <MappingFragment StoreEntitySet="Mensajes">
+          <ScalarProperty Name="idRecibe" ColumnName="idRecibe" />
+          <ScalarProperty Name="idEnvia" ColumnName="idEnvia" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="idMensaje" ColumnName="idMensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publicacions">
+      <EntityTypeMapping TypeName="POIModel.Publicacion">
+        <MappingFragment StoreEntitySet="Publicacion">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+          <ScalarProperty Name="publicacion1" ColumnName="publicacion" />
+          <ScalarProperty Name="idPublicacion" ColumnName="idPublicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tareas">
+      <EntityTypeMapping TypeName="POIModel.Tarea">
+        <MappingFragment StoreEntitySet="Tarea">
+          <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="tarea1" ColumnName="tarea" />
+          <ScalarProperty Name="idTarea" ColumnName="idTarea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="POIModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+          <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSubGrupoes">
+      <EntityTypeMapping TypeName="POIModel.UsuarioSubGrupo">
+        <MappingFragment StoreEntitySet="UsuarioSubGrupo">
+          <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idUsuarioSubGrupo" ColumnName="idUsuarioSubGrupo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -33,6 +33,7 @@ namespace Server
 
             while (!end)
             {
+                try { 
                 Thread.Sleep(10);
                 byte[] reciveBuffer = new byte[cliente.SendBufferSize];
 
@@ -78,7 +79,7 @@ namespace Server
                             estado = d.mensaje;
                             break;
                         case Mensaje.tipo.video:
-                            
+
                             foreach (conectado u in Server._server.lista)
                             {
                                 if (u.id == d.idDestino)
@@ -89,7 +90,11 @@ namespace Server
                             break;
                     }
                 }
-
+                }
+                catch
+                {
+                    end = true;
+                }
             }
         }
 

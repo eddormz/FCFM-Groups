@@ -6,3 +6,7 @@ D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\Data.pdb
 D:\Desktop\FCFM Groups\FG v2\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
 D:\Desktop\FCFM Groups\FG v2\Server\obj\Debug\Server.exe
 D:\Desktop\FCFM Groups\FG v2\Server\obj\Debug\Server.pdb
+D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\baseDatos.dll
+D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\EntityFramework.dll
+D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\baseDatos.pdb
+D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\EntityFramework.xml

@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using baseDatos;
 
 
 namespace Server
@@ -71,14 +72,16 @@ namespace Server
                         Console.WriteLine("Cliente conectado");
                         if (readbytes > 0)
                         {
-                            Mensaje d = new Mensaje(entrando);
-                            if (d.tipoo == Mensaje.tipo.login)
+                            Data.Mensaje d = new Data.Mensaje(entrando);
+                            if (d.tipoo == Data.Mensaje.tipo.login)
                             {
                                 string nombre = d.nombre;
                                 string contra = d.contrasenia;
                                 string ipuser = d.ip.ToString();
 
-                                int result = 1;/*result de query*/
+                            BDUsuarios usua = new BDUsuarios();
+
+                            int result = usua.inicioSesion(nombre, contra);
 
                                 if (result > 0)
                                 {
