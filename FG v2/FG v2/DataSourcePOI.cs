@@ -12,30 +12,7 @@ namespace FG_v2
     public class DataSourcePOI
     {
         public baseDatos datos = new baseDatos();
-        public int iniciarSesion(string correo, string contra)
-        {
-            SqlCommand cmd = new SqlCommand();
-            SqlDataAdapter da = new SqlDataAdapter();
-            DataTable dt = new DataTable();
-
-            cmd.Connection = datos.conectarbase();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT id from Usuario where correo = '" + correo + "', and contrasenia = '" + contra + "')";
-            da.SelectCommand = cmd;
-            da.Fill(dt);
-            datos.desconectarbase();
-
-            if (dt.Rows.Count > 0)
-            {
-                return Convert.ToInt32(dt.Rows[0][0].ToString());
-            }
-            else
-            {
-                return 0;
-            }
-
-        }
-
+   
         public DataTable getGrupos()
         {
             SqlCommand cmd = new SqlCommand();
@@ -56,6 +33,27 @@ namespace FG_v2
             else
             {
                 return null;
+            }
+        }
+
+        public bool registrarse(string correo, string contra, int idgrupo)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+
+                cmd.Connection = datos.conectarbase();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "INSERT INTO Usuario(correo,contrasenia,idGrupo)VALUES('" + correo + "', '" + contra + "', " + idgrupo + ")";
+                cmd.ExecuteNonQuery();
+                datos.desconectarbase();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
 

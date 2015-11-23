@@ -71,8 +71,8 @@ namespace FG_v2
 
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
-            cliente.Connect(ip, 1806);
-            registrar r = new registrar(cliente);
+            
+            registrar r = new registrar();
             r.Show();
         }
 

@@ -85,6 +85,7 @@
             // bt_In
             // 
             this.bt_In.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_In.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_In.ForeColor = System.Drawing.Color.White;
             this.bt_In.Location = new System.Drawing.Point(179, 259);
             this.bt_In.Name = "bt_In";

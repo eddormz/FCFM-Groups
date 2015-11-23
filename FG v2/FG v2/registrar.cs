@@ -14,14 +14,6 @@ namespace FG_v2
 {
     public partial class registrar : Form
     {
-       static Socket local;
-
-        public registrar(Socket c)
-        {
-            local = c;
-            InitializeComponent();
-        }
-
         public registrar()
         {
             InitializeComponent();
@@ -29,12 +21,16 @@ namespace FG_v2
 
         private void bt_In_Click(object sender, EventArgs e)
         {
-
-            //h.nombre = tb_correo.Text;
-            //h.contrasenia = tb_correo.Text;
-            //h.idGrupo = cb_carrera.SelectedValue;
-            //local.Send(h.toBytes());
-
+            DataSourcePOI dspoi = new DataSourcePOI();
+           bool result = dspoi.registrarse(tb_correo.Text, tb_contra.Text, Convert.ToInt32(cb_carrera.SelectedValue));
+            if (result)
+            {
+                MessageBox.Show("Registro Exitoso", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
+            else
+            {
+            }
         }
 
         private void registrar_Load(object sender, EventArgs e)
