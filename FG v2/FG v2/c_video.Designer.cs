@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(c_video));
             this.vSP = new AForge.Controls.VideoSourcePlayer();
             this.v_cliente = new AForge.Controls.PictureBox();
             this.btn_cerrar = new AForge.Controls.PictureBox();
@@ -56,10 +57,12 @@
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Image = null;
+            this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrar.Image")));
             this.btn_cerrar.Location = new System.Drawing.Point(739, 3);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(25, 25);
+            this.btn_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_cerrar.TabIndex = 2;
             this.btn_cerrar.TabStop = false;
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
@@ -76,6 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.v_cliente);

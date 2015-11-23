@@ -79,6 +79,7 @@
             // 
             // txt_recibido
             // 
+            this.txt_recibido.BackColor = System.Drawing.Color.White;
             this.txt_recibido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_recibido.Location = new System.Drawing.Point(3, 29);
             this.txt_recibido.Name = "txt_recibido";
@@ -99,9 +100,11 @@
             // 
             // btn_enviar
             // 
+            this.btn_enviar.Image = ((System.Drawing.Image)(resources.GetObject("btn_enviar.Image")));
             this.btn_enviar.Location = new System.Drawing.Point(243, 242);
             this.btn_enviar.Name = "btn_enviar";
             this.btn_enviar.Size = new System.Drawing.Size(37, 37);
+            this.btn_enviar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_enviar.TabIndex = 2;
             this.btn_enviar.TabStop = false;
             this.btn_enviar.Click += new System.EventHandler(this.btn_enviar_Click);
@@ -118,9 +121,10 @@
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(255, 3);
+            this.btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrar.Image")));
+            this.btn_cerrar.Location = new System.Drawing.Point(231, 8);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(25, 25);
+            this.btn_cerrar.Size = new System.Drawing.Size(17, 15);
             this.btn_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_cerrar.TabIndex = 4;
             this.btn_cerrar.TabStop = false;
@@ -128,9 +132,11 @@
             // 
             // btn_video
             // 
-            this.btn_video.Location = new System.Drawing.Point(212, 3);
+            this.btn_video.Image = ((System.Drawing.Image)(resources.GetObject("btn_video.Image")));
+            this.btn_video.Location = new System.Drawing.Point(200, 3);
             this.btn_video.Name = "btn_video";
             this.btn_video.Size = new System.Drawing.Size(25, 25);
+            this.btn_video.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btn_video.TabIndex = 5;
             this.btn_video.TabStop = false;
             this.btn_video.Click += new System.EventHandler(this.btn_video_Click);
@@ -330,6 +336,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.p_icons);
             this.Controls.Add(this.btn_video);
             this.Controls.Add(this.btn_cerrar);
@@ -337,8 +345,9 @@
             this.Controls.Add(this.btn_enviar);
             this.Controls.Add(this.txt_enviar);
             this.Controls.Add(this.txt_recibido);
+            this.DoubleBuffered = true;
             this.Name = "Chat";
-            this.Size = new System.Drawing.Size(284, 316);
+            this.Size = new System.Drawing.Size(286, 316);
             this.Load += new System.EventHandler(this.Chat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_enviar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_emoticon)).EndInit();

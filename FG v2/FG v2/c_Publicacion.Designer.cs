@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(c_Publicacion));
             this.Publicacion = new System.Windows.Forms.RichTextBox();
             this.btn_enviar = new System.Windows.Forms.Button();
             this.btn_addfile = new System.Windows.Forms.PictureBox();
@@ -46,16 +47,20 @@
             // 
             // btn_enviar
             // 
+            this.btn_enviar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_enviar.ForeColor = System.Drawing.Color.White;
             this.btn_enviar.Location = new System.Drawing.Point(432, 115);
             this.btn_enviar.Name = "btn_enviar";
             this.btn_enviar.Size = new System.Drawing.Size(75, 23);
             this.btn_enviar.TabIndex = 1;
             this.btn_enviar.Text = "Publicar";
-            this.btn_enviar.UseVisualStyleBackColor = true;
+            this.btn_enviar.UseVisualStyleBackColor = false;
             this.btn_enviar.Click += new System.EventHandler(this.btn_enviar_Click);
             // 
             // btn_addfile
             // 
+            this.btn_addfile.BackColor = System.Drawing.Color.Transparent;
+            this.btn_addfile.Image = ((System.Drawing.Image)(resources.GetObject("btn_addfile.Image")));
             this.btn_addfile.Location = new System.Drawing.Point(16, 115);
             this.btn_addfile.Name = "btn_addfile";
             this.btn_addfile.Size = new System.Drawing.Size(82, 32);
@@ -71,6 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.btn_addfile);
             this.Controls.Add(this.btn_enviar);
             this.Controls.Add(this.Publicacion);

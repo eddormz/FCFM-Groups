@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FG));
             this.flp_conectados = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_chats = new System.Windows.Forms.FlowLayoutPanel();
             this.clock = new System.Windows.Forms.Timer(this.components);
@@ -71,6 +72,7 @@
             // 
             // test
             // 
+            this.test.ForeColor = System.Drawing.Color.White;
             this.test.Location = new System.Drawing.Point(927, 304);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(97, 23);
@@ -84,12 +86,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1220, 700);
             this.Controls.Add(this.test);
             this.Controls.Add(this.flp_chats);
             this.Controls.Add(this.flp_conectados);
             this.Controls.Add(this.flp_publicacion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FG";
             this.Text = "FG";
             this.TransparencyKey = System.Drawing.Color.Maroon;

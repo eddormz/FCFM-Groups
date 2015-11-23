@@ -42,6 +42,7 @@
             // 
             // tableLayoutPanel
             // 
+            this.tableLayoutPanel.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel.ColumnCount = 2;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
@@ -141,12 +142,15 @@
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okButton.BackColor = System.Drawing.Color.DodgerBlue;
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.okButton.ForeColor = System.Drawing.Color.White;
             this.okButton.Location = new System.Drawing.Point(339, 239);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 24;
             this.okButton.Text = "&OK";
+            this.okButton.UseVisualStyleBackColor = false;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // about
@@ -154,9 +158,11 @@
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(435, 283);
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "about";
