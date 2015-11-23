@@ -96,13 +96,7 @@ namespace FG_v2
             {
                 try
                 {
-                    readbytes = s.Receive(entrando);
-                    if (readbytes > 0)
-                    {
-                        Mensaje M = new Mensaje(entrando);
-
-                        if (M.tipoo == Mensaje.tipo.imagen)
-                        {
+                    Mensaje M = new Mensaje();
                             MemoryStream ms = new MemoryStream();
                             Image i = v_i;
                             i.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
@@ -110,8 +104,7 @@ namespace FG_v2
                             M.MM = ms;
                             vc.Send(M.toBytes());
                             ms.Close();
-                        }
-                    }
+                    
                 }
                 catch (Exception e)
                 {
