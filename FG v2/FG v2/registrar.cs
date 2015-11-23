@@ -32,16 +32,38 @@ namespace FG_v2
 
         private void bt_In_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-=======
             Mensaje h = new Mensaje();
             h.tipoo = Mensaje.tipo.registrar;
             h.nombre = tb_correo.Text;
             h.contrasenia = tb_correo.Text;
             h.idGrupo = cb_carrera.SelectedValue.ToString();
             local.Send(h.toBytes());
->>>>>>> origin/master
+
+           /* //ejemplo
+            String correo = tb_correo.Text;
+            String contra = tb_contra.Text;
+            int grupo = Convert.ToInt32(cb_carrera.SelectedValue.ToString());
+            String ipusua = Data.funciones.obtenerip().ToString();
+
+            Usuario usua = new Usuario();
+            usua.correo = correo;
+            usua.contrasenia = contra;
+            usua.idGrupo = grupo;
+            usua.ip = ipusua;
+
+            usuarios usuario = new usuarios();
+            usuario.agregarUsuario(usua); */
+
+        }
+
+        private void registrar_Load(object sender, EventArgs e)
+        {
+            /* grupos grupo = new grupos();
+            List<Grupo> gpo = grupo.obtenerGrupos();
+            cb_carrera.DisplayMember = "nombreGrupo";
+            cb_carrera.ValueMember = "idGrupo";
+            cb_carrera.DataSource = gpo;
+            tb_nombreUsuario.Focus(); */
         }
     }
 }

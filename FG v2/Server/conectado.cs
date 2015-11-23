@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Data;
+using baseDatos;
 
 namespace Server
 {
@@ -41,12 +42,12 @@ namespace Server
 
                 if (readbytes > 0)
                 {
-                    Mensaje d = new Mensaje(reciveBuffer);
+                    Data.Mensaje d = new Data.Mensaje(reciveBuffer);
 
 
                     switch (d.tipoo)
                     {
-                        case Mensaje.tipo.mensaje:
+                        case Data.Mensaje.tipo.mensaje:
 
 
                             foreach (conectado u in Server._server.lista)
@@ -55,7 +56,7 @@ namespace Server
                             }
                             break;
 
-                        case Mensaje.tipo.mensajeprivado:
+                        case Data.Mensaje.tipo.mensajeprivado:
 
 
                             int result = 0; // <-----id destino
@@ -70,15 +71,29 @@ namespace Server
 
                             break;
 
-                        case Mensaje.tipo.zumbido:
+                        case Data.Mensaje.tipo.zumbido:
 
                             break;
 
-                        case Mensaje.tipo.estado:
+                        case Data.Mensaje.tipo.estado:
 
                             estado = d.mensaje;
                             break;
-                        case Mensaje.tipo.video:
+
+                        case Data.Mensaje.tipo.registrar:
+
+                                Usuario usua = new Usuario();
+                                usua.correo = d.nombre;
+                                usua.contrasenia = d.contrasenia;
+                                usua.idGrupo = 1;//d.idGrupo;
+                                usua.ip = Convert.ToString(d.ip);
+
+                                BDUsuarios usuario = new BDUsuarios();
+                                usuario.agregarUsuario(usua);
+
+                                break;
+
+                        case Data.Mensaje.tipo.video:
 
                             foreach (conectado u in Server._server.lista)
                             {

@@ -28,5 +28,19 @@ namespace baseDatos
                 return 0;
             }
         }
+
+        public void agregarUsuario(Usuario usua)
+        {
+            POIEntities context = new POIEntities();
+            try
+            {
+                context.Usuarios.Add(usua);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                //error
+            }
+        }
     }
 }

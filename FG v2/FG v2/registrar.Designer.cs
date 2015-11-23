@@ -110,6 +110,7 @@
             this.Controls.Add(this.tb_correo);
             this.Name = "registrar";
             this.Text = "registrar";
+            this.Load += new System.EventHandler(this.registrar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
