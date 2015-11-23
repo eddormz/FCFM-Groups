@@ -124,9 +124,9 @@ namespace Server
             int cantidad = 0;
             while (server)
             {
-                List<string[]> sl = new List<string[]>();
-                if (lista.Count!=cantidad)
-                {
+                try {
+                    List<string[]> sl = new List<string[]>();
+
                     cantidad = lista.Count;
                     foreach (conectado c in lista)
                     {
@@ -143,8 +143,12 @@ namespace Server
                     {
                         i.Send(l.toBytes());
                     }
-                }
 
+                }
+                catch
+                {
+                    server = false;
+                }
             }
         }
 

@@ -22,7 +22,7 @@ namespace Data
 
                 cmd.Connection = datos.conectarbase();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT id from Usuario where correo = '" + correo + "' and contrasenia = '" + contra + "'";
+                cmd.CommandText = "SELECT idUsuario from Usuario where correo = '" + correo + "' and contrasenia = '" + contra + "'";
                 da.SelectCommand = cmd;
                 da.Fill(dt);
                 datos.desconectarbase();
