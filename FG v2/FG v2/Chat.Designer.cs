@@ -340,6 +340,7 @@
             // 
             // descry
             // 
+            this.descry.Image = global::FG_v2.Properties.Resources.padlock114;
             this.descry.Location = new System.Drawing.Point(212, 286);
             this.descry.Name = "descry";
             this.descry.Size = new System.Drawing.Size(25, 25);
@@ -349,6 +350,7 @@
             // 
             // encry
             // 
+            this.encry.Image = global::FG_v2.Properties.Resources.padlock46;
             this.encry.Location = new System.Drawing.Point(181, 286);
             this.encry.Name = "encry";
             this.encry.Size = new System.Drawing.Size(25, 25);
