@@ -315,5 +315,38 @@ namespace FG_v2
             Controls.Add(c);
             
         }
+
+        private void rb_conectado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_conectado.Checked == true)
+            {
+                Mensaje m = new Mensaje();
+                m.tipoo = Mensaje.tipo.estado;
+                m.mensaje = "Conectado";
+                conectado.Send(m.toBytes());
+            }
+        }
+
+        private void rb_ausente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_ausente.Checked == true)
+            {
+                Mensaje m = new Mensaje();
+                m.tipoo = Mensaje.tipo.estado;
+                m.mensaje = "Ausente";
+                conectado.Send(m.toBytes());
+            }
+        }
+
+        private void rb_desconectado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_desconectado.Checked == true)
+            {
+                Mensaje m = new Mensaje();
+                m.tipoo = Mensaje.tipo.estado;
+                m.mensaje = "Desconectado";
+                conectado.Send(m.toBytes());
+            }
+        }
     }
 }

@@ -37,6 +37,9 @@
             this.test = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rb_conectado = new System.Windows.Forms.RadioButton();
+            this.rb_ausente = new System.Windows.Forms.RadioButton();
+            this.rb_desconectado = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // flp_conectados
@@ -101,6 +104,47 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
             // 
+            // rb_conectado
+            // 
+            this.rb_conectado.AutoSize = true;
+            this.rb_conectado.BackColor = System.Drawing.Color.Transparent;
+            this.rb_conectado.Checked = true;
+            this.rb_conectado.ForeColor = System.Drawing.Color.White;
+            this.rb_conectado.Location = new System.Drawing.Point(12, 14);
+            this.rb_conectado.Name = "rb_conectado";
+            this.rb_conectado.Size = new System.Drawing.Size(77, 17);
+            this.rb_conectado.TabIndex = 5;
+            this.rb_conectado.TabStop = true;
+            this.rb_conectado.Text = "Conectado";
+            this.rb_conectado.UseVisualStyleBackColor = false;
+            this.rb_conectado.CheckedChanged += new System.EventHandler(this.rb_conectado_CheckedChanged);
+            // 
+            // rb_ausente
+            // 
+            this.rb_ausente.AutoSize = true;
+            this.rb_ausente.BackColor = System.Drawing.Color.Transparent;
+            this.rb_ausente.ForeColor = System.Drawing.Color.White;
+            this.rb_ausente.Location = new System.Drawing.Point(12, 36);
+            this.rb_ausente.Name = "rb_ausente";
+            this.rb_ausente.Size = new System.Drawing.Size(64, 17);
+            this.rb_ausente.TabIndex = 6;
+            this.rb_ausente.Text = "Ausente";
+            this.rb_ausente.UseVisualStyleBackColor = false;
+            this.rb_ausente.CheckedChanged += new System.EventHandler(this.rb_ausente_CheckedChanged);
+            // 
+            // rb_desconectado
+            // 
+            this.rb_desconectado.AutoSize = true;
+            this.rb_desconectado.BackColor = System.Drawing.Color.Transparent;
+            this.rb_desconectado.ForeColor = System.Drawing.Color.White;
+            this.rb_desconectado.Location = new System.Drawing.Point(12, 59);
+            this.rb_desconectado.Name = "rb_desconectado";
+            this.rb_desconectado.Size = new System.Drawing.Size(95, 17);
+            this.rb_desconectado.TabIndex = 7;
+            this.rb_desconectado.Text = "Desconectado";
+            this.rb_desconectado.UseVisualStyleBackColor = false;
+            this.rb_desconectado.CheckedChanged += new System.EventHandler(this.rb_desconectado_CheckedChanged);
+            // 
             // FG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,6 +153,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1220, 700);
+            this.Controls.Add(this.rb_desconectado);
+            this.Controls.Add(this.rb_ausente);
+            this.Controls.Add(this.rb_conectado);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.test);
@@ -136,5 +183,8 @@
         private System.Windows.Forms.Button test;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rb_conectado;
+        private System.Windows.Forms.RadioButton rb_ausente;
+        private System.Windows.Forms.RadioButton rb_desconectado;
     }
 }

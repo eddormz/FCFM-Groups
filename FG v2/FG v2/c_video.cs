@@ -88,23 +88,29 @@ namespace FG_v2
             byte[] entrando = new byte[s.SendBufferSize];
             while (proceso)
             {
-                readbytes = s.Receive(entrando);
-                if (readbytes > 0)
+                try
                 {
-                    Mensaje M = new Mensaje(entrando);
-
-                    if (M.tipoo == Mensaje.tipo.imagen)
+                    readbytes = s.Receive(entrando);
+                    if (readbytes > 0)
                     {
+                        Mensaje M = new Mensaje(entrando);
 
-                        MemoryStream ms = M.MM;
-                        v_cliente.Image = Image.FromStream(ms);
-                        Image i = v_i;
-                        i.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                        if (M.tipoo == Mensaje.tipo.imagen)
+                        {
 
-                        M.MM = ms;
-                        vc.Send(M.toBytes());
-                        ms.Close();
+                            MemoryStream ms = M.MM;
+                            v_cliente.Image = Image.FromStream(ms);
+                            Image i = v_i;
+                            i.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+
+                            M.MM = ms;
+                            vc.Send(M.toBytes());
+                            ms.Close();
+                        }
                     }
+                }
+                catch (Exception e)
+                {
                 }
             }
         }
