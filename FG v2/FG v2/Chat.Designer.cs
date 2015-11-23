@@ -57,6 +57,7 @@
             this.descry = new System.Windows.Forms.PictureBox();
             this.encry = new System.Windows.Forms.PictureBox();
             this.clave = new System.Windows.Forms.TextBox();
+            this.Zumbido = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn_enviar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_emoticon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
@@ -80,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_angel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.descry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.encry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Zumbido)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_recibido
@@ -354,7 +356,6 @@
             this.encry.Size = new System.Drawing.Size(25, 25);
             this.encry.TabIndex = 8;
             this.encry.TabStop = false;
-            this.encry.Visible = false;
             this.encry.Click += new System.EventHandler(this.encry_Click);
             // 
             // clave
@@ -363,6 +364,16 @@
             this.clave.Name = "clave";
             this.clave.Size = new System.Drawing.Size(100, 20);
             this.clave.TabIndex = 9;
+            this.clave.Visible = false;
+            // 
+            // Zumbido
+            // 
+            this.Zumbido.Location = new System.Drawing.Point(258, 288);
+            this.Zumbido.Name = "Zumbido";
+            this.Zumbido.Size = new System.Drawing.Size(25, 25);
+            this.Zumbido.TabIndex = 10;
+            this.Zumbido.TabStop = false;
+            this.Zumbido.Click += new System.EventHandler(this.Zumbido_Click);
             // 
             // Chat
             // 
@@ -371,6 +382,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::FG_v2.Properties.Resources.chatNuevo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.Zumbido);
             this.Controls.Add(this.clave);
             this.Controls.Add(this.encry);
             this.Controls.Add(this.descry);
@@ -408,6 +420,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_angel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.descry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.encry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Zumbido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,5 +455,6 @@
         private System.Windows.Forms.PictureBox descry;
         private System.Windows.Forms.PictureBox encry;
         private System.Windows.Forms.TextBox clave;
+        private System.Windows.Forms.PictureBox Zumbido;
     }
 }

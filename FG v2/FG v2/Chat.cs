@@ -291,9 +291,9 @@ namespace FG_v2
         {
             if (clave.Visible)
             {
-                if (clave.Text != "")
+                if (clave.Text != "" && txt_enviar.Text != "")
                 {
-                    encriptar(txt_enviar.Text, clave.Text);
+                    txt_enviar.Text = encriptar(txt_enviar.Text, clave.Text);
                     clave.Visible = false;
                 }
             }
@@ -307,7 +307,7 @@ namespace FG_v2
         {
             if (clave.Visible)
             {
-                if (clave.Text != "")
+                if (clave.Text != ""&&txt_enviar.Text != "")
                 {
                     txt_enviar.Text=desencriptar(txt_enviar.Text, clave.Text);
                     clave.Visible = false;
@@ -402,6 +402,13 @@ namespace FG_v2
             return UTF8Encoding.UTF8.GetString(resultArray);
         }
 
+        private void Zumbido_Click(object sender, EventArgs e)
+        {
+            Mensaje m = new Mensaje();
+            m.tipoo = Mensaje.tipo.zumbido;
+
+            local.Send(m.toBytes());
+        }
     }
 
 }
