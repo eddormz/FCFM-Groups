@@ -54,6 +54,9 @@
             this.btn_confused = new System.Windows.Forms.PictureBox();
             this.btn_angry = new System.Windows.Forms.PictureBox();
             this.btn_angel = new System.Windows.Forms.PictureBox();
+            this.descry = new System.Windows.Forms.PictureBox();
+            this.encry = new System.Windows.Forms.PictureBox();
+            this.clave = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn_enviar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_emoticon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
@@ -75,6 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_confused)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_angry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_angel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.encry)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_recibido
@@ -331,6 +336,32 @@
             this.btn_angel.TabStop = false;
             this.btn_angel.Click += new System.EventHandler(this.btn_angel_Click);
             // 
+            // descry
+            // 
+            this.descry.Location = new System.Drawing.Point(212, 286);
+            this.descry.Name = "descry";
+            this.descry.Size = new System.Drawing.Size(25, 25);
+            this.descry.TabIndex = 7;
+            this.descry.TabStop = false;
+            this.descry.Click += new System.EventHandler(this.descry_Click);
+            // 
+            // encry
+            // 
+            this.encry.Location = new System.Drawing.Point(181, 286);
+            this.encry.Name = "encry";
+            this.encry.Size = new System.Drawing.Size(25, 25);
+            this.encry.TabIndex = 8;
+            this.encry.TabStop = false;
+            this.encry.Visible = false;
+            this.encry.Click += new System.EventHandler(this.encry_Click);
+            // 
+            // clave
+            // 
+            this.clave.Location = new System.Drawing.Point(79, 288);
+            this.clave.Name = "clave";
+            this.clave.Size = new System.Drawing.Size(100, 20);
+            this.clave.TabIndex = 9;
+            // 
             // Chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,6 +369,9 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.clave);
+            this.Controls.Add(this.encry);
+            this.Controls.Add(this.descry);
             this.Controls.Add(this.p_icons);
             this.Controls.Add(this.btn_video);
             this.Controls.Add(this.btn_cerrar);
@@ -370,7 +404,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_confused)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_angry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_angel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.encry)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -400,5 +437,8 @@
         private System.Windows.Forms.PictureBox btn_confused;
         private System.Windows.Forms.PictureBox btn_angry;
         private System.Windows.Forms.PictureBox btn_angel;
+        private System.Windows.Forms.PictureBox descry;
+        private System.Windows.Forms.PictureBox encry;
+        private System.Windows.Forms.TextBox clave;
     }
 }
