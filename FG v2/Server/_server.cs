@@ -123,7 +123,7 @@ namespace Server
         {
             while (server)
             {
-                Thread.Sleep(10);
+                Thread.Sleep(1000);
 
                 try {
                     List<string[]> sl = new List<string[]>();

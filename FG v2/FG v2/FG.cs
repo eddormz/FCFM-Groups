@@ -299,7 +299,9 @@ namespace FG_v2
         private void button1_Click(object sender, EventArgs e)
         {
             c_video c = new c_video(conectado, int.Parse(textBox1.Text));
+            c.BringToFront();
             Controls.Add(c);
+            
         }
     }
 }
