@@ -121,13 +121,13 @@ namespace Server
 
         public static void actualizacion()
         {
-            int cantidad = 0;
             while (server)
             {
+                Thread.Sleep(10);
+
                 try {
                     List<string[]> sl = new List<string[]>();
-
-                    cantidad = lista.Count;
+                    
                     foreach (conectado c in lista)
                     {
                         string[] a = new string[3];
