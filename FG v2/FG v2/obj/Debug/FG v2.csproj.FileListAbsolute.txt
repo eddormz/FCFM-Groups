@@ -46,3 +46,6 @@ C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.Properti
 C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.registrar.resources
 C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.c_Publicacion.resources
 C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\FG v2\obj\Debug\FG v2.csproj.GenerateResource.Cache
+C:\Users\BrendaCázares\Desktop\FCFM-Groups\FG v2\FG v2\bin\Debug\FG v2.exe.config
+C:\Users\BrendaCázares\Desktop\FCFM-Groups\FG v2\FG v2\obj\Debug\FG v2.exe
+C:\Users\BrendaCázares\Desktop\FCFM-Groups\FG v2\FG v2\obj\Debug\FG v2.pdb
