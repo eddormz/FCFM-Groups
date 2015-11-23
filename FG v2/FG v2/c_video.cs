@@ -18,14 +18,17 @@ namespace FG_v2
 {
     public partial class c_video : UserControl
     {
-        Socket vc;
+       static Socket vc;
         public c_video() { }
         Image v_i;
         bool proceso=true;
 
+        public Socket s;
         public c_video(IPAddress ip)
         {
             InitializeComponent();
+            
+
             vc = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
            
             Dispo = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -39,7 +42,7 @@ namespace FG_v2
             vSP.VideoSource = fuente;
             vSP.Start();
 
-            vc.Connect(ip,1818);
+            vc.Connect(ip,12345);
             Thread h = new Thread(video2);
             h.Start();
         }
@@ -49,7 +52,7 @@ namespace FG_v2
             try {
                 InitializeComponent();
                 vc = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                IPEndPoint ipe = new IPEndPoint(IPAddress.Any, 1818);
+                IPEndPoint ipe = new IPEndPoint(IPAddress.Any, 12345);
                 vc.Bind(ipe);
 
                 Dispo = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -84,7 +87,10 @@ namespace FG_v2
         {
             int readbytes;
             vc.Listen(0);
-            Socket s = vc.Accept();
+           s = vc.Accept();
+            Thread cv = new Thread(videosend);
+            cv.Start();
+
             byte[] entrando = new byte[s.SendBufferSize];
             while (proceso)
             {
@@ -97,14 +103,40 @@ namespace FG_v2
 
                         if (M.tipoo == Mensaje.tipo.imagen)
                         {
-
-                            MemoryStream ms = M.MM;
-                            v_cliente.Image = Image.FromStream(ms);
+                            MemoryStream ms = new MemoryStream();
                             Image i = v_i;
                             i.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
 
                             M.MM = ms;
                             vc.Send(M.toBytes());
+                            ms.Close();
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                }
+            }
+        }
+
+        private
+             void videosend()
+        {
+            byte[] entrando = new byte[s.SendBufferSize];
+            int readbytes;
+            while (true)
+            {
+                try
+                {
+                    readbytes = s.Receive(entrando);
+                    if (readbytes > 0)
+                    {
+                        Mensaje M = new Mensaje(entrando);
+
+                        if (M.tipoo == Mensaje.tipo.imagen)
+                        {
+                            MemoryStream ms = M.MM;
+                            v_cliente.Image = Image.FromStream(ms);
                             ms.Close();
                         }
                     }
