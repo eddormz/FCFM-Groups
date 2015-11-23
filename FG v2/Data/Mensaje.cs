@@ -20,6 +20,7 @@ namespace Data
         public string nombre { set; get; }
         public string contrasenia { set; get; }
         public IPAddress ip { set; get; }
+        public string idGrupo { set; get; }
 
         #endregion
 
@@ -68,7 +69,8 @@ namespace Data
             mensajeprivado,
             zumbido,
             estado,
-            video
+            video,
+            registrar
         }
     }
 }
