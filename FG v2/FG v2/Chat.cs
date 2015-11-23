@@ -87,7 +87,7 @@ namespace FG_v2
                 StreamWriter escrito = File.AppendText("historial\\" + tipo + id + ".txt");
                 String contenido = text;
                 //escribimos. 
-                escrito.WriteLine(contenido.ToString());
+                escrito.WriteLine(contenido);
                 escrito.Flush();
                 //Cerramos 
                 escrito.Close();
@@ -406,7 +406,7 @@ namespace FG_v2
         {
             Mensaje m = new Mensaje();
             m.tipoo = Mensaje.tipo.zumbido;
-
+            m.idDestino = id;
             local.Send(m.toBytes());
         }
     }

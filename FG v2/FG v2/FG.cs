@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -16,6 +17,7 @@ namespace FG_v2
 {
     delegate void entrante(Mensaje d);
     delegate void actualizacion(lista_usuarios l);
+    delegate void SetZumbido(bool q);
 
     public partial class FG : Form
     {
@@ -24,6 +26,7 @@ namespace FG_v2
         private string email;
         private int id;
         bool hilo = true;
+        SoundPlayer player;
 
 
 
@@ -50,8 +53,8 @@ namespace FG_v2
             actua.Connect(ip,1807);
             Thread ac = new Thread(actualiza);
             ac.Start();
+            player = new SoundPlayer("TD4W.wav");
 
-            
 
 
 
@@ -106,6 +109,53 @@ namespace FG_v2
 
                         case Mensaje.tipo.zumbido:
 
+                            Mensaje zumba = new Mensaje();
+                            zumba.mensaje = "Zumbido";
+                            bool existz = false;
+
+                            if (d.idDestino == 0)
+                            {
+                                
+                                for (int i = 0; i < Ventanas.Count; i++)
+                                {
+                                    if (Ventanas[i].tipo == "Publico")
+                                    {
+                                        Ventanas[i].MensajeEntrando(d);
+                                        existz = true;
+                                    }
+                                }
+                                if (!existz)
+                                {
+                                    try
+                                    {
+                                        entrante dd = new entrante(newChat);
+
+                                        this.Invoke(dd, new object[] { d });
+                                    }
+                                    catch
+                                    {
+                                        MessageBox.Show("Error al Crear Nuevo Chat, Intentelo Nuevamente");
+                                    }
+                                }
+
+                                #region Zumbido
+                                bool a = true;
+                                try
+                                {
+                                    SetZumbido dd = new SetZumbido(zumbido);
+
+                                    this.Invoke(dd, new object[] { a });
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Error al recibir Zumbido, Intentelo Nuevamente");
+                                }
+                                break;
+                                #endregion
+
+                            }
+
+
                             break;
 
                         case Mensaje.tipo.video:
@@ -127,7 +177,7 @@ namespace FG_v2
         public void actualiza()
         {
             int readbytes;
-            while (hilo)
+            while (conectado.Connected)
             {
                 try {
                     byte[] reciveBuffer = new byte[actua.SendBufferSize];
@@ -144,7 +194,7 @@ namespace FG_v2
                 }
                 catch
                 {
-                    hilo = false; 
+
                 }
             }
         }
@@ -173,6 +223,8 @@ namespace FG_v2
                 flp_chats.Controls.Add(s);
             }
         }
+
+
 
         private void test_Click(object sender, EventArgs e)
         {
@@ -232,6 +284,11 @@ namespace FG_v2
                 flp_publicacion.Controls.Add(c);
             } 
             
+        }
+
+        private void zumbido(bool n)
+        {
+            player.Play();
         }
 
         private void FG_FormClosed(object sender, FormClosedEventArgs e)

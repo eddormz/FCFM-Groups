@@ -71,6 +71,14 @@ namespace Server
 
                         case Data.Mensaje.tipo.zumbido:
 
+                                if (d.idDestino == 0)
+                                {
+                                    foreach (conectado u in Server._server.lista)
+                                    {
+                                        u.cliente.Send(d.toBytes());
+                                    }
+                                }
+
                             break;
 
                         case Data.Mensaje.tipo.estado:
