@@ -59,7 +59,12 @@ namespace Server
                 Thread.Sleep(10);
                 Console.WriteLine("Proceso iniciado");
                 int readbytes;
-                while (server)
+
+            BDGrupos grupo = new BDGrupos();
+            List<Grupo> gpo = grupo.obtenerGrupos();
+
+
+            while (server)
                 {
                     try
                     {
@@ -106,6 +111,7 @@ namespace Server
 
                             BDUsuarios usua = new BDUsuarios();
                             usua.agregarUsuario(usar);
+                            cliente.Disconnect(false);
                         }
 
                         }

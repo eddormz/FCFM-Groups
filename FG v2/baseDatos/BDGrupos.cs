@@ -16,6 +16,7 @@ namespace baseDatos
             try
             {
                 var grupos = from tGrupo in context.Grupoes
+                             where tGrupo.idPertenencia == null
                              select tGrupo;
 
                 if (grupos.Count() > 0)
@@ -48,6 +49,12 @@ namespace baseDatos
             {
                 return null;
             }
+        }
+
+        public void addSubgrupo(Grupo grupo)
+        {
+            POIEntities context = new POIEntities();
+            context.Grupoes.Add(grupo);
         }
     }
 }

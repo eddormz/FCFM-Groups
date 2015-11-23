@@ -23,7 +23,7 @@ namespace baseDatos
             }
         }
 
-        public List<Tarea> getMensaje(int idGrupo)
+        public List<Tarea> getTarea(int idGrupo)
         {
             POIEntities context = new POIEntities();
 
