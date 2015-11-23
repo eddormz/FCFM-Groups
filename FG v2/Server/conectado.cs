@@ -31,39 +31,6 @@ namespace Server
         {
             int readbytes;
 
-            //BDPublicacion publi = new BDPublicacion();
-            //Publicacion publicaciones = new Publicacion();
-            //publicaciones.idUsuario = 1;
-            //publicaciones.idGrupo = 1;
-            //publicaciones.publicacion1 = "";
-            //publi.agregarPublicacion(publicaciones);
-
-            //BDPublicacion publi = new BDPublicacion();
-            //int idGrupop = 1;
-            //publi.getPublicacionGrupo(idGrupop);
-
-            //BDGrupos grupo = new BDGrupos();
-            //int idGrupop = 1;
-            //List<Grupo> subgrupos = grupo.obtenerSubGrupos(idGrupop);
-
-            //BDGrupos grupo = new BDGrupos();
-            //int idGrupop = 1;
-            //Grupo gpo = new Grupo();
-            //gpo.idPertenencia = idGrupop;
-            //gpo.nombreSubGrupo = "";
-            //grupo.addSubgrupo(gpo);
-
-            //BDTarea task = new BDTarea();
-            //int idGrupop = 1;
-            //task.getTarea(idGrupop);
-
-            //BDTarea task = new BDTarea();
-            //int idGrupop = 1;
-            //Tarea tarea = new Tarea();
-            //tarea.idGrupo = idGrupop;
-            //tarea.status =true;
-
-
             while (!end)
             {
                 try { 
@@ -86,13 +53,6 @@ namespace Server
                             {
                                 u.cliente.Send(d.toBytes());
                             }
-
-                                //BDArchivos archi = new BDArchivos();
-                                //Archivo archivos = new Archivo();
-                                //archivos.pathArchivo = "path";
-                                //archivos.idMensaje = 2;
-                                //archi.agregarArchivo(archivos);
-
                                 break;
 
                         case Data.Mensaje.tipo.mensajeprivado:
@@ -107,13 +67,6 @@ namespace Server
                                     u.cliente.Send(d.toBytes());
                                 }
                             }
-
-                                //BDArchivos archi2 = new BDArchivos();
-                                //Archivo archivos2 = new Archivo();
-                                //archivos2.pathArchivo = "path";
-                                //archivos2.idMensaje = 1;
-                                //archi2.agregarArchivo(archivos2);
-
                                 break;
 
                         case Data.Mensaje.tipo.zumbido:
@@ -124,18 +77,6 @@ namespace Server
 
                             estado = d.mensaje;
                             break;
-
-                        case Data.Mensaje.tipo.registrar:
-
-                                //Usuario usua = new Usuario();
-                                //usua.correo = d.nombre;
-                                //usua.contrasenia = d.contrasenia;
-                                //usua.idGrupo = 1;//d.idGrupo;
-
-                                //BDUsuarios usuario = new BDUsuarios();
-                                //usuario.agregarUsuario(usua);
-
-                                break;
 
                         case Data.Mensaje.tipo.video:
 

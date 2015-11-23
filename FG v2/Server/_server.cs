@@ -59,9 +59,6 @@ namespace Server
                 Console.WriteLine("Proceso iniciado");
                 int readbytes;
 
-            //BDGrupos grupo = new BDGrupos();
-            //List<Grupo> gpo = grupo.obtenerGrupos();
-
 
             while (server)
                 {
@@ -101,17 +98,6 @@ namespace Server
                             }
 
                         }
-                        //else if(d.tipoo == Data.Mensaje.tipo.registrar)
-                        //{
-                        //    Usuario usar = new Usuario();
-                        //    usar.correo = d.nombre;
-                        //    usar.contrasenia = d.contrasenia;
-                        //    usar.idGrupo = 1;//d.idGrupo;
-
-                        //    BDUsuarios usua = new BDUsuarios();
-                        //    usua.agregarUsuario(usar);
-                        //    cliente.Disconnect(false);
-                        //}
 
                         }
 

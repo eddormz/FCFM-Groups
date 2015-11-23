@@ -30,11 +30,6 @@ namespace FG_v2
         private void bt_In_Click(object sender, EventArgs e)
         {
 
-            //h.nombre = tb_correo.Text;
-            //h.contrasenia = tb_correo.Text;
-            //h.idGrupo = cb_carrera.SelectedValue;
-            //local.Send(h.toBytes());
-
         }
 
         private void registrar_Load(object sender, EventArgs e)
