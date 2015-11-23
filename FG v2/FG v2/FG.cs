@@ -295,5 +295,11 @@ namespace FG_v2
         {
             hilo = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            c_video c = new c_video(conectado, int.Parse(textBox1.Text));
+            Controls.Add(c);
+        }
     }
 }
