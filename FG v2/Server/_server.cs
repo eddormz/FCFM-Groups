@@ -73,30 +73,40 @@ namespace Server
                         if (readbytes > 0)
                         {
                             Data.Mensaje d = new Data.Mensaje(entrando);
-                            if (d.tipoo == Data.Mensaje.tipo.login)
-                            {
-                                string nombre = d.nombre;
-                                string contra = d.contrasenia;
-                                string ipuser = d.ip.ToString();
+                        if (d.tipoo == Data.Mensaje.tipo.login)
+                        {
+                            string nombre = d.nombre;
+                            string contra = d.contrasenia;
+                            string ipuser = d.ip.ToString();
 
                             BDUsuarios usua = new BDUsuarios();
 
                             int result = usua.inicioSesion(nombre, contra);
 
-                                if (result > 0)
-                                {
-                                    conectado c = new conectado(cliente);
-                                    c.nombre = nombre;
-                                    c.id = result;
-                                    c.estado = "Conectado";
-                                    lista.Add(c);
+                            if (result > 0)
+                            {
+                                conectado c = new conectado(cliente);
+                                c.nombre = nombre;
+                                c.id = result;
+                                c.estado = "Conectado";
+                                lista.Add(c);
 
-                                    d.iduser = result;
+                                d.iduser = result;
 
-                                    cliente.Send(d.toBytes());
-                                }
-
+                                cliente.Send(d.toBytes());
                             }
+
+                        }
+                        else if(d.tipoo == Data.Mensaje.tipo.registrar)
+                        {
+                            Usuario usar = new Usuario();
+                            usar.correo = d.nombre;
+                            usar.contrasenia = d.contrasenia;
+                            usar.idGrupo = 1;//d.idGrupo;
+
+                            BDUsuarios usua = new BDUsuarios();
+                            usua.agregarUsuario(usar);
+                        }
 
                         }
 

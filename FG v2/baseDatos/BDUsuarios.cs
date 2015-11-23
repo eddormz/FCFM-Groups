@@ -39,7 +39,7 @@ namespace baseDatos
             }
             catch (Exception e)
             {
-                //error
+                Console.WriteLine(e.Message);
             }
         }
     }

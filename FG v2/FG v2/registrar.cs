@@ -14,10 +14,7 @@ namespace FG_v2
 {
     public partial class registrar : Form
     {
-        Socket local;
-        string correo;
-        string contra;
-        string idgrupo;
+       static Socket local;
 
         public registrar(Socket c)
         {
@@ -36,7 +33,7 @@ namespace FG_v2
             h.tipoo = Mensaje.tipo.registrar;
             h.nombre = tb_correo.Text;
             h.contrasenia = tb_correo.Text;
-            h.idGrupo = Convert.ToInt32(cb_carrera.SelectedValue);
+            h.idGrupo = 1;//Convert.ToInt32(cb_carrera.SelectedValue);
             local.Send(h.toBytes());
 
            /* //ejemplo

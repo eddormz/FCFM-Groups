@@ -112,11 +112,9 @@
       <PropertyRef Name="idUsuario" />
     </Key>
     <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombreUsuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="correo" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="contrasenia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="idGrupo" Type="Int32" Nullable="false" />
-    <Property Name="ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Grupo" Relationship="POIModel.FK_Usuario_Grupo" FromRole="Usuario" ToRole="Grupo" />
     <NavigationProperty Name="Mensajes" Relationship="POIModel.FK_Mensaje_Usuario" FromRole="Usuario" ToRole="Mensaje" />
     <NavigationProperty Name="Mensajes1" Relationship="POIModel.FK_Mensaje_Usuario1" FromRole="Usuario" ToRole="Mensaje" />

@@ -15,7 +15,9 @@ namespace FG_v2
 {
     public partial class inicio : Form
     {
-        static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
+        // static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
+        static IPAddress ip = IPAddress.Parse("127.0.0.1");
+
         IPEndPoint ipe = new IPEndPoint(ip, 1806);
         static Socket cliente;
 
@@ -69,7 +71,8 @@ namespace FG_v2
 
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
-            registrar r = new registrar();
+            cliente.Connect(ip, 1806);
+            registrar r = new registrar(cliente);
             r.Show();
         }
 

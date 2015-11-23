@@ -55,11 +55,9 @@
             <PropertyRef Name="idUsuario" />
           </Key>
           <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombreUsuario" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="correo" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="contrasenia" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="idGrupo" Type="int" Nullable="false" />
-          <Property Name="ip" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="UsuarioSubGrupo">
           <Key>
@@ -354,11 +352,9 @@
             <PropertyRef Name="idUsuario" />
           </Key>
           <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombreUsuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="correo" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="contrasenia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="idGrupo" Type="Int32" Nullable="false" />
-          <Property Name="ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Grupo" Relationship="POIModel.FK_Usuario_Grupo" FromRole="Usuario" ToRole="Grupo" />
           <NavigationProperty Name="Mensajes" Relationship="POIModel.FK_Mensaje_Usuario" FromRole="Usuario" ToRole="Mensaje" />
           <NavigationProperty Name="Mensajes1" Relationship="POIModel.FK_Mensaje_Usuario1" FromRole="Usuario" ToRole="Mensaje" />
@@ -495,7 +491,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -554,11 +550,9 @@
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="POIModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
-                <ScalarProperty Name="ip" ColumnName="ip" />
                 <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
                 <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
                 <ScalarProperty Name="correo" ColumnName="correo" />
-                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
               </MappingFragment>
             </EntityTypeMapping>

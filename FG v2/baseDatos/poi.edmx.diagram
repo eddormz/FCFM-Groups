@@ -5,13 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d268a07f86f445ea9bdba37039c7ee6e" Name="Diagram1">
-        <EntityTypeShape EntityType="POIModel.Archivo" Width="1.5" PointX="10.5" PointY="4.625" />
+        <EntityTypeShape EntityType="POIModel.Archivo" Width="1.5" PointX="7.5" PointY="10.5" />
         <EntityTypeShape EntityType="POIModel.Grupo" Width="1.5" PointX="0.75" PointY="5.625" />
-        <EntityTypeShape EntityType="POIModel.Mensaje" Width="1.5" PointX="5.25" PointY="4.25" />
-        <EntityTypeShape EntityType="POIModel.Publicacion" Width="1.5" PointX="8.25" PointY="4.875" />
-        <EntityTypeShape EntityType="POIModel.Tarea" Width="1.5" PointX="3" PointY="10.875" />
-        <EntityTypeShape EntityType="POIModel.Usuario" Width="1.5" PointX="3" PointY="3.875" />
-        <EntityTypeShape EntityType="POIModel.UsuarioSubGrupo" Width="1.5" PointX="5.25" PointY="8" />
+        <EntityTypeShape EntityType="POIModel.Mensaje" Width="1.5" PointX="5.25" PointY="12.875" />
+        <EntityTypeShape EntityType="POIModel.Publicacion" Width="1.5" PointX="5.25" PointY="8" />
+        <EntityTypeShape EntityType="POIModel.Tarea" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="POIModel.Usuario" Width="1.5" PointX="3" PointY="10" />
+        <EntityTypeShape EntityType="POIModel.UsuarioSubGrupo" Width="1.5" PointX="5.25" PointY="5.125" />
         <AssociationConnector Association="POIModel.FK_Archivo_Mensaje" />
         <AssociationConnector Association="POIModel.FK_Archivo_Publicacion" />
         <AssociationConnector Association="POIModel.FK_Publicacion_Grupo" />

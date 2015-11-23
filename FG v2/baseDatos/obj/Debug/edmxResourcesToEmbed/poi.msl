@@ -54,11 +54,9 @@
     <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="POIModel.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
-          <ScalarProperty Name="ip" ColumnName="ip" />
           <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
           <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
           <ScalarProperty Name="correo" ColumnName="correo" />
-          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
           <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
         </MappingFragment>
       </EntityTypeMapping>

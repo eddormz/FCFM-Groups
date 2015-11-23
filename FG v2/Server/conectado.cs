@@ -86,7 +86,6 @@ namespace Server
                                 usua.correo = d.nombre;
                                 usua.contrasenia = d.contrasenia;
                                 usua.idGrupo = 1;//d.idGrupo;
-                                usua.ip = Convert.ToString(d.ip);
 
                                 BDUsuarios usuario = new BDUsuarios();
                                 usuario.agregarUsuario(usua);

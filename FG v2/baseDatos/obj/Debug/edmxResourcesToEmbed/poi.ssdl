@@ -50,11 +50,9 @@
       <PropertyRef Name="idUsuario" />
     </Key>
     <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombreUsuario" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="correo" Type="varchar" MaxLength="150" Nullable="false" />
     <Property Name="contrasenia" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="idGrupo" Type="int" Nullable="false" />
-    <Property Name="ip" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="UsuarioSubGrupo">
     <Key>
