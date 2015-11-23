@@ -85,7 +85,6 @@ namespace FG_v2
 
         private void video()
         {
-            int readbytes;
             vc.Listen(0);
            s = vc.Accept();
             Thread cv = new Thread(videosend);
@@ -112,8 +111,7 @@ namespace FG_v2
             }
         }
 
-        private
-             void videosend()
+        private void videosend()
         {
             byte[] entrando = new byte[s.SendBufferSize];
             int readbytes;
@@ -145,7 +143,6 @@ namespace FG_v2
             Thread cv = new Thread(videosend);
             cv.Start();
 
-            byte[] entrando = new byte[vc.SendBufferSize];
             while (proceso)
             {
                 try {
@@ -157,8 +154,7 @@ namespace FG_v2
                             M.MM = ms;
                             vc.Send(M.toBytes());
                             ms.Close();
-                        
-                    
+                
                 }
                 catch(Exception e)
                 {
