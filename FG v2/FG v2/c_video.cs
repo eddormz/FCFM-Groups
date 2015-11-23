@@ -142,29 +142,23 @@ namespace FG_v2
 
         private void video2()
         {
-            int readbytes;
-           
+            Thread cv = new Thread(videosend);
+            cv.Start();
+
             byte[] entrando = new byte[vc.SendBufferSize];
             while (proceso)
             {
                 try {
-                    readbytes = vc.Receive(entrando);
-                    if (readbytes > 0)
-                    {
-                        Mensaje M=new Mensaje(entrando);
-
-                        if (M.tipoo == Mensaje.tipo.imagen) {
-
-                            MemoryStream ms = M.MM;
-                            v_cliente.Image = Image.FromStream(ms);
-                            Image i = v_i;
+                            Mensaje M = new Mensaje();
+                    MemoryStream ms = new MemoryStream();
+                    Image i = v_i;
                             i.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
 
                             M.MM = ms;
                             vc.Send(M.toBytes());
                             ms.Close();
-                        }
-                    }
+                        
+                    
                 }
                 catch(Exception e)
                 {
