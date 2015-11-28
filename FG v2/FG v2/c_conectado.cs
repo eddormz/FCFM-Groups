@@ -20,6 +20,7 @@ namespace FG_v2
         {
             InitializeComponent();
         }
+        
 
         public c_conectado(string estado, int id, string nombre)
         {
@@ -52,7 +53,7 @@ namespace FG_v2
 
         private void conectado_DoubleClick(object sender, EventArgs e)
         {
-            
+            FG.nuevochat(this.id);   
         }
     }
 }

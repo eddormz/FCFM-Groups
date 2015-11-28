@@ -23,8 +23,8 @@ namespace FG_v2
     public partial class FG : Form
     {
         List<Chat> Ventanas;
-        static public Socket conectado;
-        private string email;
+        public Socket conectado;
+        public string email;
         private int id;
         bool hilo = true;
         SoundPlayer player;
@@ -350,5 +350,14 @@ namespace FG_v2
                 conectado.Send(m.toBytes());
             }
         }
+
+
+
+        public static void nuevochat(int id)
+        {
+            //Chat s = new Chat(conectado, email, id);
+
+        }
+
     }
 }

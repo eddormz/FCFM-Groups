@@ -73,7 +73,6 @@
             this.flp_publicacion.Name = "flp_publicacion";
             this.flp_publicacion.Size = new System.Drawing.Size(596, 638);
             this.flp_publicacion.TabIndex = 2;
-            this.flp_publicacion.Visible = false;
             this.flp_publicacion.WrapContents = false;
             // 
             // test

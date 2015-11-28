@@ -57,10 +57,11 @@ namespace Server
 
                         case Data.Mensaje.tipo.mensajeprivado:
 
+                                cliente.Send(d.toBytes());
+                               
+                            int result = d.idDestino;
 
-                            int result = 0; // <-----id destino
-
-                            foreach (conectado u in Server._server.lista)
+                                foreach (conectado u in Server._server.lista)
                             {
                                 if (u.id == result)
                                 {
