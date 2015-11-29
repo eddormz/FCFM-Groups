@@ -51,7 +51,7 @@ namespace FG_v2
 
                 if (n.iduser > 0)
                 {
-                    FG main = new FG(cliente, n.iduser,tb_correo.Text);
+                    FG main = new FG(cliente, n.iduser,tb_correo.Text, n.idGrupo);
                     main.Show();
                     Hide();
                 }

@@ -28,8 +28,8 @@ namespace FG_v2
         private int id;
         bool hilo = true;
         SoundPlayer player;
-
-
+        
+        public int idGrupo;
 
         static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
         //static IPAddress ip = IPAddress.Parse("127.0.0.1");
@@ -41,12 +41,13 @@ namespace FG_v2
             InitializeComponent();
         }
 
-        public FG(Socket cliente, int iduser, String nom)
+        public FG(Socket cliente, int iduser, String nom, int idGrupo)
         {
             Ventanas = new List<Chat>();
             conectado = cliente;
             this.email = nom;
             this.id = iduser;
+            this.idGrupo = idGrupo;
             InitializeComponent();
             Thread cs = new Thread(escuchar);
             cs.Start();
@@ -207,6 +208,8 @@ namespace FG_v2
             }
             MessageBox.Show("Socket no conectado");
             actua.Shutdown(SocketShutdown.Both);
+
+            Application.Exit();
         }
         
 
@@ -312,7 +315,7 @@ namespace FG_v2
         {
             DataSourcePOI dsp = new DataSourcePOI();
 
-            c_Publicacion p = new c_Publicacion();
+            c_Publicacion p = new c_Publicacion(id, idGrupo);
             flp_publicacion.Controls.Add(p);
 
             DataTable dt = dsp.getPublicacion(2);
@@ -336,8 +339,8 @@ namespace FG_v2
                     }
                 }
                 flp_publicacion.Controls.Add(c);
-
             }
+
 
         }
 

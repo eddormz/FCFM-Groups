@@ -12,7 +12,7 @@ namespace Data
     public class DataSourcePOIData
     {
         public baseDatos datos = new baseDatos();
-        public int iniciarSesion(string correo, string contra)
+        public DataTable iniciarSesion(string correo, string contra)
         {
             try
             {
@@ -22,23 +22,23 @@ namespace Data
 
                 cmd.Connection = datos.conectarbase();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT idUsuario from Usuario where correo = '" + correo + "' and contrasenia = '" + contra + "'";
+                cmd.CommandText = "SELECT idUsuario, idGrupo from Usuario where correo = '" + correo + "' and contrasenia = '" + contra + "'";
                 da.SelectCommand = cmd;
                 da.Fill(dt);
                 datos.desconectarbase();
 
                 if (dt.Rows.Count > 0)
                 {
-                    return Convert.ToInt32(dt.Rows[0][0].ToString());
+                    return dt;
                 }
                 else
                 {
-                    return 0;
+                    return null;
                 }
             }
             catch (Exception e)
             {
-                return 0;
+                return null;
             }
 
         }
