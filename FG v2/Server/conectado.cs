@@ -70,7 +70,8 @@ namespace Server
                                 
                                 if (!enviado)
                                 {
-                                    esperarmensaje(int.Parse(dt.Rows[b][0].ToString()),d);
+                                        Thread j = new Thread(()=>esperarmensaje(int.Parse(dt.Rows[b][0].ToString()), d));
+                                        j.Start();
                                 }
                                 }
                                 break;
