@@ -69,7 +69,7 @@ namespace FG_v2
 
                 cmd.Connection = datos.conectarbase();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT p.idPublicacion, p.publicacion, p.idGrupo, p.idUsuario, u.correo FROM Publicacion p inner join usuario u on p.idUsuario = u.idUsuario where p.idGrupo = " + id;
+                cmd.CommandText = "SELECT p.idPublicacion, p.publicacion, p.idGrupo, p.idUsuario, u.correo, p.nombreArchivo FROM Publicacion p inner join usuario u on p.idUsuario = u.idUsuario where p.idGrupo = " + id;
                 da.SelectCommand = cmd;
                 da.Fill(dt);
                 datos.desconectarbase();
@@ -99,7 +99,36 @@ namespace FG_v2
 
                 cmd.Connection = datos.conectarbase();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "INSERT INTO Publicacion(publicacion,idGrupo,idUsuario)VALUES('" + publicacion + "'," + idGrupo + "," + idUsuario + ") select SCOPE_IDENTITY()";
+                cmd.CommandText = "INSERT INTO Publicacion(publicacion,idGrupo,idUsuario, nombreArchivo)VALUES('" + publicacion + "'," + idGrupo + "," + idUsuario + ", null) select SCOPE_IDENTITY()";
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                datos.desconectarbase();
+                if (dt.Rows.Count > 0)
+                {
+                    return dt;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public DataTable insertPublicacionArchivo(string publicacion, int idGrupo, int idUsuario, string nombreArchivo)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+
+                cmd.Connection = datos.conectarbase();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "INSERT INTO Publicacion(publicacion,idGrupo,idUsuario, nombreArchivo)VALUES('" + publicacion + "'," + idGrupo + "," + idUsuario + ", '" + nombreArchivo + "') select SCOPE_IDENTITY()";
                 da.SelectCommand = cmd;
                 da.Fill(dt);
                 datos.desconectarbase();
@@ -317,6 +346,8 @@ namespace FG_v2
                 return null;
             }
         }
+
+       
 
     }
 }

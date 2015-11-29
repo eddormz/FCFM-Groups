@@ -74,7 +74,9 @@ namespace Data
             estado,
             imagen,
             archivo,
-            cerrar
+            cerrar,
+            publicacionarchivo,
+            solicitudArchivo
         }
     }
 }

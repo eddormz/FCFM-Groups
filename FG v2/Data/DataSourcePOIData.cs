@@ -42,5 +42,28 @@ namespace Data
             }
 
         }
+
+        public DataTable getUsuarios(int idGrupo)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = datos.conectarbase();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT idUsuario FROM Usuario where idGrupo =  " + idGrupo;
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            datos.desconectarbase();
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

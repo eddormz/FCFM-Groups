@@ -78,7 +78,7 @@ namespace FG_v2
                     m.archi.ByteArrayToFile();
                     SetTextCallback dd = new SetTextCallback(escribirmsj);
 
-                    this.Invoke(dd, new object[] { "Archivo Recibido" });
+                    this.Invoke(dd, new object[] { "Archivo Recibido "+m.archi.j });
                 }
                 catch (Exception ex)
                 {

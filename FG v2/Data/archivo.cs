@@ -13,7 +13,7 @@ namespace Data
     {
 
         byte[] _ByteArray;
-        string j;
+        public string j;
 
         public archivo(byte[] i,string s)
         {
@@ -24,17 +24,6 @@ namespace Data
 
         }
 
-        public void convertirfile()
-        {
-            if (!Directory.Exists("Descarga\\"))
-            {
-                Directory.CreateDirectory("Descarga\\");
-            }
-
-            FileStream wFile;
-            wFile = new FileStream("Descarga\\" + j,FileMode.Append);
-            wFile.Close();
-        }
 
         public bool ByteArrayToFile()
         {

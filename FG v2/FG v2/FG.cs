@@ -199,6 +199,13 @@ namespace FG_v2
 
                             break;
 
+                        case Data.Mensaje.tipo.solicitudArchivo:
+
+                            d.archi.ByteArrayToFile();
+                            MessageBox.Show("Mensaje Recibido " + d.archi.j);
+
+                            break;
+
 
                     }
 
@@ -315,11 +322,13 @@ namespace FG_v2
         {
             DataSourcePOI dsp = new DataSourcePOI();
 
-            c_Publicacion p = new c_Publicacion(id, idGrupo);
+            c_Publicacion p = new c_Publicacion(id, idGrupo, conectado);
             flp_publicacion.Controls.Add(p);
 
             DataTable dt = dsp.getPublicacion(idGrupo);
             c_desplegar c = null;
+
+            bool isExistsFile = false;
 
             int temp=0;
 
@@ -329,7 +338,12 @@ namespace FG_v2
                 {
                     // c_desplegar c = new c_desplegar("nombre"+i, "Toda la publicacion aqui", 1);
 
-                    c = new c_desplegar(dt.Rows[i][4] + "", dt.Rows[i][1] + "", int.Parse(dt.Rows[i][0].ToString()), idGrupo, id);
+                    if (dt.Rows[i][5].ToString() != "")
+                    {
+                        isExistsFile = true;
+                    }
+
+                    c = new c_desplegar(dt.Rows[i][4] + "", dt.Rows[i][1] + "", int.Parse(dt.Rows[i][0].ToString()), idGrupo, id, isExistsFile, dt.Rows[i][5].ToString(), conectado);
 
                     DataTable dtc = dsp.getComentario(int.Parse(dt.Rows[i][0].ToString()));
 

@@ -34,6 +34,7 @@
             this.input_publicacion = new System.Windows.Forms.RichTextBox();
             this.btn_Publicar = new System.Windows.Forms.PictureBox();
             this.flp_comentarios = new System.Windows.Forms.FlowLayoutPanel();
+            this.lnkNombreArchivo = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Publicar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // input_publicacion
             // 
             this.input_publicacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.input_publicacion.Location = new System.Drawing.Point(14, 56);
+            this.input_publicacion.Location = new System.Drawing.Point(5, 88);
             this.input_publicacion.Name = "input_publicacion";
             this.input_publicacion.Size = new System.Drawing.Size(469, 24);
             this.input_publicacion.TabIndex = 3;
@@ -74,7 +75,7 @@
             // 
             this.btn_Publicar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Publicar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Publicar.Image")));
-            this.btn_Publicar.Location = new System.Drawing.Point(477, 50);
+            this.btn_Publicar.Location = new System.Drawing.Point(480, 88);
             this.btn_Publicar.Name = "btn_Publicar";
             this.btn_Publicar.Size = new System.Drawing.Size(71, 30);
             this.btn_Publicar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -87,24 +88,37 @@
             this.flp_comentarios.AutoScroll = true;
             this.flp_comentarios.BackColor = System.Drawing.Color.White;
             this.flp_comentarios.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flp_comentarios.Location = new System.Drawing.Point(14, 86);
+            this.flp_comentarios.Location = new System.Drawing.Point(6, 118);
             this.flp_comentarios.Name = "flp_comentarios";
-            this.flp_comentarios.Size = new System.Drawing.Size(520, 61);
+            this.flp_comentarios.Size = new System.Drawing.Size(542, 61);
             this.flp_comentarios.TabIndex = 0;
             this.flp_comentarios.WrapContents = false;
+            // 
+            // lnkNombreArchivo
+            // 
+            this.lnkNombreArchivo.AutoSize = true;
+            this.lnkNombreArchivo.BackColor = System.Drawing.Color.Transparent;
+            this.lnkNombreArchivo.Location = new System.Drawing.Point(6, 69);
+            this.lnkNombreArchivo.Name = "lnkNombreArchivo";
+            this.lnkNombreArchivo.Size = new System.Drawing.Size(42, 13);
+            this.lnkNombreArchivo.TabIndex = 5;
+            this.lnkNombreArchivo.TabStop = true;
+            this.lnkNombreArchivo.Text = "archivo";
+            this.lnkNombreArchivo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNombreArchivo_LinkClicked);
             // 
             // c_desplegar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.lnkNombreArchivo);
             this.Controls.Add(this.btn_Publicar);
             this.Controls.Add(this.input_publicacion);
             this.Controls.Add(this.publicacion);
             this.Controls.Add(this.nombre);
             this.Controls.Add(this.flp_comentarios);
             this.Name = "c_desplegar";
-            this.Size = new System.Drawing.Size(551, 150);
+            this.Size = new System.Drawing.Size(551, 182);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Publicar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,5 +131,6 @@
         private System.Windows.Forms.RichTextBox input_publicacion;
         private System.Windows.Forms.PictureBox btn_Publicar;
         public System.Windows.Forms.FlowLayoutPanel flp_comentarios;
+        private System.Windows.Forms.LinkLabel lnkNombreArchivo;
     }
 }
