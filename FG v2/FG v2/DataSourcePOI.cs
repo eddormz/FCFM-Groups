@@ -244,7 +244,31 @@ namespace FG_v2
 
             cmd.Connection = datos.conectarbase();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT idUsuarioSubGrupo,idUsuario,idGrupo FROM UsuarioSubGrupo where idUsuario = " + id;
+            cmd.CommandText = "SELECT usg.idGrupo, g.nombreSubGrupo FROM UsuarioSubGrupo usg inner join Usuario u on usg.idUsuario = u.idUsuario LEFT join Grupo g on g.idGrupo = usg.idGrupo where u.idUsuario = " + id;
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            datos.desconectarbase();
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        public DataTable getGrupo(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = datos.conectarbase();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT nombreGrupo FROM Grupo where idGrupo = " + id;
             da.SelectCommand = cmd;
             da.Fill(dt);
             datos.desconectarbase();

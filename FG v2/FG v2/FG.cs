@@ -328,6 +328,13 @@ namespace FG_v2
             DataTable dt = dsp.getPublicacion(idGrupo);
             c_desplegar c = null;
 
+            
+
+                    tarea t = new tarea(idGrupo, id);
+                    t.Location = new Point(12, 354);
+                    this.Controls.Add(t);
+            
+
             bool isExistsFile = false;
 
             int temp=0;
