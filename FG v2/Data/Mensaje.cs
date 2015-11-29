@@ -72,7 +72,6 @@ namespace Data
             mensajeprivado,
             zumbido,
             estado,
-            video,
             imagen,
             archivo,
             cerrar

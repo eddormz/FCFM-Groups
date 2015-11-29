@@ -87,17 +87,6 @@ namespace Server
                             estado = d.mensaje;
                             break;
 
-                        case Data.Mensaje.tipo.video:
-
-                            foreach (conectado u in Server._server.lista)
-                            {
-                                if (u.id == d.idDestino)
-                                {
-                                    u.cliente.Send(d.toBytes());
-                                }
-                            }
-                            break;
-
                             case Data.Mensaje.tipo.archivo:
 
                                 if (d.idDestino == 0)

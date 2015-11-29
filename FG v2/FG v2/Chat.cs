@@ -25,7 +25,6 @@ namespace FG_v2
         public String tipo;
         Socket local;
         string correo;
-        c_video c;
 
         private Hashtable emoticons;
 
@@ -214,8 +213,7 @@ namespace FG_v2
         private void btn_video_Click(object sender, EventArgs e)
         {
             
-            c =new c_video(local, id);
-            ParentForm.Controls.Add(c);
+            
         }
 
 
