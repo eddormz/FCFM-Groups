@@ -57,7 +57,7 @@ namespace FG_v2
                 }
                 else
                 {
-                    cliente.Close();
+                    cliente.Disconnect(true);
                     Application.Restart();
                 }
 

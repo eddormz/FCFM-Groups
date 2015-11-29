@@ -14,7 +14,7 @@ namespace Server
 {
     class conectado
     {
-        Socket cliente;
+        public Socket cliente;
         public string nombre { set; get; }
         public int id { set; get; }
         public string estado { set; get; }

@@ -123,6 +123,12 @@
     <Compile Include="c_Publicacion.Designer.cs">
       <DependentUpon>c_Publicacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="tarea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="tarea.Designer.cs">
+      <DependentUpon>tarea.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="about.resx">
       <DependentUpon>about.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="c_Publicacion.resx">
       <DependentUpon>c_Publicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tarea.resx">
+      <DependentUpon>tarea.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -144,9 +144,31 @@ namespace Server
 
                     lista_usuarios l = new lista_usuarios();
                     l.lista = sl;
+
+                    
+
                     foreach (Socket i in upl)
                     {
-                        i.Send(l.toBytes());
+                        string ipuerto=i.LocalEndPoint.ToString();
+                        string[] s=ipuerto.Split(':');
+                        bool auncon = false;
+
+                        foreach (conectado c in lista)
+                        {
+                            string conected=c.cliente.LocalEndPoint.ToString();
+                            string[] cc = conected.Split(':');
+
+                            if (s[0] == cc[0])
+                            {
+                                i.Send(l.toBytes());
+                                auncon = true;
+                            }
+                        }
+                        if (!auncon)
+                        {
+                            upl.Remove(i);
+                            i.Disconnect(true);
+                        }
                     }
 
                 }
