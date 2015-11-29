@@ -112,7 +112,7 @@ namespace Server
                                 cliente.Send(d.toBytes());
                                 end = true;
                                 _server.lista.Remove(this);
-                                cliente.Close();
+                                cliente.Disconnect(true);
                                 break;
                     }
                 }
