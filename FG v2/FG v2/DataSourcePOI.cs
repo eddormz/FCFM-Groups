@@ -12,7 +12,7 @@ namespace FG_v2
     public class DataSourcePOI
     {
         public baseDatos datos = new baseDatos();
-   
+
         public DataTable getGrupos()
         {
             SqlCommand cmd = new SqlCommand();
@@ -60,16 +60,24 @@ namespace FG_v2
 
         public DataTable getPublicacion(int id)
         {
-            SqlCommand cmd = new SqlCommand();
-            SqlDataAdapter da = new SqlDataAdapter();
             DataTable dt = new DataTable();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter da = new SqlDataAdapter();
 
-            cmd.Connection = datos.conectarbase();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT idPublicacion, publicacion, idGrupo, idUsuario FROM Publicacion where idGrupo = " + id;
-            da.SelectCommand = cmd;
-            da.Fill(dt);
-            datos.desconectarbase();
+
+                cmd.Connection = datos.conectarbase();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT p.idPublicacion, p.publicacion, p.idGrupo, p.idUsuario, u.correo FROM Publicacion p inner join usuario u on p.idUsuario = u.idUsuario where p.idGrupo = " + id;
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                datos.desconectarbase();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
 
             if (dt.Rows.Count > 0)
             {
@@ -287,7 +295,7 @@ namespace FG_v2
 
             cmd.Connection = datos.conectarbase();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT idComentario,idPublicacion,comentario,idUsuario FROM Comentario where idPublicacion = " + id;
+            cmd.CommandText = "SELECT c.comentario FROM Comentario c inner join Publicacion p on c.idPublicacion = p.idPublicacion inner join Usuario u on c.idUsuario = u.idUsuario where c.idPublicacion = " + id;
             da.SelectCommand = cmd;
             da.Fill(dt);
             datos.desconectarbase();

@@ -22,7 +22,20 @@ namespace FG_v2
 
         private void btn_enviar_Click(object sender, EventArgs e)
         {
-            
+            DataSourcePOI dsp = new DataSourcePOI();
+
+            bool resultado = dsp.insertPublicacion(Publicacion.Text, 2, 2);
+
+            if (resultado)
+            {
+                DataTable dt = dsp.getPublicacion(2);
+
+                for (int bc = 0; bc < dt.Rows.Count; bc++)
+                {
+                    c_desplegar c = new c_desplegar(dt.Rows[bc][4] + "", dt.Rows[bc][1] + "", 1);
+
+                }
+            }
         }
 
         private void btn_addfile_Click(object sender, EventArgs e)

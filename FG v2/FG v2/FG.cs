@@ -317,22 +317,32 @@ namespace FG_v2
 
         private void FG_Load(object sender, EventArgs e)
         {
+            DataSourcePOI dsp = new DataSourcePOI();
+
             c_Publicacion p = new c_Publicacion();
             flp_publicacion.Controls.Add(p);
 
-            for (int i = 0; i < 10; i++)
-            {
-                c_desplegar c = new c_desplegar("nombre"+i, "Toda la publicacion aqui", 1);
+            DataTable dt = dsp.getPublicacion(2);
+            c_desplegar c = null;
 
-                for (int j = 0; j < 10; j++)
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                // c_desplegar c = new c_desplegar("nombre"+i, "Toda la publicacion aqui", 1);
+
+                DataTable dtc = dsp.getComentario(int.Parse(dt.Rows[0][0].ToString()));
+
+
+                c = new c_desplegar(dt.Rows[i][4] + "", dt.Rows[i][1] + "", 1);
+
+                for (int j = 0; j < dtc.Rows.Count; j++)
                 {
                     Label l = new Label();
-                    l.Text = "comentario"+j;
+                    l.Text = dtc.Rows[i][0].ToString();
                     c.flp_comentarios.Controls.Add(l);
                 }
                 flp_publicacion.Controls.Add(c);
-            } 
-            
+            }
+
         }
 
         private void zumbido(bool n)
