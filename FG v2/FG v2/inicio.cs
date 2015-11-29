@@ -38,6 +38,7 @@ namespace FG_v2
                 d.nombre = tb_correo.Text;
                 d.contrasenia = tb_contra.Text;
                 d.ip = Data.funciones.obtenerip();
+                d.tipoo = Mensaje.tipo.login;
                 byte[] entrando = new byte[cliente.SendBufferSize];
 
                 cliente.Connect(ip, 1806);
