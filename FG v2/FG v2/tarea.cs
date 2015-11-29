@@ -14,6 +14,7 @@ namespace FG_v2
     {
         int idGrupo;
         int id;
+        CheckBox chkTarea = null;
 
         public tarea(int idGrupo, int id)
         {
@@ -23,12 +24,12 @@ namespace FG_v2
 
             DataSourcePOI dsp = new DataSourcePOI();
 
-            DataTable dt = dsp.getSubGrupo(id);
+            DataTable dt = dsp.getTarea(idGrupo);
 
             if(dt!=null)
             for (int bc = 0; bc < dt.Rows.Count; bc++)
             {
-                CheckBox chkTarea = new CheckBox();
+                chkTarea = new CheckBox();
                 chkTarea.Text = dt.Rows[bc][0].ToString() + ", " + dt.Rows[bc][1].ToString();
 
                 flpTarea.Controls.Add(chkTarea);
@@ -53,6 +54,17 @@ namespace FG_v2
         private void btnCancel_Click(object sender, EventArgs e)
         {
             pnlAdd.Visible = false;
+        }
+
+        private void chkTarea_CheckedChanged(object sender, EventArgs e)
+        {
+            bool checado = chkTarea.Checked;
+            DataSourcePOI dsp = new DataSourcePOI();
+
+            string[] texto = chkTarea.Text.Split(',');
+
+            dsp.actualizarTarea(checado, int.Parse(texto[1]));
+
         }
     }
 }

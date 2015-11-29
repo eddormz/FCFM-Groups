@@ -304,6 +304,25 @@ namespace FG_v2
             }
         }
 
+        public void actualizarTarea(bool status, int idTarea)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+
+                cmd.Connection = datos.conectarbase();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "UPDATE Tarea SET status = " + status + " WHERE idTarea = "+ idTarea;
+                cmd.ExecuteNonQuery();
+                datos.desconectarbase();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
         public DataTable getTarea(int id)
         {
             SqlCommand cmd = new SqlCommand();
