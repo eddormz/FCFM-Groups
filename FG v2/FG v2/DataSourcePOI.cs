@@ -89,7 +89,7 @@ namespace FG_v2
             }
         }
 
-        public bool insertPublicacion(string publicacion, int idGrupo, int idUsuario)
+        public DataTable insertPublicacion(string publicacion, int idGrupo, int idUsuario)
         {
             try
             {
@@ -99,14 +99,22 @@ namespace FG_v2
 
                 cmd.Connection = datos.conectarbase();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "INSERT INTO Publicacion(publicacion,idGrupo,idUsuario)VALUES('" + publicacion + "'," + idGrupo + "," + idUsuario + ")";
-                cmd.ExecuteNonQuery();
+                cmd.CommandText = "INSERT INTO Publicacion(publicacion,idGrupo,idUsuario)VALUES('" + publicacion + "'," + idGrupo + "," + idUsuario + ") select SCOPE_IDENTITY()";
+                da.SelectCommand = cmd;
+                da.Fill(dt);
                 datos.desconectarbase();
-                return true;
+                if (dt.Rows.Count > 0)
+                {
+                    return dt;
+                }
+                else
+                {
+                    return null;
+                }
             }
             catch (Exception ex)
             {
-                return false;
+                return null;
             }
         }
 
@@ -295,7 +303,7 @@ namespace FG_v2
 
             cmd.Connection = datos.conectarbase();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT c.comentario FROM Comentario c inner join Publicacion p on c.idPublicacion = p.idPublicacion inner join Usuario u on c.idUsuario = u.idUsuario where c.idPublicacion = " + id;
+            cmd.CommandText = "SELECT c.comentario, c.idPublicacion FROM Comentario c inner join Publicacion p on c.idPublicacion = p.idPublicacion inner join Usuario u on c.idUsuario = u.idUsuario where c.idPublicacion = " + id;
             da.SelectCommand = cmd;
             da.Fill(dt);
             datos.desconectarbase();

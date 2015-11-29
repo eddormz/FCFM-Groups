@@ -321,23 +321,31 @@ namespace FG_v2
             DataTable dt = dsp.getPublicacion(idGrupo);
             c_desplegar c = null;
 
+            int temp=0;
+
             if (dt != null)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     // c_desplegar c = new c_desplegar("nombre"+i, "Toda la publicacion aqui", 1);
 
-                    c = new c_desplegar(dt.Rows[i][4] + "", dt.Rows[i][1] + "", 1);
+                    c = new c_desplegar(dt.Rows[i][4] + "", dt.Rows[i][1] + "", int.Parse(dt.Rows[0][0].ToString()), idGrupo, id);
 
-                    DataTable dtc = dsp.getComentario(int.Parse(dt.Rows[0][0].ToString()));
+                    DataTable dtc = dsp.getComentario(int.Parse(dt.Rows[i][0].ToString()));
+
+                    temp = int.Parse(dt.Rows[i][0].ToString());
+                    
 
                     if (dtc != null)
                     {
                         for (int j = 0; j < dtc.Rows.Count; j++)
                         {
+                            int temp2 = int.Parse(dtc.Rows[j][1].ToString());
+                            if (temp == temp2) {
                             Label l = new Label();
-                            l.Text = dtc.Rows[i][0].ToString();
+                            l.Text = dtc.Rows[j][0].ToString();
                             c.flp_comentarios.Controls.Add(l);
+                        }
                         }
                     }
                     flp_publicacion.Controls.Add(c);

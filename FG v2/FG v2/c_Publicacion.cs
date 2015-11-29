@@ -30,15 +30,15 @@ namespace FG_v2
         {
             DataSourcePOI dsp = new DataSourcePOI();
 
-            bool resultado = dsp.insertPublicacion(Publicacion.Text, idGrupo, id);
+            DataTable dtt = dsp.insertPublicacion(Publicacion.Text, idGrupo, id);
 
-            if (resultado)
+            if (dtt.Rows[0][0].ToString() != "null")
             {
-                DataTable dt = dsp.getPublicacion(2);
+                DataTable dt = dsp.getPublicacion(idGrupo);
 
                 for (int bc = 0; bc < dt.Rows.Count; bc++)
                 {
-                    c_desplegar c = new c_desplegar(dt.Rows[bc][4] + "", dt.Rows[bc][1] + "", 1);
+                    c_desplegar c = new c_desplegar(dt.Rows[bc][4] + "", dt.Rows[bc][1] + "", int.Parse(dtt.Rows[0][0].ToString()), idGrupo, id);
 
                 }
                 Publicacion.Text = "";
