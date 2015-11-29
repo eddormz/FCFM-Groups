@@ -74,7 +74,8 @@ namespace Data
             estado,
             video,
             imagen,
-            archivo
+            archivo,
+            cerrar
         }
     }
 }

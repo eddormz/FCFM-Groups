@@ -202,6 +202,12 @@ namespace FG_v2
 
                             break;
 
+                        case Mensaje.tipo.cerrar:
+                            hilo = false;
+
+                            break;
+
+
                     }
 
 
@@ -355,6 +361,9 @@ namespace FG_v2
 
         private void FG_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Mensaje m = new Mensaje();
+            m.tipoo = Mensaje.tipo.cerrar;
+            conectado.Send(m.toBytes());
             hilo = false;
         }
 

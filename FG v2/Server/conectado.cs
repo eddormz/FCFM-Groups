@@ -118,6 +118,13 @@ namespace Server
                                     }
                                 }
                                 break;
+
+                            case Data.Mensaje.tipo.cerrar:
+                                cliente.Send(d.toBytes());
+                                cliente.Disconnect(false);
+                                end = true;
+                                _server.lista.Remove(this);
+                                break;
                     }
                 }
                 }
@@ -126,6 +133,8 @@ namespace Server
                     end = true;
                 }
             }
+
+
         }
 
     }
