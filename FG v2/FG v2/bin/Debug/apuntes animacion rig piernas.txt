@@ -1,0 +1,15 @@
+IK Handle tool rotate de cadera a tobillo
+ik handle tool single de tobillo al arco - arco punta
+
+curva root -join root  == curva cintura - join cintura //constrain parent
+curva cintura curva
+
+ik tobillo curva arco P
+ik arco curva arco P
+ik punta curva dedos P
+curva dedos curva arco curva punta P
+curva punta curva pie P
+
+
+curva a join
+curva hijo a padre p
