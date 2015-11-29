@@ -329,7 +329,7 @@ namespace FG_v2
                 {
                     // c_desplegar c = new c_desplegar("nombre"+i, "Toda la publicacion aqui", 1);
 
-                    c = new c_desplegar(dt.Rows[i][4] + "", dt.Rows[i][1] + "", int.Parse(dt.Rows[0][0].ToString()), idGrupo, id);
+                    c = new c_desplegar(dt.Rows[i][4] + "", dt.Rows[i][1] + "", int.Parse(dt.Rows[i][0].ToString()), idGrupo, id);
 
                     DataTable dtc = dsp.getComentario(int.Parse(dt.Rows[i][0].ToString()));
 
