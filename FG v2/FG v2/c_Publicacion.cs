@@ -41,6 +41,7 @@ namespace FG_v2
                     c_desplegar c = new c_desplegar(dt.Rows[bc][4] + "", dt.Rows[bc][1] + "", 1);
 
                 }
+                Publicacion.Text = "";
             }
         }
 
