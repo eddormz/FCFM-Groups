@@ -52,3 +52,8 @@ a: que onda
 12: holals
 15: ya?
 12: asas
+15: la cocha:$
+15: la cocha:$
+Archivo Recibido
+12: asd
+Archivo Recibido

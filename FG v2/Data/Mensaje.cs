@@ -51,6 +51,7 @@ namespace Data
             this.tipoo = d.tipoo;
             this.idGrupo = d.idGrupo;
             this.MM = d.MM;
+            this.archi = d.archi;
             ms.Close();
         }
 
