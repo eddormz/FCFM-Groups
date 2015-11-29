@@ -17,6 +17,7 @@ namespace FG_v2
 {
     delegate void SetTextCallback(string text);
 
+
     public partial class Chat : UserControl
     {
         public int id;
@@ -58,17 +59,33 @@ namespace FG_v2
 
         public void MensajeEntrando(Mensaje m)
         {
-            try
+            if (m.tipoo == Mensaje.tipo.mensaje)
             {
-                SetTextCallback dd = new SetTextCallback(escribirmsj);
+                try
+                {
+                    SetTextCallback dd = new SetTextCallback(escribirmsj);
 
-                this.Invoke(dd, new object[] { m.mensaje });
+                    this.Invoke(dd, new object[] { m.mensaje });
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show("Error al Escribir mensaje in chat, Intentelo Nuevamente");
+                }
             }
-            catch(Exception x)
+            if (m.tipoo == Mensaje.tipo.archivo)
             {
-                MessageBox.Show("Error al Escribir mensaje in chat, Intentelo Nuevamente");
-            }
+                try
+                {
+                    m.archi.convertirfile();
+                    SetTextCallback dd = new SetTextCallback(escribirmsj);
 
+                    this.Invoke(dd, new object[] { "Archivo Recibido" });
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
         }
 
         private void btn_enviar_Click(object sender, EventArgs e)
@@ -424,6 +441,27 @@ namespace FG_v2
             m.tipoo = Mensaje.tipo.zumbido;
             m.idDestino = id;
             local.Send(m.toBytes());
+        }
+
+        private void agregararchivo_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fs = new FileStream(openFileDialog1.FileName, FileMode.Open);
+
+                archivo a = new archivo(fs, openFileDialog1.SafeFileName);
+
+                Mensaje m = new Mensaje();
+                m.archi = a;
+                m.tipoo = Mensaje.tipo.archivo;
+                m.idDestino = id;
+                local.Send(m.toBytes());
+                MessageBox.Show("Archivo Enviado", "Exito");
+
+                fs.Close();
+            }
+
+           
         }
     }
 

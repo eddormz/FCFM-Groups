@@ -97,6 +97,27 @@ namespace Server
                                 }
                             }
                             break;
+
+                            case Data.Mensaje.tipo.archivo:
+
+                                if (d.idDestino == 0)
+                                {
+                                    foreach (conectado u in Server._server.lista)
+                                    {
+                                        u.cliente.Send(d.toBytes());
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (conectado u in Server._server.lista)
+                                    {
+                                        if (d.idDestino == u.id)
+                                        {
+                                            u.cliente.Send(d.toBytes());
+                                        }
+                                    }
+                                }
+                                break;
                     }
                 }
                 }

@@ -50,13 +50,13 @@
             this.pb_estatus.TabIndex = 1;
             this.pb_estatus.TabStop = false;
             // 
-            // conectado
+            // c_conectado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pb_estatus);
             this.Controls.Add(this.txt_nombreConectado);
-            this.Name = "conectado";
+            this.Name = "c_conectado";
             this.Size = new System.Drawing.Size(175, 31);
             this.Load += new System.EventHandler(this.conectado_Load);
             this.DoubleClick += new System.EventHandler(this.conectado_DoubleClick);

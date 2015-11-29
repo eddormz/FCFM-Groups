@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Data;
 
 namespace FG_v2
 {
@@ -27,10 +29,13 @@ namespace FG_v2
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                System.IO.StreamReader sr = new
-                   System.IO.StreamReader(openFileDialog1.FileName);
-                MessageBox.Show(sr.ReadToEnd());
-                sr.Close();
+                FileStream fs = new FileStream(openFileDialog1.FileName, FileMode.Open);
+
+                archivo a = new archivo(fs, openFileDialog1.SafeFileName);
+
+                a.convertirfile();
+
+                fs.Close();
             }
         }
     }

@@ -19,6 +19,7 @@ namespace FG_v2
     delegate void actualizacion(lista_usuarios l);
     delegate void SetZumbido(bool q);
     delegate void iniciarVideo(IPAddress ip);
+    delegate void clickconectado(int id);
 
     public partial class FG : Form
     {
@@ -169,6 +170,38 @@ namespace FG_v2
 
                             break;
 
+                        case Mensaje.tipo.archivo:
+
+                            if (d.idDestino == 0){
+
+                                bool exista = false;
+
+                                for (int i = 0; i < Ventanas.Count; i++)
+                                {
+                                    if (Ventanas[i].tipo == "Publico")
+                                    {
+                                        Ventanas[i].MensajeEntrando(d);
+                                        exista = true;
+                                    }
+                                }
+                                if (!exista)
+                                {
+                                    try
+                                    {
+                                        entrante dd = new entrante(newChat);
+
+                                        this.Invoke(dd, new object[] { d });
+                                    }
+                                    catch
+                                    {
+                                        MessageBox.Show("Error al Crear Nuevo Chat, Intentelo Nuevamente");
+                                    }
+                                }
+
+                            }
+
+                            break;
+
                     }
 
 
@@ -233,6 +266,11 @@ namespace FG_v2
                 flp_chats.Controls.Add(s);
                 s.MensajeEntrando(d);
             }
+        }
+
+        private void newChatPrivado(Mensaje d)
+        {
+
         }
 
 
@@ -353,10 +391,16 @@ namespace FG_v2
 
 
 
-        public static void nuevochat(int id)
+        public void nuevochat(int id)
         {
-            //Chat s = new Chat(conectado, email, id);
 
+            clickconectado i = new clickconectado(chatprivado);
+            Invoke(i, new object[] { id });
+        }
+
+        public static void chatprivado(int i)
+        {
+            
         }
 
     }

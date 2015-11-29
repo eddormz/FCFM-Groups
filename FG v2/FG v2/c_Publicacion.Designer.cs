@@ -63,7 +63,7 @@
             this.btn_addfile.Image = ((System.Drawing.Image)(resources.GetObject("btn_addfile.Image")));
             this.btn_addfile.Location = new System.Drawing.Point(16, 115);
             this.btn_addfile.Name = "btn_addfile";
-            this.btn_addfile.Size = new System.Drawing.Size(82, 32);
+            this.btn_addfile.Size = new System.Drawing.Size(30, 32);
             this.btn_addfile.TabIndex = 2;
             this.btn_addfile.TabStop = false;
             this.btn_addfile.Click += new System.EventHandler(this.btn_addfile_Click);

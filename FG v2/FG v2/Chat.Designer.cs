@@ -58,6 +58,8 @@
             this.encry = new System.Windows.Forms.PictureBox();
             this.clave = new System.Windows.Forms.TextBox();
             this.Zumbido = new System.Windows.Forms.PictureBox();
+            this.agregararchivo = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.btn_enviar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_emoticon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
@@ -82,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.descry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.encry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Zumbido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agregararchivo)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_recibido
@@ -375,6 +378,19 @@
             this.Zumbido.TabStop = false;
             this.Zumbido.Click += new System.EventHandler(this.Zumbido_Click);
             // 
+            // agregararchivo
+            // 
+            this.agregararchivo.Location = new System.Drawing.Point(169, 3);
+            this.agregararchivo.Name = "agregararchivo";
+            this.agregararchivo.Size = new System.Drawing.Size(25, 25);
+            this.agregararchivo.TabIndex = 11;
+            this.agregararchivo.TabStop = false;
+            this.agregararchivo.Click += new System.EventHandler(this.agregararchivo_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,6 +398,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.agregararchivo);
             this.Controls.Add(this.Zumbido);
             this.Controls.Add(this.clave);
             this.Controls.Add(this.encry);
@@ -421,6 +438,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.descry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.encry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Zumbido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agregararchivo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,5 +474,7 @@
         private System.Windows.Forms.PictureBox encry;
         private System.Windows.Forms.TextBox clave;
         private System.Windows.Forms.PictureBox Zumbido;
+        private System.Windows.Forms.PictureBox agregararchivo;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

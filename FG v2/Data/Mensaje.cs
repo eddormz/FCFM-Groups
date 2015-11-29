@@ -27,7 +27,7 @@ namespace Data
         #region datos server
 
         //  List<conectado> lista;
-
+        public archivo archi { set; get; }
         #endregion
 
         public string mensaje { set; get; }
@@ -72,7 +72,8 @@ namespace Data
             zumbido,
             estado,
             video,
-            imagen
+            imagen,
+            archivo
         }
     }
 }

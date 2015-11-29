@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="archivo.cs" />
     <Compile Include="baseDatos.cs" />
     <Compile Include="DataSourcePOIData.cs" />
     <Compile Include="funciones.cs" />
