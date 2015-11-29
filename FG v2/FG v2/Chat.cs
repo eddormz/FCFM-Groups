@@ -447,9 +447,11 @@ namespace FG_v2
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                FileStream fs = new FileStream(openFileDialog1.FileName, FileMode.Open);
+               
+                byte[] array = File.ReadAllBytes((openFileDialog1.FileName));
 
-                archivo a = new archivo(fs, openFileDialog1.SafeFileName);
+
+                archivo a = new archivo(array, openFileDialog1.SafeFileName);
 
                 Mensaje m = new Mensaje();
                 m.archi = a;
@@ -457,8 +459,7 @@ namespace FG_v2
                 m.idDestino = id;
                 local.Send(m.toBytes());
                 MessageBox.Show("Archivo Enviado", "Exito");
-
-                fs.Close();
+                
             }
 
            

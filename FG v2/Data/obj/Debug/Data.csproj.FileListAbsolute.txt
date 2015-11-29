@@ -7,4 +7,3 @@ D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Data\bin\Debug\Data.dll
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Data\bin\Debug\Data.pdb
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Data\obj\Debug\Data.dll
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Data\obj\Debug\Data.pdb
-D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache

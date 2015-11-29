@@ -12,13 +12,16 @@ namespace Data
     public class archivo
     {
 
-        FileStream h;
+        byte[] _ByteArray;
         string j;
 
-        public archivo(FileStream i,string s)
+        public archivo(byte[] i,string s)
         {
-            h = i;
+            _ByteArray = i;
             j = s;
+
+
+
         }
 
         public void convertirfile()
@@ -30,9 +33,38 @@ namespace Data
 
             FileStream wFile;
             wFile = new FileStream("Descarga\\" + j,FileMode.Append);
-            h.CopyTo(wFile);
             wFile.Close();
         }
+
+        public bool ByteArrayToFile()
+        {
+            try
+            {
+                // Open file for reading
+                System.IO.FileStream _FileStream =
+                   new System.IO.FileStream(j, System.IO.FileMode.Create,
+                                            System.IO.FileAccess.Write);
+                // Writes a block of bytes to this stream using data from
+                // a byte array.
+                _FileStream.Write(_ByteArray, 0, _ByteArray.Length);
+
+                // close file stream
+                _FileStream.Close();
+
+                return true;
+            }
+            catch (Exception _Exception)
+            {
+                // Error
+                Console.WriteLine("Exception caught in process: {0}",
+                                  _Exception.ToString());
+            }
+
+            // error occured, return false
+            return false;
+        }
+
+
 
     }
 }

@@ -42,13 +42,7 @@ namespace FG_v2
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                FileStream fs = new FileStream(openFileDialog1.FileName, FileMode.Open);
-
-                archivo a = new archivo(fs, openFileDialog1.SafeFileName);
-
-                a.convertirfile();
-
-                fs.Close();
+                
             }
         }
     }
