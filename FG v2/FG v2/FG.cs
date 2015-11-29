@@ -260,7 +260,7 @@ namespace FG_v2
 
         private void newChat(Mensaje d)
         {
-            Chat s = new Chat(conectado, email);
+            Chat s = new Chat(idGrupo,conectado, email);
             s.tipo = "Publico";
             
             if (flp_chats.Controls.Count < 3)
@@ -280,7 +280,7 @@ namespace FG_v2
 
         private void test_Click(object sender, EventArgs e)
         {
-            Chat s = new Chat(conectado,email);
+            Chat s = new Chat(idGrupo,conectado,email);
             s.tipo = "Publico";
             if (flp_chats.Controls.Count < 3){
                 Ventanas.Add(s);

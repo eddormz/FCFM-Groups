@@ -56,7 +56,7 @@ namespace Server
                         case Data.Mensaje.tipo.mensaje:
                                 bool enviado = false;
                                 dt = dspd.getUsuarios(d.idGrupo);
-                                for (int b = 0; b < dt.Rows.Count; b++)
+                                for (int b = 0; b < dt.Rows.Count-1; b++)
                                 {
                                     foreach (conectado u in Server._server.lista)
                                     {
@@ -173,12 +173,19 @@ namespace Server
             bool enviado = false;
             while (!enviado)
             {
-                foreach(conectado u in _server.lista)
+                Thread.Sleep(10);
+                foreach(conectado u in Server._server.lista)
                 {
-                    if (u.id == id)
+                    try {
+                        if (u.id == id)
+                        {
+                            u.cliente.Send(d.toBytes());
+                            enviado = true;
+                        }
+                    }
+                    catch
                     {
-                        u.cliente.Send(d.toBytes());
-                        enviado = true;
+
                     }
                 }
             }
