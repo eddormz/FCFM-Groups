@@ -206,13 +206,14 @@ namespace FG_v2
 
             }
             MessageBox.Show("Socket no conectado");
+            actua.Shutdown(SocketShutdown.Both);
         }
         
 
         public void actualiza()
         {
             int readbytes;
-            while (conectado.Connected)
+            while (hilo)
             {
                 try {
                     byte[] reciveBuffer = new byte[actua.SendBufferSize];
