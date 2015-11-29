@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Data;
 
 
 namespace Server
@@ -82,7 +83,10 @@ namespace Server
 
                             DataSourcePOIData dspoi = new DataSourcePOIData();
 
-                            int result = dspoi.iniciarSesion(nombre, contra);
+                            DataTable dt = dspoi.iniciarSesion(nombre, contra);
+
+                            int result = int.Parse(dt.Rows[0][0].ToString());
+                            int idgroup = int.Parse(dt.Rows[0][1].ToString());
 
                             if (result > 0)
                             {
@@ -93,6 +97,7 @@ namespace Server
                                 lista.Add(c);
 
                                 d.iduser = result;
+                                d.idGrupo = idgroup;
 
                                 cliente.Send(d.toBytes());
                             }

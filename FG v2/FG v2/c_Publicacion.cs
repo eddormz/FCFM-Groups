@@ -15,16 +15,22 @@ namespace FG_v2
     public partial class c_Publicacion : UserControl
     {
         bool file = false;
-        public c_Publicacion()
+
+        int id = 0;
+        int idGrupo = 0;
+
+        public c_Publicacion(int id, int idGrupo)
         {
             InitializeComponent();
+            this.id = id;
+            this.idGrupo = idGrupo;
         }
 
         private void btn_enviar_Click(object sender, EventArgs e)
         {
             DataSourcePOI dsp = new DataSourcePOI();
 
-            bool resultado = dsp.insertPublicacion(Publicacion.Text, 2, 2);
+            bool resultado = dsp.insertPublicacion(Publicacion.Text, idGrupo, id);
 
             if (resultado)
             {
@@ -35,9 +41,6 @@ namespace FG_v2
                     c_desplegar c = new c_desplegar(dt.Rows[bc][4] + "", dt.Rows[bc][1] + "", 1);
 
                 }
-
-                Publicacion.Text = "";
-                Publicacion.Focus();
             }
         }
 
