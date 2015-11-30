@@ -90,7 +90,7 @@
             this.rb_conectado.BackColor = System.Drawing.Color.Transparent;
             this.rb_conectado.Checked = true;
             this.rb_conectado.ForeColor = System.Drawing.Color.White;
-            this.rb_conectado.Location = new System.Drawing.Point(12, 14);
+            this.rb_conectado.Location = new System.Drawing.Point(1088, 1);
             this.rb_conectado.Name = "rb_conectado";
             this.rb_conectado.Size = new System.Drawing.Size(77, 17);
             this.rb_conectado.TabIndex = 5;
@@ -104,7 +104,7 @@
             this.rb_ausente.AutoSize = true;
             this.rb_ausente.BackColor = System.Drawing.Color.Transparent;
             this.rb_ausente.ForeColor = System.Drawing.Color.White;
-            this.rb_ausente.Location = new System.Drawing.Point(12, 36);
+            this.rb_ausente.Location = new System.Drawing.Point(1088, 16);
             this.rb_ausente.Name = "rb_ausente";
             this.rb_ausente.Size = new System.Drawing.Size(64, 17);
             this.rb_ausente.TabIndex = 6;
@@ -117,7 +117,7 @@
             this.rb_desconectado.AutoSize = true;
             this.rb_desconectado.BackColor = System.Drawing.Color.Transparent;
             this.rb_desconectado.ForeColor = System.Drawing.Color.White;
-            this.rb_desconectado.Location = new System.Drawing.Point(12, 59);
+            this.rb_desconectado.Location = new System.Drawing.Point(1088, 30);
             this.rb_desconectado.Name = "rb_desconectado";
             this.rb_desconectado.Size = new System.Drawing.Size(95, 17);
             this.rb_desconectado.TabIndex = 7;

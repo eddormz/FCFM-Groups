@@ -214,7 +214,6 @@ namespace FG_v2
                 }
 
             }
-            MessageBox.Show("Socket no conectado");
             actua.Shutdown(SocketShutdown.Both);
 
             Application.Exit();
@@ -447,7 +446,6 @@ namespace FG_v2
         
         public void clickconectado(object sender, EventArgs e)
         {
-            MessageBox.Show(""+c.id);
             Chat s = new Chat(conectado, email, c.id);
             if (flp_chats.Controls.Count < 3)
             {
