@@ -109,6 +109,28 @@ namespace FG_v2
 
                         case Mensaje.tipo.mensajeprivado:
 
+                            bool existechat = false;
+                            foreach (Chat chat in Ventanas)
+                            {
+                                if (chat.id == d.iduser)
+                                {
+                                    chat.MensajeEntrando(d);
+                                    existechat = true;
+                                }
+                            }
+                            if (!existechat)
+                            {
+                                try
+                                {
+                                    entrante dd = new entrante(newChatPrivado);
+
+                                    this.Invoke(dd, new object[] { d });
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Error al Crear Nuevo Chat, Intentelo Nuevamente");
+                                }
+                            }
                             break;
 
                         case Mensaje.tipo.zumbido:
@@ -276,7 +298,12 @@ namespace FG_v2
 
         private void newChatPrivado(Mensaje d)
         {
-
+            Chat s = new Chat(conectado, email, d.iduser);
+            if (flp_chats.Controls.Count < 3)
+            {
+                Ventanas.Add(s);
+                flp_chats.Controls.Add(s);
+            }
         }
 
 
@@ -435,26 +462,24 @@ namespace FG_v2
         }
 
 
-
-        public void nuevochat(int id)
-        {
-
-            clickconectado i = new clickconectado(chatprivado);
-            Invoke(i, new object[] { id });
-        }
-
-        public static void chatprivado(int i)
-        {
-            
-        }
-        
         public void clickconectado(object sender, EventArgs e)
         {
-            Chat s = new Chat(conectado, email, c.id);
-            if (flp_chats.Controls.Count < 3)
+            bool existechat = false;
+                foreach (Chat chat in Ventanas)
             {
-                Ventanas.Add(s);
-                flp_chats.Controls.Add(s);
+                if (chat.id == c.id)
+                {
+                    existechat = true;
+                }
+            }
+            if (!existechat)
+            {
+                Chat s = new Chat(conectado, email, c.id);
+                if (flp_chats.Controls.Count < 3)
+                {
+                    Ventanas.Add(s);
+                    flp_chats.Controls.Add(s);
+                }
             }
         }
 
