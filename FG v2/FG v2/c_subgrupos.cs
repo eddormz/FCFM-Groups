@@ -25,7 +25,7 @@ namespace FG_v2
             DataSourcePOI dsp = new DataSourcePOI();
             DataTable dt = dsp.getSubGrupo(id);
 
-            DataTable dtt = dsp.getGrupo(id);
+            DataTable dtt = dsp.getGrupo(idGrupo);
 
             if (dtt != null)
                 lblGrupo.Text = dtt.Rows[0][0].ToString();
