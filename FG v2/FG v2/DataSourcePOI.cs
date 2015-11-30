@@ -431,7 +431,34 @@ namespace FG_v2
             }
         }
 
-       
+        public int insertSubgruponom(int idGrupo, string nombreSubgrupo)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+
+                cmd.Connection = datos.conectarbase();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "INSERT INTO Grupo (nombreSubGrupo,idPertenencia) VALUES('" + nombreSubgrupo + "', " + idGrupo + ") select SCOPE_IDENTITY()";
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                datos.desconectarbase();
+                if (dt.Rows.Count > 0)
+                {
+                    return int.Parse(dt.Rows[0][0].ToString());
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
 
     }
 }

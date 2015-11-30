@@ -53,7 +53,9 @@ namespace FG_v2
         {
             DataSourcePOI dsp = new DataSourcePOI();
 
-            dsp.insertSubGrupo(id, idGrupo);
+            int idGrupinho = dsp.insertSubgruponom(idGrupo, txtNombreSubgrupo.Text);
+
+            dsp.insertSubGrupo(id, idGrupinho);
 
             pnlsubgrup.Visible = false;
         }
