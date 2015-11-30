@@ -34,6 +34,7 @@ namespace FG_v2
         {
             local = c;
             this.id = id;
+            idu = iduser;
             this.correo = correo;
             cerrar = false;
 
