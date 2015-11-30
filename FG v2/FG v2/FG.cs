@@ -16,9 +16,12 @@ using System.Windows.Forms;
 namespace FG_v2
 {
     delegate void entrante(Mensaje d);
+    delegate void entrantep(Mensaje d,int t);
     delegate void actualizacion(lista_usuarios l);
     delegate void SetZumbido(bool q);
     delegate void clickconectado(int id);
+
+
 
     public partial class FG : Form
     {
@@ -133,9 +136,9 @@ namespace FG_v2
                             {
                                 try
                                 {
-                                    entrante dd = new entrante(newChatPrivado);
+                                    entrantep dd = new entrantep(newChatPrivado);
 
-                                    this.Invoke(dd, new object[] { d });
+                                    this.Invoke(dd, new object[] { d,usar });
                                 }
                                 catch
                                 {
@@ -307,9 +310,9 @@ namespace FG_v2
             }
         }
 
-        private void newChatPrivado(Mensaje d)
+        private void newChatPrivado(Mensaje d,int u)
         {
-            Chat s = new Chat(conectado, email, d.iduser,id,idGrupo);
+            Chat s = new Chat(conectado, email,u,id,idGrupo);
             if (flp_chats.Controls.Count < 3)
             {
                 Ventanas.Add(s);
