@@ -110,9 +110,20 @@ namespace FG_v2
                         case Mensaje.tipo.mensajeprivado:
 
                             bool existechat = false;
+                            int usar;
+                            if (d.iduser == id)
+                            {
+                                usar = d.idDestino;
+                            }
+                            else
+                            {
+                                usar = d.iduser;
+                            }
+
+
                             foreach (Chat chat in Ventanas)
                             {
-                                if (chat.id == d.iduser)
+                                if (chat.id == usar)
                                 {
                                     chat.MensajeEntrando(d);
                                     existechat = true;
