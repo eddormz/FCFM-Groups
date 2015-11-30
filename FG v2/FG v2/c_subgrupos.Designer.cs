@@ -31,12 +31,12 @@
             this.lstSubgrupos = new System.Windows.Forms.ListView();
             this.lblGrupo = new System.Windows.Forms.Label();
             this.btnAddSubgrupo = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pnlsubgrup = new System.Windows.Forms.Panel();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.txtNombreSubgrupo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlsubgrup.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstSubgrupos
@@ -68,34 +68,37 @@
             this.btnAddSubgrupo.UseVisualStyleBackColor = true;
             this.btnAddSubgrupo.Click += new System.EventHandler(this.btnAddSubgrupo_Click);
             // 
-            // panel1
+            // pnlsubgrup
             // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.txtNombreSubgrupo);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(169, 280);
-            this.panel1.TabIndex = 3;
+            this.pnlsubgrup.Controls.Add(this.btnCancelar);
+            this.pnlsubgrup.Controls.Add(this.btnAgregar);
+            this.pnlsubgrup.Controls.Add(this.txtNombreSubgrupo);
+            this.pnlsubgrup.Controls.Add(this.label1);
+            this.pnlsubgrup.Location = new System.Drawing.Point(0, 0);
+            this.pnlsubgrup.Name = "pnlsubgrup";
+            this.pnlsubgrup.Size = new System.Drawing.Size(169, 280);
+            this.pnlsubgrup.TabIndex = 3;
+            this.pnlsubgrup.Visible = false;
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(3, 87);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(3, 87);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(163, 23);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Location = new System.Drawing.Point(3, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregar.Location = new System.Drawing.Point(3, 58);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(163, 23);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtNombreSubgrupo
             // 
@@ -118,14 +121,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlsubgrup);
             this.Controls.Add(this.btnAddSubgrupo);
             this.Controls.Add(this.lblGrupo);
             this.Controls.Add(this.lstSubgrupos);
             this.Name = "c_subgrupos";
             this.Size = new System.Drawing.Size(169, 283);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlsubgrup.ResumeLayout(false);
+            this.pnlsubgrup.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,9 +139,9 @@
         private System.Windows.Forms.ListView lstSubgrupos;
         private System.Windows.Forms.Label lblGrupo;
         private System.Windows.Forms.Button btnAddSubgrupo;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pnlsubgrup;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtNombreSubgrupo;
         private System.Windows.Forms.Label label1;
     }

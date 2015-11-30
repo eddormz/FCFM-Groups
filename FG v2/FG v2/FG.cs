@@ -376,7 +376,7 @@ namespace FG_v2
                     t.Location = new Point(12, 354);
                     this.Controls.Add(t);
 
-            c_subgrupos subgrup = new c_subgrupos(id);
+            c_subgrupos subgrup = new c_subgrupos(id, idGrupo);
             subgrup.Location = new Point(0, 0);
             this.Controls.Add(subgrup);
             
