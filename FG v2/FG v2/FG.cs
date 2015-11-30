@@ -336,6 +336,10 @@ namespace FG_v2
                     tarea t = new tarea(idGrupo, id);
                     t.Location = new Point(12, 354);
                     this.Controls.Add(t);
+
+            c_subgrupos subgrup = new c_subgrupos(id);
+            subgrup.Location = new Point(0, 0);
+            this.Controls.Add(subgrup);
             
 
             bool isExistsFile = false;

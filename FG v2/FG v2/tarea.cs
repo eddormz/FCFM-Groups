@@ -40,7 +40,7 @@ namespace FG_v2
                         bool stado = bool.Parse(dtt.Rows[0][1].ToString());
                         chkTarea.Checked = stado;
                     }
-
+                    chkTarea.AutoSize = true;
                     chkTarea.CheckedChanged += new EventHandler(chkTarea_CheckedChanged);
                     flpTarea.Controls.Add(chkTarea);
 
