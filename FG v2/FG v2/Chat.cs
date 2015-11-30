@@ -62,7 +62,7 @@ namespace FG_v2
 
         public void MensajeEntrando(Mensaje m)
         {
-            if (m.tipoo == Mensaje.tipo.mensaje)
+            if (m.tipoo == Mensaje.tipo.mensaje&& m.tipoo == Mensaje.tipo.mensajeprivado)
             {
                 try
                 {

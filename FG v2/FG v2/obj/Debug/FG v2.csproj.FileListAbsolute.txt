@@ -40,6 +40,7 @@ D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.about.resources
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.Chat.resources
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.c_conectado.resources
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.c_desplegar.resources
+D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.c_subgrupos.resources
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.FG.resources
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.inicio.resources
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.Properties.Resources.resources
@@ -49,4 +50,3 @@ D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.tarea.resources
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG v2.csproj.GenerateResource.Cache
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG v2.exe
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG v2.pdb
-D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\FG v2\obj\Debug\FG_v2.c_subgrupos.resources
