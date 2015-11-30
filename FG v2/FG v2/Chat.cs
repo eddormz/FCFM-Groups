@@ -119,7 +119,7 @@ namespace FG_v2
                 Directory.CreateDirectory("historial\\");
             }
 
-            if (!File.Exists(tipo + id + ".txt"))
+            if (!File.Exists("historial\\"+tipo + id + ".txt"))
             {
 
                 StreamWriter escrito = File.AppendText("historial\\" + tipo + id + ".txt");
