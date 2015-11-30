@@ -285,7 +285,7 @@ namespace FG_v2
 
         private void newChat(Mensaje d)
         {
-            Chat s = new Chat(idGrupo,conectado, email);
+            Chat s = new Chat(idGrupo,id,conectado, email);
             s.tipo = "Publico";
             
             if (flp_chats.Controls.Count < 3)
@@ -298,11 +298,12 @@ namespace FG_v2
 
         private void newChatPrivado(Mensaje d)
         {
-            Chat s = new Chat(conectado, email, d.iduser);
+            Chat s = new Chat(conectado, email, d.iduser,id,idGrupo);
             if (flp_chats.Controls.Count < 3)
             {
                 Ventanas.Add(s);
                 flp_chats.Controls.Add(s);
+                s.MensajeEntrando(d);
             }
         }
 
@@ -310,7 +311,7 @@ namespace FG_v2
 
         private void test_Click(object sender, EventArgs e)
         {
-            Chat s = new Chat(idGrupo,conectado,email);
+            Chat s = new Chat(idGrupo,id,conectado,email);
             s.tipo = "Publico";
             if (flp_chats.Controls.Count < 3){
                 Ventanas.Add(s);
@@ -474,7 +475,7 @@ namespace FG_v2
             }
             if (!existechat)
             {
-                Chat s = new Chat(conectado, email, c.id);
+                Chat s = new Chat(conectado, email, c.id,id,idGrupo);
                 if (flp_chats.Controls.Count < 3)
                 {
                     Ventanas.Add(s);

@@ -96,6 +96,12 @@
     <Compile Include="c_desplegar.Designer.cs">
       <DependentUpon>c_desplegar.cs</DependentUpon>
     </Compile>
+    <Compile Include="c_subgrupos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="c_subgrupos.Designer.cs">
+      <DependentUpon>c_subgrupos.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSourcePOI.cs" />
     <Compile Include="FG.cs">
       <SubType>Form</SubType>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="c_desplegar.resx">
       <DependentUpon>c_desplegar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="c_subgrupos.resx">
+      <DependentUpon>c_subgrupos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FG.resx">
       <DependentUpon>FG.cs</DependentUpon>

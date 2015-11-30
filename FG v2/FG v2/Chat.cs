@@ -21,6 +21,7 @@ namespace FG_v2
     public partial class Chat : UserControl
     {
         public int id;
+        public int idu;
         public int idgrupo;
         public bool cerrar;
         public String tipo;
@@ -29,7 +30,7 @@ namespace FG_v2
 
         private Hashtable emoticons;
 
-        public Chat(Socket c,string correo,int id)
+        public Chat(Socket c,string correo,int id,int iduser,int grupo)
         {
             local = c;
             this.id = id;
@@ -40,7 +41,7 @@ namespace FG_v2
             CrearEmoticones();
         }
 
-        public Chat(int idgrup,Socket c,String correo)
+        public Chat(int idgrup,int idusuario, Socket c,String correo)
         {
             local = c;
             id = 0;
@@ -98,6 +99,7 @@ namespace FG_v2
                 h.tipoo = Mensaje.tipo.mensaje;
             }
             h.idDestino = id;
+            h.iduser = idu;
             h.mensaje = correo + ": " + txt_enviar.Text;
             h.idGrupo = idgrupo;
             local.Send(h.toBytes());
