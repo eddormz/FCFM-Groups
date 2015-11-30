@@ -293,7 +293,7 @@ namespace FG_v2
 
                 cmd.Connection = datos.conectarbase();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "INSERT INTO Tarea(tarea,status,idGrupo) VALUES ('" + tarea + "', 1, " + idGrupo + ")";
+                cmd.CommandText = "INSERT INTO Tarea(tarea,idGrupo) VALUES ('" + tarea + "', " + idGrupo + ")";
                 cmd.ExecuteNonQuery();
                 datos.desconectarbase();
                 return true;
@@ -304,7 +304,7 @@ namespace FG_v2
             }
         }
 
-        public void actualizarTarea(bool status, int idTarea)
+        public void actualizarTarea(int status, int idTarea)
         {
             try
             {
@@ -314,7 +314,25 @@ namespace FG_v2
 
                 cmd.Connection = datos.conectarbase();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "UPDATE Tarea SET status = " + status + " WHERE idTarea = "+ idTarea;
+                cmd.CommandText = "UPDATE tareaAlumno set Status = " + status + " WHERE idTarea = " + idTarea;
+                cmd.ExecuteNonQuery();
+                datos.desconectarbase();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        public void insertarTareaAlumno(int status, int idTarea, int idUsuario)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+
+                cmd.Connection = datos.conectarbase();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "INSERT INTO tareaAlumno (idTarea,idUsuario,Status) VALUES (" + idTarea + " , " + idUsuario + ", " + status + ")";
                 cmd.ExecuteNonQuery();
                 datos.desconectarbase();
             }
@@ -331,7 +349,30 @@ namespace FG_v2
 
             cmd.Connection = datos.conectarbase();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT idTarea,tarea,status,idGrupo FROM Tarea where idGrupo = " + id;
+            cmd.CommandText = "SELECT idTarea,tarea,idGrupo FROM Tarea where idGrupo = " + id;
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            datos.desconectarbase();
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public DataTable getTareaAlumno(int idTarea, int idUsuario)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = datos.conectarbase();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT idTarea,Status FROM tareaAlumno where idUsuario = " + idUsuario + " and idTarea = " + idTarea;
             da.SelectCommand = cmd;
             da.Fill(dt);
             datos.desconectarbase();

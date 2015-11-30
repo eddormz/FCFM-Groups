@@ -26,13 +26,25 @@ namespace FG_v2
 
             DataTable dt = dsp.getTarea(idGrupo);
 
-            if(dt!=null)
-            for (int bc = 0; bc < dt.Rows.Count; bc++)
+            if (dt != null)
             {
-                chkTarea = new CheckBox();
-                chkTarea.Text = dt.Rows[bc][0].ToString() + ", " + dt.Rows[bc][1].ToString();
+                for (int bc = 0; bc < dt.Rows.Count; bc++)
+                {
+                    DataTable dtt = dsp.getTareaAlumno(int.Parse(dt.Rows[bc][0].ToString()), id);
 
-                flpTarea.Controls.Add(chkTarea);
+                    chkTarea = new CheckBox();
+                    chkTarea.Text = dt.Rows[bc][0].ToString() + ", " + dt.Rows[bc][1].ToString();
+
+                    if (dtt != null)
+                    {
+                        bool stado = bool.Parse(dtt.Rows[0][1].ToString());
+                        chkTarea.Checked = stado;
+                    }
+
+                    chkTarea.CheckedChanged += new EventHandler(chkTarea_CheckedChanged);
+                    flpTarea.Controls.Add(chkTarea);
+
+                }
             }
 
             this.idGrupo = idGrupo;
@@ -61,9 +73,21 @@ namespace FG_v2
             bool checado = chkTarea.Checked;
             DataSourcePOI dsp = new DataSourcePOI();
 
+
+            int status = 0;
+
             string[] texto = chkTarea.Text.Split(',');
 
-            dsp.actualizarTarea(checado, int.Parse(texto[1]));
+            if (checado)
+            {
+                status = 1;
+            }
+
+            DataTable dtt = dsp.getTareaAlumno(int.Parse(texto[0]), id);
+            if (dtt != null)
+                dsp.actualizarTarea(status, int.Parse(texto[0]));
+            else
+                dsp.insertarTareaAlumno(status, int.Parse(texto[0]), id);
 
         }
     }
