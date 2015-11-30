@@ -194,6 +194,31 @@ namespace FG_v2
                                 #endregion
 
                             }
+                            else
+                            {
+                                bool existechatz = false;
+                                foreach (Chat chat in Ventanas)
+                                {
+                                    if (chat.id == d.iduser)
+                                    {
+                                        chat.MensajeEntrando(d);
+                                        existechat = true;
+                                    }
+                                }
+                                if (!existechatz)
+                                {
+                                    try
+                                    {
+                                        entrantep dd = new entrantep(newChatPrivado);
+
+                                        this.Invoke(dd, new object[] { d, d.iduser });
+                                    }
+                                    catch
+                                    {
+                                        MessageBox.Show("Error al Crear Nuevo Chat, Intentelo Nuevamente");
+                                    }
+                                }
+                            }
 
 
                             break;
@@ -228,6 +253,32 @@ namespace FG_v2
                                 }
 
                             }
+                            else
+                            {
+                                bool existechatz = false;
+                                foreach (Chat chat in Ventanas)
+                                {
+                                    if (chat.id == d.iduser)
+                                    {
+                                        chat.MensajeEntrando(d);
+                                        existechat = true;
+                                    }
+                                }
+                                if (!existechatz)
+                                {
+                                    try
+                                    {
+                                        entrantep dd = new entrantep(newChatPrivado);
+
+                                        this.Invoke(dd, new object[] { d, d.iduser });
+                                    }
+                                    catch
+                                    {
+                                        MessageBox.Show("Error al Crear Nuevo Chat, Intentelo Nuevamente");
+                                    }
+                                }
+                            }
+                            
 
                             break;
 
