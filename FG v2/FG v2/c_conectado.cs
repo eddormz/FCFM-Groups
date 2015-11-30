@@ -12,7 +12,7 @@ namespace FG_v2
 {
     public partial class c_conectado : UserControl
     {
-        int id;
+        public int id;
         string nombre;
         string estado;
         

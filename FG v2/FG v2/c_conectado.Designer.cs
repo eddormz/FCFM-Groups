@@ -68,7 +68,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label txt_nombreConectado;
-        private System.Windows.Forms.PictureBox pb_estatus;
+        public System.Windows.Forms.Label txt_nombreConectado;
+        public System.Windows.Forms.PictureBox pb_estatus;
     }
 }

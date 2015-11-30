@@ -36,6 +36,7 @@ namespace FG_v2
 
         static Socket actua;
 
+        c_conectado c = null;
         public FG()
         {
             InitializeComponent();
@@ -252,7 +253,10 @@ namespace FG_v2
             {
                 if (int.Parse(i[1]) != this.id)
                 {
-                    c_conectado c = new c_conectado(i[0], int.Parse(i[1]), i[2]);
+                    c = new c_conectado(i[0], int.Parse(i[1]), i[2]);
+                    c.Click += new EventHandler(clickconectado);
+                    c.pb_estatus.Click+= new EventHandler(clickconectado);
+                    c.txt_nombreConectado.Click += new EventHandler(clickconectado);
                     flp_conectados.Controls.Add(c);
                 }
             }
@@ -439,6 +443,17 @@ namespace FG_v2
         public static void chatprivado(int i)
         {
             
+        }
+        
+        public void clickconectado(object sender, EventArgs e)
+        {
+            MessageBox.Show(""+c.id);
+            Chat s = new Chat(conectado, email, c.id);
+            if (flp_chats.Controls.Count < 3)
+            {
+                Ventanas.Add(s);
+                flp_chats.Controls.Add(s);
+            }
         }
 
     }
