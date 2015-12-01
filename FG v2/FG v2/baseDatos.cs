@@ -16,7 +16,10 @@ namespace Data
         {
             try
             {
-                conectada = new SqlConnection("Data Source=2ND; Initial Catalog=POI; User Id=sa; Password=sa; Connection Lifetime=60; Max Pool Size=50; Min Pool Size=3");
+                 conectada = new SqlConnection("Data Source=2ND; Initial Catalog=POI; User Id=sa; Password=sa; Connection Lifetime=60; Max Pool Size=50; Min Pool Size=3");
+
+               // conectada = new SqlConnection("Data Source=erickterri; Initial Catalog=POI; User Id=sa; Password=terri10dx; Connection Lifetime=60; Max Pool Size=50; Min Pool Size=3");
+
                 conectada.Open();
             }
             catch (Exception ex)

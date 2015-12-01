@@ -109,9 +109,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.Controls.Add(this.pnlAdd);
             this.Controls.Add(this.flpTarea);
             this.Controls.Add(this.btnaddTarea);
-            this.Controls.Add(this.pnlAdd);
             this.Name = "tarea";
             this.Size = new System.Drawing.Size(155, 376);
             this.pnlAdd.ResumeLayout(false);
