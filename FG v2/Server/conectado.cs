@@ -19,6 +19,8 @@ namespace Server
         public int id { set; get; }
         public string estado { set; get; }
         public bool end = false;
+        DataSourcePOIData dspd = new DataSourcePOIData();
+        DataTable dt;
 
         public conectado() { }
 
@@ -33,10 +35,7 @@ namespace Server
         public void escucharcliente()
         {
             int readbytes;
-
-            DataSourcePOIData dspd = new DataSourcePOIData();
-            DataTable dt;
-
+            
             while (!end)
             {
                 try { 
@@ -54,6 +53,8 @@ namespace Server
                     {
                            
                         case Data.Mensaje.tipo.mensaje:
+
+                                #region Mensaje a grupo con espera
                                 bool enviado = false;
                                 dt = dspd.getUsuarios(d.idGrupo);
                                 for (int b = 0; b < dt.Rows.Count-1; b++)
@@ -68,16 +69,19 @@ namespace Server
                                         }
                                     }
                                 
-                                if (!enviado)
-                                {
-                                        Thread j = new Thread(()=>esperarmensaje(int.Parse(dt.Rows[b][0].ToString()), d));
-                                        j.Start();
+                                    if (!enviado)
+                                    {
+                                            Thread j = new Thread(()=>esperarmensaje(int.Parse(dt.Rows[b][0].ToString()), d));
+                                            j.Start();
+                                    }
                                 }
-                                }
+                                #endregion
+
                                 break;
 
                         case Data.Mensaje.tipo.mensajeprivado:
 
+                                #region Mensaje privado
                                 cliente.Send(d.toBytes());
                                
                             int result = d.idDestino;
@@ -89,17 +93,13 @@ namespace Server
                                     u.cliente.Send(d.toBytes());
                                 }
                             }
+                                #endregion
+
                                 break;
 
                         case Data.Mensaje.tipo.zumbido:
 
-                                if (d.idDestino == 0)
-                                {
-                                    foreach (conectado u in Server._server.lista)
-                                    {
-                                        u.cliente.Send(d.toBytes());
-                                    }
-                                }
+                                envio(d);
 
                             break;
 
@@ -108,33 +108,25 @@ namespace Server
                             estado = d.mensaje;
                             break;
 
-                            case Data.Mensaje.tipo.archivo:
+                        case Data.Mensaje.tipo.archivo:
 
-                                if (d.idDestino == 0)
-                                {
-                                    foreach (conectado u in Server._server.lista)
-                                    {
-                                        u.cliente.Send(d.toBytes());
-                                    }
-                                }
-                                else
-                                {
-                                    foreach (conectado u in Server._server.lista)
-                                    {
-                                        if (d.idDestino == u.id)
-                                        {
-                                            u.cliente.Send(d.toBytes());
-                                        }
-                                    }
-                                }
+                                envio(d);
+                                
                                 break;
 
-                            case Data.Mensaje.tipo.cerrar:
-                                cliente.Send(d.toBytes());
-                                end = true;
-                                _server.lista.Remove(this);
-                                cliente.Disconnect(true);
+                         case Data.Mensaje.tipo.cerrar:
+
+                                #region Mensaje cerrar
+                                    cliente.Send(d.toBytes());
+                                    end = true;
+                                    _server.lista.Remove(this);
+                                    cliente.Disconnect(true);
+                                #endregion
+
                                 break;
+
+                         #region publicar archivo
+
                             case Data.Mensaje.tipo.publicacionarchivo:
                                 
                                 d.archi.ByteArrayToFile();
@@ -154,9 +146,10 @@ namespace Server
                                 cliente.Send(m.toBytes());
 
                                 break;
+                                #endregion
 
                         }
-                }
+                    }
                 }
                 catch
                 {
@@ -167,6 +160,34 @@ namespace Server
 
         }
 
+        public void envio(Mensaje d)
+        {
+            if (d.idDestino == 0)
+            {
+                dt = dspd.getUsuarios(d.idGrupo);
+                for (int b = 0; b < dt.Rows.Count - 1; b++)
+                {
+                    foreach (conectado u in Server._server.lista)
+                    {
+                        if (int.Parse(dt.Rows[b][0].ToString()) == u.id)
+                        {
+
+                            u.cliente.Send(d.toBytes());
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (conectado u in Server._server.lista)
+                {
+                    if (d.idDestino == u.id)
+                    {
+                        u.cliente.Send(d.toBytes());
+                    }
+                }
+            }
+        }
 
         public void esperarmensaje(int id,Mensaje d)
         {

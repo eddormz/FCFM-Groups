@@ -450,7 +450,6 @@
         private System.Windows.Forms.RichTextBox txt_enviar;
         private System.Windows.Forms.PictureBox btn_enviar;
         private System.Windows.Forms.PictureBox btn_emoticon;
-        private System.Windows.Forms.PictureBox btn_cerrar;
         private System.Windows.Forms.PictureBox btn_video;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel p_icons;
@@ -476,5 +475,6 @@
         private System.Windows.Forms.PictureBox Zumbido;
         private System.Windows.Forms.PictureBox agregararchivo;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        public System.Windows.Forms.PictureBox btn_cerrar;
     }
 }

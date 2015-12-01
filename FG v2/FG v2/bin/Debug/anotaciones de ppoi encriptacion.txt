@@ -1,0 +1,36 @@
+criptografia
+tradiciaonalmente se ha dfinido como el ambito de la criptologia que se ocupa de las tecnicas de cigrado o codigicado destinadas a alterar las represetanciones linguisticas de ciretos mensajes con el fin de hacerlos ininteligibles a receptores no autorizados 
+parte de la criptiliga que se encga de l estudi de algoritmos protocols y sistemas que se utilizan para proteger la informacon y dota de seguridad alas comunicaciones y a las entidades que comunican.
+la encriotacion o escritura secreta ha estado presente por miles de anis 
+encriotacion basica si no se conoce el metodo utulzado habria que probar cambiando cada letra por otros de los posibles valores hsata qe uun mensaje leible resulte esto es llamdo ataque fuerza brutao exhaustivo
+las computadoras han logrado un gran avance la encritpacion con llave publica o llave asimetrica
+
+texto plano informacion en su forma normal
+Textro cifrado infromacion en forma mezclada es decir encriptada
+
+criptoanalisis reucperacion del texto plano desde el texto cifrado sin previo conocimineto de la llave correcta
+cifrado es un procedimiento que utiliza un algoritmo de cifrado con cierta clace transforma un mensaje sin atender a su estructura linguistica o signigicado de tal forma que se a incompresinble o al menos difici de comprender a todas persona qeu no tenga la clave secreta del agloritmo
+la clase de cifrado y de decifrado pueden ser iguales simetricas o asimetricas
+
+simetrica
+cripto de una clave es un metodo c riptografico en el cual se usa una misma clave para cifrar y decifrar mensajes
+las dos partes que se comuncina han de ponerse de acuerdo de antemano sobre la clave a usar
+una vez que ambas partes tienen acceso a esta clave el ermitente cifra un mensaje usando la clave lo envia al desstinatario y este lo decifra co n la misma clave
+
+asimetrica
+se usan dos claves pertenencen al amisma persona que envio el mensaje
+una clave es publica la otra es privada y el propetario se guarda sin que nadie tenga acceso a ella si el remitente usala publica del destinatario para cifrar el emnsaje una vez cifrado solo la clave privada del destinatario para descifrar este mensaje ya que es unico que la conoce por tantos se logra la confidencialidad del envio del mensaje nadie salvo el destiantario pueden decifrarlo
+
+clave criptografica es una pieza de infromacion que controla la oiperacion de un algorito de criptografia verifica quien esta autorizado para acceder ala aplicacion servicio
+
+la seuridad es determinada 
+longitud mayor numero de bits de informacion por clave numero de combinaciones
+la aleatoriedad es una clace es elegida basandose en aalabras dque existen en una lengua natural es susceptible de ser rota mediante un ataque de diccionario por ello una clave segura debe ser generada de una manera aleatoria usando 
+el periodo de uso de una clase 
+algotritmo de encriptaion 
+algoritmo simple producira el mismo resultado para el mismo texto plano
+algoritmo manejado por una llave generara un resultado diferente
+
+altera al algoritmo para que encripte de una manejra diferente llave criotografica
+estandar de encriotacion de datos DES de 56bits
+ataque de fuerza bruta

@@ -36,6 +36,7 @@ namespace FG_v2
             this.id = id;
             idu = iduser;
             this.correo = correo;
+            idgrupo = grupo;
             cerrar = false;
 
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace FG_v2
 
         public Chat(int idgrup,int idusuario, Socket c,String correo)
         {
+            idu = idusuario;
             local = c;
             id = 0;
             idgrupo = idgrup;
@@ -62,7 +64,7 @@ namespace FG_v2
 
         public void MensajeEntrando(Mensaje m)
         {
-            if (m.tipoo == Mensaje.tipo.mensaje|| m.tipoo == Mensaje.tipo.mensajeprivado)
+            if (m.tipoo == Mensaje.tipo.mensaje|| m.tipoo == Mensaje.tipo.mensajeprivado||m.tipoo==Mensaje.tipo.zumbido)
             {
                 try
                 {
@@ -162,6 +164,7 @@ namespace FG_v2
             //Cerramos 
             leido.Close();
         }
+
         #endregion
 
         #region Emoticones
@@ -324,6 +327,7 @@ namespace FG_v2
         }
         #endregion
 
+        #region encryptacion
         private void encry_Click(object sender, EventArgs e)
         {
             if (clave.Visible)
@@ -439,11 +443,15 @@ namespace FG_v2
             return UTF8Encoding.UTF8.GetString(resultArray);
         }
 
+        #endregion
+
         private void Zumbido_Click(object sender, EventArgs e)
         {
             Mensaje m = new Mensaje();
             m.tipoo = Mensaje.tipo.zumbido;
             m.idDestino = id;
+            m.iduser = idu;
+            m.idGrupo = idgrupo;
             local.Send(m.toBytes());
         }
 
@@ -453,14 +461,14 @@ namespace FG_v2
             {
                
                 byte[] array = File.ReadAllBytes((openFileDialog1.FileName));
-
-
                 archivo a = new archivo(array, openFileDialog1.SafeFileName);
-
+                MessageBox.Show("Archivo Listo para enviar " + a.j);
                 Mensaje m = new Mensaje();
                 m.archi = a;
                 m.tipoo = Mensaje.tipo.archivo;
                 m.idDestino = id;
+                m.idGrupo = idgrupo;
+                m.iduser = idu;
                 local.Send(m.toBytes());
                 MessageBox.Show("Archivo Enviado", "Exito");
                 

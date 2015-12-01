@@ -31,7 +31,7 @@ namespace FG_v2
         private int id;
         bool hilo = true;
         SoundPlayer player;
-        
+        Chat s;
         public int idGrupo;
 
        // static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
@@ -87,13 +87,14 @@ namespace FG_v2
                         case Mensaje.tipo.mensaje:
                             bool exist = false;
 
-                                for (int i = 0; i < Ventanas.Count; i++) {
-                                if (Ventanas[i].tipo == "Publico")
+                            foreach(Chat cha in Ventanas)
+                            {
+                                if (cha.idgrupo == d.idGrupo)
                                 {
-                                    Ventanas[i].MensajeEntrando(d);
+                                    cha.MensajeEntrando(d);
                                     exist = true;
                                 }
-                                }
+                            }
                             if (!exist)
                             {
                                 try
@@ -150,18 +151,19 @@ namespace FG_v2
                         case Mensaje.tipo.zumbido:
 
                             Mensaje zumba = new Mensaje();
+                            zumba.tipoo = Mensaje.tipo.zumbido;
                             zumba.mensaje = "Zumbido";
                             bool existz = false;
 
                             if (d.idDestino == 0)
                             {
-                                
-                                for (int i = 0; i < Ventanas.Count; i++)
+                                foreach (Chat cha in Ventanas)
                                 {
-                                    if (Ventanas[i].tipo == "Publico")
+                                    if (cha.idgrupo == d.idGrupo)
                                     {
-                                        Ventanas[i].MensajeEntrando(d);
+                                        cha.MensajeEntrando(zumba);
                                         existz = true;
+                                        zumbidoactivar();
                                     }
                                 }
                                 if (!existz)
@@ -170,7 +172,8 @@ namespace FG_v2
                                     {
                                         entrante dd = new entrante(newChat);
 
-                                        this.Invoke(dd, new object[] { d });
+                                        this.Invoke(dd, new object[] { zumba });
+                                        zumbidoactivar();
                                     }
                                     catch
                                     {
@@ -178,20 +181,9 @@ namespace FG_v2
                                     }
                                 }
 
-                                #region Zumbido
-                                
-                                try
-                                {
-                                    SetZumbido dd = new SetZumbido(zumbido);
 
-                                    this.Invoke(dd, new object[] { true });
-                                }
-                                catch
-                                {
-                                    MessageBox.Show("Error al recibir Zumbido, Intentelo Nuevamente");
-                                }
                                 break;
-                                #endregion
+                                
 
                             }
                             else
@@ -201,8 +193,9 @@ namespace FG_v2
                                 {
                                     if (chat.id == d.iduser)
                                     {
-                                        chat.MensajeEntrando(d);
+                                        chat.MensajeEntrando(zumba);
                                         existechat = true;
+                                        zumbidoactivar();
                                     }
                                 }
                                 if (!existechatz)
@@ -212,6 +205,7 @@ namespace FG_v2
                                         entrantep dd = new entrantep(newChatPrivado);
 
                                         this.Invoke(dd, new object[] { d, d.iduser });
+                                        zumbidoactivar();
                                     }
                                     catch
                                     {
@@ -230,14 +224,15 @@ namespace FG_v2
 
                                 bool exista = false;
 
-                                for (int i = 0; i < Ventanas.Count; i++)
+                                foreach(Chat f in Ventanas)
                                 {
-                                    if (Ventanas[i].tipo == "Publico")
+                                    if (f.idgrupo == d.idGrupo)
                                     {
-                                        Ventanas[i].MensajeEntrando(d);
+                                        f.MensajeEntrando(d);
                                         exista = true;
                                     }
                                 }
+                                
                                 if (!exista)
                                 {
                                     try
@@ -306,7 +301,6 @@ namespace FG_v2
             Application.Exit();
         }
         
-
         public void actualiza()
         {
             int readbytes;
@@ -350,9 +344,8 @@ namespace FG_v2
 
         private void newChat(Mensaje d)
         {
-            Chat s = new Chat(idGrupo,id,conectado, email);
-            s.tipo = "Publico";
-            
+            s = new Chat(idGrupo,id,conectado, email);
+            s.btn_cerrar.Click += new EventHandler(clickcerrar);
             if (flp_chats.Controls.Count < 3)
             {
                 Ventanas.Add(s);
@@ -372,46 +365,55 @@ namespace FG_v2
             }
         }
 
-
-
         private void test_Click(object sender, EventArgs e)
-        {
-            Chat s = new Chat(idGrupo,id,conectado,email);
-            s.tipo = "Publico";
-            if (flp_chats.Controls.Count < 3){
-                Ventanas.Add(s);
-                flp_chats.Controls.Add(s);
-             }
+        { bool existe = false;
+            s = new Chat(idGrupo, id, conectado, email);
+            s.btn_cerrar.Click += new EventHandler(clickcerrar);
+
+            foreach (Chat chats in Ventanas)
+            {
+                if (chats.idgrupo == idGrupo)
+                {
+                    existe = true;
+                }
+            }
+            if (!existe)
+            {
+                if (flp_chats.Controls.Count < 3)
+                {
+                    Ventanas.Add(s);
+                    flp_chats.Controls.Add(s);
+                }
+            }
         }
         
-
         private void clock_Tick(object sender, EventArgs e)
         {
-            if (Ventanas != null)
-            {
-                for (int i = 0; i < Ventanas.Count; i++)
-                {
-                    if (Ventanas[i].cerrar == true)
-                    {
-                        flp_chats.Controls.Remove(Ventanas[i]);
-                        Ventanas[i].Dispose();
-                        Ventanas.Remove(Ventanas[i]);
+            //if (Ventanas != null)
+            //{
+            //    for (int i = 0; i < Ventanas.Count; i++)
+            //    {
+            //        if (Ventanas[i].cerrar == true)
+            //        {
+            //            flp_chats.Controls.Remove(Ventanas[i]);
+            //            Ventanas[i].Dispose();
+            //            Ventanas.Remove(Ventanas[i]);
 
-                    }
-                }
-                if (Ventanas.Count > 0)
-                {
-                    flp_chats.Visible = true;
-                }
-                else
-                {
-                    flp_chats.Visible = false;
-                }
-            }
-            else
-            {
-                flp_chats.Visible = false;
-            }
+            //        }
+            //    }
+            //    if (Ventanas.Count > 0)
+            //    {
+            //        flp_chats.Visible = true;
+            //    }
+            //    else
+            //    {
+            //        flp_chats.Visible = false;
+            //    }
+            //}
+            //else
+            //{
+            //    flp_chats.Visible = false;
+            //}
         }
 
         private void FG_Load(object sender, EventArgs e)
@@ -472,14 +474,32 @@ namespace FG_v2
                     flp_publicacion.Controls.Add(c);
                 }
             }
-
+           
 
         }
+       
+        #region Zumbido
 
         private void zumbido(bool n)
         {
             player.Play();
         }
+
+        public void zumbidoactivar()
+        {
+            try
+            {
+                SetZumbido dd = new SetZumbido(zumbido);
+
+                this.Invoke(dd, new object[] { true });
+            }
+            catch
+            {
+                MessageBox.Show("Error al recibir Zumbido, Intentelo Nuevamente");
+            }
+        }
+
+        #endregion
 
         private void FG_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -493,7 +513,7 @@ namespace FG_v2
         {
            
         }
-
+        #region cambio de estado
         private void rb_conectado_CheckedChanged(object sender, EventArgs e)
         {
             if (rb_conectado.Checked == true)
@@ -527,6 +547,7 @@ namespace FG_v2
             }
         }
 
+#endregion
 
         public void clickconectado(object sender, EventArgs e)
         {
@@ -547,6 +568,14 @@ namespace FG_v2
                     flp_chats.Controls.Add(s);
                 }
             }
+        }
+
+        public void clickcerrar(object sender, EventArgs e)
+        {
+            flp_chats.Controls.Remove(s);
+            Ventanas.Remove(s);
+            s.Dispose();
+            
         }
 
     }
