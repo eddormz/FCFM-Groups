@@ -443,28 +443,33 @@ namespace FG_v2
 
         private void FG_Load(object sender, EventArgs e)
         {
+            publicaciones(id, idGrupo, conectado, flp_publicacion);
+        }
+
+        public void publicaciones(int id, int idGrupo, Socket conectado, FlowLayoutPanel flp_publicacion)
+        {
             DataSourcePOI dsp = new DataSourcePOI();
 
-            c_Publicacion p = new c_Publicacion(id, idGrupo, conectado);
+            c_Publicacion p = new c_Publicacion(id, idGrupo, conectado, flp_publicacion);
             flp_publicacion.Controls.Add(p);
 
             DataTable dt = dsp.getPublicacion(idGrupo);
             c_desplegar c = null;
 
-            
 
-                    tarea t = new tarea(idGrupo, id);
-                    t.Location = new Point(12, 354);
-                    this.Controls.Add(t);
+
+            tarea t = new tarea(idGrupo, id);
+            t.Location = new Point(12, 354);
+            this.Controls.Add(t);
 
             c_subgrupos subgrup = new c_subgrupos(id, idGrupo);
             subgrup.Location = new Point(0, 0);
             this.Controls.Add(subgrup);
-            
+
 
             bool isExistsFile = false;
 
-            int temp=0;
+            int temp = 0;
 
             if (dt != null)
             {
@@ -482,27 +487,26 @@ namespace FG_v2
                     DataTable dtc = dsp.getComentario(int.Parse(dt.Rows[i][0].ToString()));
 
                     temp = int.Parse(dt.Rows[i][0].ToString());
-                    
+
 
                     if (dtc != null)
                     {
                         for (int j = 0; j < dtc.Rows.Count; j++)
                         {
                             int temp2 = int.Parse(dtc.Rows[j][1].ToString());
-                            if (temp == temp2) {
-                            Label l = new Label();
-                            l.Text = dtc.Rows[j][0].ToString();
-                            c.flp_comentarios.Controls.Add(l);
-                        }
+                            if (temp == temp2)
+                            {
+                                Label l = new Label();
+                                l.Text = dtc.Rows[j][0].ToString();
+                                c.flp_comentarios.Controls.Add(l);
+                            }
                         }
                     }
                     flp_publicacion.Controls.Add(c);
                 }
             }
-           
-
         }
-       
+
         #region Zumbido
 
         private void zumbido(bool n)
