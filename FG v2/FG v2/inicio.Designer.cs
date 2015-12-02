@@ -55,6 +55,7 @@
             // 
             this.tb_contra.Location = new System.Drawing.Point(120, 233);
             this.tb_contra.Name = "tb_contra";
+            this.tb_contra.PasswordChar = '●';
             this.tb_contra.Size = new System.Drawing.Size(134, 20);
             this.tb_contra.TabIndex = 1;
             // 

@@ -20,13 +20,15 @@ namespace FG_v2
         int id = 0;
         int idGrupo = 0;
         Socket socketPublicacion;
+        FlowLayoutPanel flp;
 
-        public c_Publicacion(int id, int idGrupo, Socket socketnuevo)
+        public c_Publicacion(int id, int idGrupo, Socket socketnuevo, FlowLayoutPanel flp)
         {
             InitializeComponent();
             this.id = id;
             this.idGrupo = idGrupo;
             this.socketPublicacion = socketnuevo;
+            this.flp = flp;
         }
 
         private void btn_enviar_Click(object sender, EventArgs e)
@@ -51,6 +53,9 @@ namespace FG_v2
 
                     }
                     Publicacion.Text = "";
+                    flp.Controls.Clear();
+                    FG fg = new FG();
+                    fg.publicaciones(id, idGrupo, socketPublicacion, flp);
                 }
             }
             else {
@@ -72,6 +77,9 @@ namespace FG_v2
 
                     }
                     Publicacion.Text = "";
+                    flp.Controls.Clear();
+                    FG fg = new FG();
+                    fg.publicaciones(id, idGrupo, socketPublicacion, flp);
                 }
                 socketPublicacion.Send(mensaje.toBytes());
                 file = false;

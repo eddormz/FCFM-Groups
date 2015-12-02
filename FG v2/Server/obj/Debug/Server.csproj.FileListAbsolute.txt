@@ -21,3 +21,11 @@ D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Server\bin\Debug\Data.pdb
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Server\obj\Debug\Server.exe
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Server\obj\Debug\Server.pdb
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\Server.exe.config
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\obj\Debug\Server.exe
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\obj\Debug\Server.pdb
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\Server.exe
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\Server.pdb
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\Data.dll
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\Data.pdb
+C:\Users\ErickAlejandro\Desktop\FCFM-Groups\FG v2\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
