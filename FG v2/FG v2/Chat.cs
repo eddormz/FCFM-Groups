@@ -24,7 +24,6 @@ namespace FG_v2
         public int idu;
         public int idgrupo;
         public bool cerrar;
-        public String tipo;
         Socket local;
         string correo;
 
@@ -120,11 +119,8 @@ namespace FG_v2
             {
                 Directory.CreateDirectory("historial\\");
             }
-
-            if (!File.Exists("historial\\"+tipo + id + ".txt"))
-            {
-
-                StreamWriter escrito = File.AppendText("historial\\" + tipo + id + ".txt");
+            
+                StreamWriter escrito = File.AppendText("historial\\eres " +idu +"-hablas "+ id +"Eres del grupo "+idgrupo+ ".txt");
                 String contenido = text;
                 //escribimos. 
                 escrito.WriteLine(contenido);
@@ -134,27 +130,13 @@ namespace FG_v2
                 //Vaciamos 
                 this.txt_recibido.Text = "";
                 leer();
-            }
-            else
-            {
-                StreamWriter escrito = File.AppendText("historial\\" + tipo + id + ".txt");
-                String contenido = text;
-                //escribimos. 
-                escrito.WriteLine(contenido.ToString());
-                escrito.Flush();
-                //Cerramos 
-                escrito.Close();
-                //Vaciamos 
-                this.txt_recibido.Text = "";
-                leer();
-            }
 
         }
 
         private void leer()
         {
             this.txt_recibido.Clear();
-            StreamReader leido = File.OpenText("historial\\" + tipo+id+".txt");
+            StreamReader leido = File.OpenText("historial\\eres " + idu + "-hablas " + id + "Eres del grupo " + idgrupo + ".txt");
             //Variable que contendrá el archivo 
             string contenido = null;
             //Leemos todo el archivo 
@@ -213,7 +195,7 @@ namespace FG_v2
 
         private void Chat_Load(object sender, EventArgs e)
         {
-            if (tipo == "Publico")
+            if (id==0)
             {
                 btn_video.Hide();
             }
