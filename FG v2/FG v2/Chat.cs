@@ -449,6 +449,7 @@ namespace FG_v2
         {
             Mensaje m = new Mensaje();
             m.tipoo = Mensaje.tipo.zumbido;
+            m.mensaje = "Zumbido";
             m.idDestino = id;
             m.iduser = idu;
             m.idGrupo = idgrupo;
