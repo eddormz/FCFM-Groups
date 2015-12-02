@@ -63,16 +63,19 @@ namespace FG_v2
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            DataSourcePOI dsp = new DataSourcePOI();
+            if (txtNombreSubgrupo.Text != "")
+            {
+                DataSourcePOI dsp = new DataSourcePOI();
 
-            int idGrupinho = dsp.insertSubgruponom(idGrupo, txtNombreSubgrupo.Text);
+                int idGrupinho = dsp.insertSubgruponom(idGrupo, txtNombreSubgrupo.Text);
 
-            dsp.insertSubGrupo(id, idGrupinho);
+                dsp.insertSubGrupo(id, idGrupinho);
 
-            pnlsubgrup.Visible = false;
+                pnlsubgrup.Visible = false;
 
-            FG fg = new FG();
-            fg.subrgupos(id, idGrupo, subgrupos, flp);
+                FG fg = new FG();
+                fg.subrgupos(id, idGrupo, subgrupos, flp);
+            }
         }
     }
 }

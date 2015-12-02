@@ -64,14 +64,16 @@ namespace FG_v2
 
         private void btnAgregarNueva_Click(object sender, EventArgs e)
         {
-            DataSourcePOI dsp = new DataSourcePOI();
-            bool agregado = dsp.insertTarea(txtNombreTarea.Text, idGrupo);
-            if (agregado)
-                pnlAdd.Visible = false;
-            FG fg = new FG();
-            fg.tareas(id, idGrupo, tareas, flp);
+            if (txtNombreTarea.Text != "")
+            {
+                DataSourcePOI dsp = new DataSourcePOI();
+                bool agregado = dsp.insertTarea(txtNombreTarea.Text, idGrupo);
+                if (agregado)
+                    pnlAdd.Visible = false;
+                FG fg = new FG();
+                fg.tareas(id, idGrupo, tareas, flp);
+            }
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             pnlAdd.Visible = false;

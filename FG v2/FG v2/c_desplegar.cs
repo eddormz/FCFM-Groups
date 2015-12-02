@@ -39,20 +39,23 @@ namespace FG_v2
 
         private void btn_Publicar_Click(object sender, EventArgs e)
         {
-            DataSourcePOI dsp = new DataSourcePOI();
-
-            bool resultado = dsp.insertComentario(idpublicacion, input_publicacion.Text, id);
-
-            if (resultado)
+            if (input_publicacion.Text != "")
             {
-                DataTable dt = dsp.getComentario(idpublicacion);
+                DataSourcePOI dsp = new DataSourcePOI();
 
-                for (int bc = 0; bc < dt.Rows.Count; bc++)
+                bool resultado = dsp.insertComentario(idpublicacion, input_publicacion.Text, id);
+
+                if (resultado)
                 {
-                    c_desplegar c = new c_desplegar(input_publicacion.Text, publicacion.Text, idpublicacion, idGrupo, id, isExistsFile, nombreArchivo, archivoS);
+                    DataTable dt = dsp.getComentario(idpublicacion);
 
+                    for (int bc = 0; bc < dt.Rows.Count; bc++)
+                    {
+                        c_desplegar c = new c_desplegar(input_publicacion.Text, publicacion.Text, idpublicacion, idGrupo, id, isExistsFile, nombreArchivo, archivoS);
+
+                    }
+                    input_publicacion.Text = "";
                 }
-                input_publicacion.Text = "";
             }
         }
 

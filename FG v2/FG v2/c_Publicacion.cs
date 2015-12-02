@@ -33,56 +33,60 @@ namespace FG_v2
 
         private void btn_enviar_Click(object sender, EventArgs e)
         {
-            if (!file)
+            if (Publicacion.Text != "")
             {
-
-                DataSourcePOI dsp = new DataSourcePOI();
-
-                DataTable dtt = dsp.insertPublicacion(Publicacion.Text, idGrupo, id);
-
-                if (dtt.Rows[0][0].ToString() != "null")
+                if (!file)
                 {
-                    DataTable dt = dsp.getPublicacion(idGrupo);
 
-                    for (int bc = 0; bc < dt.Rows.Count; bc++)
+                    DataSourcePOI dsp = new DataSourcePOI();
+
+                    DataTable dtt = dsp.insertPublicacion(Publicacion.Text, idGrupo, id);
+
+                    if (dtt.Rows[0][0].ToString() != "null")
                     {
+                        DataTable dt = dsp.getPublicacion(idGrupo);
+
+                        for (int bc = 0; bc < dt.Rows.Count; bc++)
+                        {
 
 
 
-                        c_desplegar c = new c_desplegar(dt.Rows[bc][4] + "", dt.Rows[bc][1] + "", int.Parse(dtt.Rows[0][0].ToString()), idGrupo, id, file, dt.Rows[bc][5].ToString(), socketPublicacion);
+                            c_desplegar c = new c_desplegar(dt.Rows[bc][4] + "", dt.Rows[bc][1] + "", int.Parse(dtt.Rows[0][0].ToString()), idGrupo, id, file, dt.Rows[bc][5].ToString(), socketPublicacion);
 
+                        }
+                        Publicacion.Text = "";
+                        flp.Controls.Clear();
+                        FG fg = new FG();
+                        fg.publicaciones(id, idGrupo, socketPublicacion, flp);
                     }
-                    Publicacion.Text = "";
-                    flp.Controls.Clear();
-                    FG fg = new FG();
-                    fg.publicaciones(id, idGrupo, socketPublicacion, flp);
                 }
-            }
-            else {
-                Mensaje mensaje = new Mensaje();
-                mensaje.archi = a;
-                mensaje.tipoo = Mensaje.tipo.publicacionarchivo;
-
-                DataSourcePOI dsp = new DataSourcePOI();
-
-                DataTable dtt = dsp.insertPublicacionArchivo(Publicacion.Text, idGrupo, id, a.j);
-
-                if (dtt.Rows[0][0].ToString() != "null")
+                else
                 {
-                    DataTable dt = dsp.getPublicacion(idGrupo);
+                    Mensaje mensaje = new Mensaje();
+                    mensaje.archi = a;
+                    mensaje.tipoo = Mensaje.tipo.publicacionarchivo;
 
-                    for (int bc = 0; bc < dt.Rows.Count; bc++)
+                    DataSourcePOI dsp = new DataSourcePOI();
+
+                    DataTable dtt = dsp.insertPublicacionArchivo(Publicacion.Text, idGrupo, id, a.j);
+
+                    if (dtt.Rows[0][0].ToString() != "null")
                     {
-                        c_desplegar c = new c_desplegar(dt.Rows[bc][4] + "", dt.Rows[bc][1] + "", int.Parse(dtt.Rows[0][0].ToString()), idGrupo, id, file, dt.Rows[bc][5].ToString(), socketPublicacion);
+                        DataTable dt = dsp.getPublicacion(idGrupo);
 
+                        for (int bc = 0; bc < dt.Rows.Count; bc++)
+                        {
+                            c_desplegar c = new c_desplegar(dt.Rows[bc][4] + "", dt.Rows[bc][1] + "", int.Parse(dtt.Rows[0][0].ToString()), idGrupo, id, file, dt.Rows[bc][5].ToString(), socketPublicacion);
+
+                        }
+                        Publicacion.Text = "";
+                        flp.Controls.Clear();
+                        FG fg = new FG();
+                        fg.publicaciones(id, idGrupo, socketPublicacion, flp);
                     }
-                    Publicacion.Text = "";
-                    flp.Controls.Clear();
-                    FG fg = new FG();
-                    fg.publicaciones(id, idGrupo, socketPublicacion, flp);
+                    socketPublicacion.Send(mensaje.toBytes());
+                    file = false;
                 }
-                socketPublicacion.Send(mensaje.toBytes());
-                file = false;
             }
         }
 

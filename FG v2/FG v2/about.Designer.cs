@@ -137,7 +137,7 @@
             this.textBoxDescription.Size = new System.Drawing.Size(271, 126);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "Eduardo\r\nErick\r\nBrenda";
+            this.textBoxDescription.Text = "Eduardo Antonio Ramirez de la Torre\r\nErick Alejandro Deharo Celestino\r\nBrenda";
             // 
             // okButton
             // 

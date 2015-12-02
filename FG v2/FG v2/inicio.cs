@@ -29,45 +29,46 @@ namespace FG_v2
 
         private void bt_In_Click(object sender, EventArgs e)
         {
-            
 
-            try
+            if (txt_correo.Text != "" && txt_contra.Text != "")
             {
-
-                Mensaje d = new Mensaje();
-                d.nombre = tb_correo.Text;
-                d.contrasenia = tb_contra.Text;
-                d.ip = Data.funciones.obtenerip();
-                d.tipoo = Mensaje.tipo.login;
-                byte[] entrando = new byte[cliente.SendBufferSize];
-
-                cliente.Connect(ip, 1806);
-
-                //La cadena de string la convertimos en un arreglo de bytes para enviarla
-                cliente.Send(d.toBytes());
-
-                cliente.Receive(entrando);
-                Mensaje n = new Mensaje(entrando);
-
-                if (n.iduser > 0)
+                try
                 {
-                    FG main = new FG(cliente, n.iduser,tb_correo.Text, n.idGrupo);
-                    main.Show();
-                    Hide();
+
+                    Mensaje d = new Mensaje();
+                    d.nombre = tb_correo.Text;
+                    d.contrasenia = tb_contra.Text;
+                    d.ip = Data.funciones.obtenerip();
+                    d.tipoo = Mensaje.tipo.login;
+                    byte[] entrando = new byte[cliente.SendBufferSize];
+
+                    cliente.Connect(ip, 1806);
+
+                    //La cadena de string la convertimos en un arreglo de bytes para enviarla
+                    cliente.Send(d.toBytes());
+
+                    cliente.Receive(entrando);
+                    Mensaje n = new Mensaje(entrando);
+
+                    if (n.iduser > 0)
+                    {
+                        FG main = new FG(cliente, n.iduser, tb_correo.Text, n.idGrupo);
+                        main.Show();
+                        Hide();
+                    }
+                    else
+                    {
+                        cliente.Disconnect(true);
+                        Application.Restart();
+                    }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    cliente.Disconnect(true);
-                    Application.Restart();
+                    Console.WriteLine("Error conectando al cliente: " + ex.ToString());
                 }
 
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error conectando al cliente: " + ex.ToString());
-            }
-
-
         }
 
         private void btn_Registrar_Click(object sender, EventArgs e)

@@ -94,17 +94,25 @@ namespace FG_v2
 
         private void btn_enviar_Click(object sender, EventArgs e)
         {
-            Mensaje h = new Mensaje();
-            if (id > 0) {
-                h.tipoo = Mensaje.tipo.mensajeprivado;
-            } else {
-                h.tipoo = Mensaje.tipo.mensaje;
+            if (txt_enviar.Text != "")
+            {
+                Mensaje h = new Mensaje();
+                if (id > 0)
+                {
+                    h.tipoo = Mensaje.tipo.mensajeprivado;
+                }
+                else
+                {
+                    h.tipoo = Mensaje.tipo.mensaje;
+                }
+                h.idDestino = id;
+                h.iduser = idu;
+                h.mensaje = correo + ": " + txt_enviar.Text;
+                h.idGrupo = idgrupo;
+                local.Send(h.toBytes());
+                txt_enviar.Text = "";
+
             }
-            h.idDestino = id;
-            h.iduser = idu;
-            h.mensaje = correo + ": " + txt_enviar.Text;
-            h.idGrupo = idgrupo;
-            local.Send(h.toBytes());
         }
 
         private void timer1_Tick(object sender, EventArgs e)

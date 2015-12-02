@@ -21,6 +21,7 @@ namespace FG_v2
 
         private void bt_In_Click(object sender, EventArgs e)
         {
+            if (tb_correo.Text!=""&&tb_contra.Text!="") { }
             DataSourcePOI dspoi = new DataSourcePOI();
            bool result = dspoi.registrarse(tb_correo.Text, tb_contra.Text, Convert.ToInt32(cb_carrera.SelectedValue));
             if (result)
@@ -30,6 +31,7 @@ namespace FG_v2
             }
             else
             {
+                MessageBox.Show("Registro Fallido", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
