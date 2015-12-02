@@ -477,7 +477,9 @@ namespace FG_v2
                 {
                     // c_desplegar c = new c_desplegar("nombre"+i, "Toda la publicacion aqui", 1);
 
-                    if (dt.Rows[i][5].ToString() != "")
+                    string comprar = dt.Rows[i][5].ToString();
+
+                    if (!"".Equals(comprar))
                     {
                         isExistsFile = true;
                     }
@@ -503,6 +505,7 @@ namespace FG_v2
                         }
                     }
                     flp_publicacion.Controls.Add(c);
+                    isExistsFile = false;
                 }
             }
         }
