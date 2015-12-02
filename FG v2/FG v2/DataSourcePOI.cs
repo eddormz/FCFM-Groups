@@ -460,5 +460,27 @@ namespace FG_v2
             }
         }
 
+        public DataTable getnotmygroups(int idUsuario)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = datos.conectarbase();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT idGrupo,nombreGrupo,nombreSubGrupo,idPertenencia FROM Grupo where idPertenencia is not null and idGrupo not in (SELECT idGrupo FROM UsuarioSubGrupo where idUsuario = " + idUsuario + ")";
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            datos.desconectarbase();
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

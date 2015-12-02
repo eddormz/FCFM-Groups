@@ -48,7 +48,7 @@ namespace FG_v2
 
         private void lstSubgrupos_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show(lstSubgrupos.Items.ToString(), lstSubgrupos.Items[0].SubItems.ToString());
+            MessageBox.Show(lstSubgrupos.Items[0].Text, lstSubgrupos.Items[0].SubItems[1].Text);
         }
 
         private void btnAddSubgrupo_Click(object sender, EventArgs e)
@@ -76,6 +76,43 @@ namespace FG_v2
                 FG fg = new FG();
                 fg.subrgupos(id, idGrupo, subgrupos, flp);
             }
+        }
+
+        private void btnCancelarAgregarse_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pnlAgregarse.Visible = true;
+            DataSourcePOI dsp = new DataSourcePOI();
+            DataTable dt = dsp.getnotmygroups(id);
+
+            if (dt != null)
+            {
+                for (int bc = 0; bc < dt.Rows.Count; bc++)
+                {
+                    lstAgregarse.Items.Add(dt.Rows[bc][0].ToString() + "-" + dt.Rows[bc][2].ToString());
+                }
+            }
+        }
+
+        private void lstAgregarse_DoubleClick(object sender, EventArgs e)
+        {
+            DataSourcePOI dsp = new DataSourcePOI();
+
+            string[] datos = lstAgregarse.SelectedItems[0].Text.Split('-');
+            int idSubgrupoGrupo = int.Parse(datos[0]);
+            dsp.insertSubGrupo(id, idSubgrupoGrupo);
+            pnlAgregarse.Visible = false;
+            FG fg = new FG();
+            fg.subrgupos(id, idGrupo, subgrupos, flp);
+        }
+
+        private void btnCancelarAgregarse_Click_1(object sender, EventArgs e)
+        {
+            pnlAgregarse.Visible = false;
         }
     }
 }

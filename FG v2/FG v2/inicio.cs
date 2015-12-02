@@ -15,8 +15,8 @@ namespace FG_v2
 {
     public partial class inicio : Form
     {
-         static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
-     //   static IPAddress ip = IPAddress.Parse("127.0.0.1");
+       //  static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
+        static IPAddress ip = IPAddress.Parse("127.0.0.1");
 
         IPEndPoint ipe = new IPEndPoint(ip, 1806);
         static Socket cliente;
