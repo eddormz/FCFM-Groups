@@ -414,6 +414,31 @@ namespace FG_v2
             //{
             //    flp_chats.Visible = false;
             //}
+
+            if (flp_chats.Controls.Count > 0)
+            {
+                flp_chats.Visible = true;
+
+                switch (flp_chats.Controls.Count)
+                {
+                    case 1:
+                        flp_chats.Width = 1*286;
+                        break;
+                    case 2:
+                        flp_chats.Width = 2* 286;
+                        break;
+                    case 3:
+                        flp_chats.Width = 3 * 286;
+                        break;
+
+                }
+
+            }
+            else
+            {
+                flp_chats.Visible = false;
+            }
+
         }
 
         private void FG_Load(object sender, EventArgs e)

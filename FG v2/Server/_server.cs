@@ -50,8 +50,10 @@ namespace Server
                     end();
                 }
             }
-            
+            svr.Close();
+            svr2.Close();
             Console.WriteLine("END");
+            
         }
 
         public static void ON()
@@ -108,7 +110,7 @@ namespace Server
 
 
                     }
-                    catch { }
+                    catch { server = false; }
                 }
         }
 
@@ -116,10 +118,16 @@ namespace Server
         {
             while (server)
             {
-                Thread.Sleep(10);
-                svr2.Listen(0);
-                Socket cliente = svr2.Accept();
-                upl.Add(cliente);
+                try {
+                    Thread.Sleep(10);
+                    svr2.Listen(0);
+                    Socket cliente = svr2.Accept();
+                    upl.Add(cliente);
+                }
+                catch
+                {
+                    server = false;
+                }
 
             }
         }

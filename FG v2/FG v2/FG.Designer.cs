@@ -43,9 +43,9 @@
             // flp_conectados
             // 
             this.flp_conectados.BackColor = System.Drawing.Color.Transparent;
-            this.flp_conectados.Location = new System.Drawing.Point(1088, 58);
+            this.flp_conectados.Location = new System.Drawing.Point(1088, 87);
             this.flp_conectados.Name = "flp_conectados";
-            this.flp_conectados.Size = new System.Drawing.Size(129, 638);
+            this.flp_conectados.Size = new System.Drawing.Size(129, 609);
             this.flp_conectados.TabIndex = 0;
             // 
             // flp_chats
@@ -75,12 +75,13 @@
             // 
             // test
             // 
-            this.test.ForeColor = System.Drawing.Color.White;
-            this.test.Location = new System.Drawing.Point(927, 304);
+            this.test.ForeColor = System.Drawing.Color.Black;
+            this.test.Image = global::FG_v2.Properties.Resources.fondo1___copia;
+            this.test.Location = new System.Drawing.Point(1088, 58);
             this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(97, 23);
+            this.test.Size = new System.Drawing.Size(126, 23);
             this.test.TabIndex = 0;
-            this.test.Text = "Boton de Prueba";
+            this.test.Text = "Chat Grupal";
             this.test.UseVisualStyleBackColor = true;
             this.test.Click += new System.EventHandler(this.test_Click);
             // 
@@ -133,18 +134,18 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1220, 700);
+            this.Controls.Add(this.test);
+            this.Controls.Add(this.flp_conectados);
             this.Controls.Add(this.rb_desconectado);
             this.Controls.Add(this.rb_ausente);
             this.Controls.Add(this.rb_conectado);
-            this.Controls.Add(this.test);
             this.Controls.Add(this.flp_chats);
-            this.Controls.Add(this.flp_conectados);
             this.Controls.Add(this.flp_publicacion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FG";
             this.Text = "FG";
-            this.TransparencyKey = System.Drawing.Color.Maroon;
+            this.TransparencyKey = System.Drawing.SystemColors.WindowText;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FG_FormClosed);
             this.Load += new System.EventHandler(this.FG_Load);
             this.ResumeLayout(false);
