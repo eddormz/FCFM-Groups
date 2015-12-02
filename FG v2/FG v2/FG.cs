@@ -204,7 +204,7 @@ namespace FG_v2
                                     {
                                         entrantep dd = new entrantep(newChatPrivado);
 
-                                        this.Invoke(dd, new object[] { zumba, d.iduser });
+                                        this.Invoke(dd, new object[] { d, d.iduser });
                                         zumbidoactivar();
                                     }
                                     catch
