@@ -34,8 +34,8 @@ namespace FG_v2
         Chat s;
         public int idGrupo;
 
-       // static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
-        static IPAddress ip = IPAddress.Parse("127.0.0.1");
+       static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
+       // static IPAddress ip = IPAddress.Parse("127.0.0.1");
 
         static Socket actua;
 
@@ -446,6 +446,22 @@ namespace FG_v2
             publicaciones(id, idGrupo, conectado, flp_publicacion);
         }
 
+        public void tareas(int id, int idGrupo, Socket conectado, FlowLayoutPanel flowLayoutPanel2)
+        {
+            flowLayoutPanel2.Controls.Clear();
+            tarea t = new tarea(idGrupo, id, conectado, flowLayoutPanel2);
+            t.Location = new Point(12, 354);
+            flowLayoutPanel2.Controls.Add(t);
+        }
+
+        public void subrgupos(int id, int idGrupo, Socket conectado, FlowLayoutPanel flowLayoutPanel1)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            c_subgrupos subgrup = new c_subgrupos(id, idGrupo, conectado, flowLayoutPanel1);
+            subgrup.Location = new Point(0, 0);
+            flowLayoutPanel1.Controls.Add(subgrup);
+        }
+
         public void publicaciones(int id, int idGrupo, Socket conectado, FlowLayoutPanel flp_publicacion)
         {
             DataSourcePOI dsp = new DataSourcePOI();
@@ -457,15 +473,9 @@ namespace FG_v2
             c_desplegar c = null;
 
 
-
-            tarea t = new tarea(idGrupo, id);
-            t.Location = new Point(12, 354);
-            this.Controls.Add(t);
-
-            c_subgrupos subgrup = new c_subgrupos(id, idGrupo);
-            subgrup.Location = new Point(0, 0);
-            this.Controls.Add(subgrup);
-
+            tareas(id, idGrupo, conectado, flowLayoutPanel2);
+            
+            subrgupos(id, idGrupo, conectado, flowLayoutPanel1);
 
             bool isExistsFile = false;
 

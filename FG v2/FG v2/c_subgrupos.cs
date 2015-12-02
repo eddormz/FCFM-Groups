@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Sockets;
 
 namespace FG_v2
 {
@@ -14,13 +15,17 @@ namespace FG_v2
     {
         int id;
         int idGrupo;
+        Socket subgrupos;
+        FlowLayoutPanel flp;
 
-        public c_subgrupos(int id, int idGrupo)
+        public c_subgrupos(int id, int idGrupo, Socket subgrupos, FlowLayoutPanel flp)
         {
             InitializeComponent();
 
             this.id = id;
             this.idGrupo = idGrupo;
+            this.subgrupos = subgrupos;
+            this.flp = flp;
 
             DataSourcePOI dsp = new DataSourcePOI();
             DataTable dt = dsp.getSubGrupo(id);
@@ -65,6 +70,9 @@ namespace FG_v2
             dsp.insertSubGrupo(id, idGrupinho);
 
             pnlsubgrup.Visible = false;
+
+            FG fg = new FG();
+            fg.subrgupos(id, idGrupo, subgrupos, flp);
         }
     }
 }

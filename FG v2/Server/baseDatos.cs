@@ -15,9 +15,11 @@ namespace Data
         {
             try
             {
-                  conectada = new SqlConnection("Server=(local); DataBase=POI; Trusted_Connection=True");
+                conectada = new SqlConnection("Server=(local); DataBase=POI; Trusted_Connection=True");
 
                 //conectada = new SqlConnection("Data Source=erickterri; Initial Catalog=POI; User Id=sa; Password=terri10dx; Connection Lifetime=60; Max Pool Size=50; Min Pool Size=3");
+
+                //conectada = new SqlConnection("Data Source = brendacazares; Initial Catalog = POI; User Id = sa; Password = 1234; Connection Lifetime = 60; Max Pool Size = 50; Min Pool Size = 3");
 
                 conectada.Open();
             }
