@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Sockets;
 
 namespace FG_v2
 {
@@ -15,12 +16,18 @@ namespace FG_v2
         int idGrupo;
         int id;
         CheckBox chkTarea = null;
+        Socket tareas;
+        FlowLayoutPanel flp;
 
-        public tarea(int idGrupo, int id)
+
+        public tarea(int idGrupo, int id, Socket tareas, FlowLayoutPanel flp)
         {
             InitializeComponent();
 
             this.id = id;
+            this.tareas = tareas;
+            this.flp = flp;
+
 
             DataSourcePOI dsp = new DataSourcePOI();
 
@@ -61,6 +68,8 @@ namespace FG_v2
             bool agregado = dsp.insertTarea(txtNombreTarea.Text, idGrupo);
             if (agregado)
                 pnlAdd.Visible = false;
+            FG fg = new FG();
+            fg.tareas(id, idGrupo, tareas, flp);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

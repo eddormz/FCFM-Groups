@@ -38,6 +38,8 @@
             this.rb_conectado = new System.Windows.Forms.RadioButton();
             this.rb_ausente = new System.Windows.Forms.RadioButton();
             this.rb_desconectado = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // flp_conectados
@@ -126,6 +128,24 @@
             this.rb_desconectado.UseVisualStyleBackColor = false;
             this.rb_desconectado.CheckedChanged += new System.EventHandler(this.rb_desconectado_CheckedChanged);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 1);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(186, 338);
+            this.flowLayoutPanel1.TabIndex = 8;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1, 358);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(170, 338);
+            this.flowLayoutPanel2.TabIndex = 9;
+            // 
             // FG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +154,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1220, 700);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.test);
             this.Controls.Add(this.flp_conectados);
             this.Controls.Add(this.rb_desconectado);
@@ -163,5 +185,7 @@
         private System.Windows.Forms.RadioButton rb_conectado;
         private System.Windows.Forms.RadioButton rb_ausente;
         private System.Windows.Forms.RadioButton rb_desconectado;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
