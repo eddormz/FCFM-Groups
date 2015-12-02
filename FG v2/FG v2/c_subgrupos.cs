@@ -34,7 +34,8 @@ namespace FG_v2
             {
                 for (int bc = 0; bc < dt.Rows.Count; bc++)
                 {
-                    lstSubgrupos.Items.Add(dt.Rows[bc][0].ToString()+"-"+dt.Rows[bc][1].ToString());
+                    lstSubgrupos.Items.Add(dt.Rows[bc][1].ToString());
+                    lstSubgrupos.Items[bc].SubItems.Add(dt.Rows[bc][0].ToString());
                     lstSubgrupos.DoubleClick += new EventHandler(lstSubgrupos_DoubleClick);
                 }
             }

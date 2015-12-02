@@ -32,7 +32,6 @@ namespace FG_v2
         bool hilo = true;
         SoundPlayer player;
         Chat s;
-        c_subgrupos subgrup;
         public int idGrupo;
 
        // static IPAddress ip = IPAddress.Parse(Data.funciones.obtenersvr("2ND"));
@@ -463,9 +462,8 @@ namespace FG_v2
             t.Location = new Point(12, 354);
             this.Controls.Add(t);
 
-            subgrup = new c_subgrupos(id, idGrupo);
+            c_subgrupos subgrup = new c_subgrupos(id, idGrupo);
             subgrup.Location = new Point(0, 0);
-            subgrup.lstSubgrupos.SelectedIndexChanged += new EventHandler(chatsub);
             this.Controls.Add(subgrup);
 
 
@@ -610,19 +608,6 @@ namespace FG_v2
             Ventanas.Remove(s);
             s.Dispose();
             
-        }
-
-        public void chatsub(object sender, EventArgs e) {
-            string[] spl = subgrup.lstSubgrupos.SelectedItems[0].Text.Split('-');
-
-            s = new Chat(int.Parse(spl[0]), id, conectado, email);
-            s.btn_cerrar.Click += new EventHandler(clickcerrar);
-            if (flp_chats.Controls.Count < 3)
-            {
-                Ventanas.Add(s);
-                flp_chats.Controls.Add(s);
-            }
-
         }
 
     }

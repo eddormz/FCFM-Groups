@@ -62,22 +62,7 @@ namespace Data
             }
             else
             {
-                cmd.Connection = datos.conectarbase();
-                cmd.CommandType = CommandType.Text;
-                
-                cmd.CommandText = "SELECT idUsuario  FROM UsuarioSubGrupo  WHERE idGrupo = " + idGrupo;
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-                datos.desconectarbase();
-
-                if (dt.Rows.Count > 0)
-                {
-                    return dt;
-                }
-                else
-                {
-                    return null;
-                }
+                return null;
             }
         }
     }
