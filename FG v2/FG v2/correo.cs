@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//necesarias para el envio de correo por SMTP
+using System.Web;
+using System.Net;
+using System.Net.Mail;
+
 namespace FG_v2
 {
     public partial class correo : Form
