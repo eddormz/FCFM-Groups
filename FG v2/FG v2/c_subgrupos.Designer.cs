@@ -134,12 +134,15 @@
             // 
             // btnCancelarAgregarse
             // 
+            this.btnCancelarAgregarse.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCancelarAgregarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarAgregarse.ForeColor = System.Drawing.Color.White;
             this.btnCancelarAgregarse.Location = new System.Drawing.Point(3, 9);
             this.btnCancelarAgregarse.Name = "btnCancelarAgregarse";
             this.btnCancelarAgregarse.Size = new System.Drawing.Size(157, 23);
             this.btnCancelarAgregarse.TabIndex = 1;
             this.btnCancelarAgregarse.Text = "Cancelar";
-            this.btnCancelarAgregarse.UseVisualStyleBackColor = true;
+            this.btnCancelarAgregarse.UseVisualStyleBackColor = false;
             this.btnCancelarAgregarse.Click += new System.EventHandler(this.btnCancelarAgregarse_Click_1);
             // 
             // lstAgregarse

@@ -43,7 +43,7 @@
             // bt_In
             // 
             this.bt_In.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bt_In.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_In.ForeColor = System.Drawing.Color.White;
             this.bt_In.Location = new System.Drawing.Point(230, 261);
             this.bt_In.Name = "bt_In";
             this.bt_In.Size = new System.Drawing.Size(87, 27);
@@ -56,10 +56,11 @@
             // 
             this.txt_contra.AutoSize = true;
             this.txt_contra.BackColor = System.Drawing.Color.Transparent;
-            this.txt_contra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_contra.Location = new System.Drawing.Point(32, 167);
+            this.txt_contra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_contra.ForeColor = System.Drawing.Color.White;
+            this.txt_contra.Location = new System.Drawing.Point(22, 167);
             this.txt_contra.Name = "txt_contra";
-            this.txt_contra.Size = new System.Drawing.Size(85, 18);
+            this.txt_contra.Size = new System.Drawing.Size(95, 18);
             this.txt_contra.TabIndex = 8;
             this.txt_contra.Text = "Contraseña";
             // 
@@ -67,10 +68,11 @@
             // 
             this.txt_correo.AutoSize = true;
             this.txt_correo.BackColor = System.Drawing.Color.Transparent;
-            this.txt_correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_correo.ForeColor = System.Drawing.Color.White;
             this.txt_correo.Location = new System.Drawing.Point(32, 137);
             this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(55, 18);
+            this.txt_correo.Size = new System.Drawing.Size(61, 18);
             this.txt_correo.TabIndex = 7;
             this.txt_correo.Text = "Correo";
             // 
@@ -101,10 +103,11 @@
             // 
             this.tx_carrera.AutoSize = true;
             this.tx_carrera.BackColor = System.Drawing.Color.Transparent;
-            this.tx_carrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tx_carrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tx_carrera.ForeColor = System.Drawing.Color.White;
             this.tx_carrera.Location = new System.Drawing.Point(32, 200);
             this.tx_carrera.Name = "tx_carrera";
-            this.tx_carrera.Size = new System.Drawing.Size(58, 18);
+            this.tx_carrera.Size = new System.Drawing.Size(65, 18);
             this.tx_carrera.TabIndex = 11;
             this.tx_carrera.Text = "Carrera";
             // 
@@ -114,7 +117,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(57, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 77);
+            this.pictureBox1.Size = new System.Drawing.Size(208, 104);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;

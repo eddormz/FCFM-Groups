@@ -80,14 +80,14 @@
             // 
             // test
             // 
+            this.test.BackColor = System.Drawing.Color.DodgerBlue;
             this.test.ForeColor = System.Drawing.Color.Black;
-            this.test.Image = global::FG_v2.Properties.Resources.fondo1___copia;
             this.test.Location = new System.Drawing.Point(1088, 58);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(126, 23);
             this.test.TabIndex = 0;
             this.test.Text = "Chat Grupal";
-            this.test.UseVisualStyleBackColor = true;
+            this.test.UseVisualStyleBackColor = false;
             this.test.Click += new System.EventHandler(this.test_Click);
             // 
             // rb_conectado
@@ -162,12 +162,13 @@
             // 
             // btnCorreo
             // 
+            this.btnCorreo.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCorreo.Location = new System.Drawing.Point(988, 58);
             this.btnCorreo.Name = "btnCorreo";
             this.btnCorreo.Size = new System.Drawing.Size(94, 23);
             this.btnCorreo.TabIndex = 11;
             this.btnCorreo.Text = "Enviar Correo";
-            this.btnCorreo.UseVisualStyleBackColor = true;
+            this.btnCorreo.UseVisualStyleBackColor = false;
             this.btnCorreo.Click += new System.EventHandler(this.btnCorreo_Click);
             // 
             // FG

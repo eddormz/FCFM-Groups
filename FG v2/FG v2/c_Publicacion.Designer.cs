@@ -48,10 +48,11 @@
             // btn_enviar
             // 
             this.btn_enviar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_enviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_enviar.ForeColor = System.Drawing.Color.White;
             this.btn_enviar.Location = new System.Drawing.Point(432, 115);
             this.btn_enviar.Name = "btn_enviar";
-            this.btn_enviar.Size = new System.Drawing.Size(75, 23);
+            this.btn_enviar.Size = new System.Drawing.Size(75, 32);
             this.btn_enviar.TabIndex = 1;
             this.btn_enviar.Text = "Publicar";
             this.btn_enviar.UseVisualStyleBackColor = false;

@@ -147,6 +147,9 @@
     <EmbeddedResource Include="Chat.resx">
       <DependentUpon>Chat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="correo.resx">
+      <DependentUpon>correo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="c_conectado.resx">
       <DependentUpon>c_conectado.cs</DependentUpon>
     </EmbeddedResource>

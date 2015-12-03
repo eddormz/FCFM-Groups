@@ -75,7 +75,7 @@
             // 
             this.btn_Publicar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Publicar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Publicar.Image")));
-            this.btn_Publicar.Location = new System.Drawing.Point(480, 88);
+            this.btn_Publicar.Location = new System.Drawing.Point(480, 82);
             this.btn_Publicar.Name = "btn_Publicar";
             this.btn_Publicar.Size = new System.Drawing.Size(71, 30);
             this.btn_Publicar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

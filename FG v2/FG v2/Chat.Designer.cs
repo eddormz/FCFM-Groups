@@ -380,9 +380,11 @@
             // 
             // agregararchivo
             // 
+            this.agregararchivo.Image = ((System.Drawing.Image)(resources.GetObject("agregararchivo.Image")));
             this.agregararchivo.Location = new System.Drawing.Point(169, 3);
             this.agregararchivo.Name = "agregararchivo";
             this.agregararchivo.Size = new System.Drawing.Size(25, 25);
+            this.agregararchivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.agregararchivo.TabIndex = 11;
             this.agregararchivo.TabStop = false;
             this.agregararchivo.Click += new System.EventHandler(this.agregararchivo_Click);

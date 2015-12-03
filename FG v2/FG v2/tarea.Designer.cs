@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tarea));
             this.btnaddTarea = new System.Windows.Forms.Button();
             this.flpTarea = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlAdd = new System.Windows.Forms.Panel();
@@ -59,42 +60,49 @@
             // 
             // pnlAdd
             // 
+            this.pnlAdd.BackColor = System.Drawing.Color.Transparent;
             this.pnlAdd.Controls.Add(this.btnCancel);
             this.pnlAdd.Controls.Add(this.btnAgregarNueva);
             this.pnlAdd.Controls.Add(this.label1);
             this.pnlAdd.Controls.Add(this.txtNombreTarea);
             this.pnlAdd.Location = new System.Drawing.Point(3, 3);
             this.pnlAdd.Name = "pnlAdd";
-            this.pnlAdd.Size = new System.Drawing.Size(147, 314);
+            this.pnlAdd.Size = new System.Drawing.Size(149, 314);
             this.pnlAdd.TabIndex = 2;
             this.pnlAdd.Visible = false;
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(12, 84);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(127, 23);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAgregarNueva
             // 
+            this.btnAgregarNueva.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAgregarNueva.ForeColor = System.Drawing.Color.White;
             this.btnAgregarNueva.Location = new System.Drawing.Point(12, 55);
             this.btnAgregarNueva.Name = "btnAgregarNueva";
             this.btnAgregarNueva.Size = new System.Drawing.Size(127, 23);
             this.btnAgregarNueva.TabIndex = 2;
             this.btnAgregarNueva.Text = "Agregar Nueva";
-            this.btnAgregarNueva.UseVisualStyleBackColor = true;
+            this.btnAgregarNueva.UseVisualStyleBackColor = false;
             this.btnAgregarNueva.Click += new System.EventHandler(this.btnAgregarNueva_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(24, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(115, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre de la tarea";
             // 
@@ -117,6 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.pbGamification);
             this.Controls.Add(this.pnlAdd);
             this.Controls.Add(this.flpTarea);
