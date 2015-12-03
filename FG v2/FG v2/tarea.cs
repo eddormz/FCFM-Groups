@@ -33,6 +33,8 @@ namespace FG_v2
 
             DataTable dt = dsp.getTarea(idGrupo);
 
+            pbGamification.Maximum = dt.Rows.Count;
+
             if (dt != null)
             {
                 for (int bc = 0; bc < dt.Rows.Count; bc++)
@@ -46,6 +48,11 @@ namespace FG_v2
                     {
                         bool stado = bool.Parse(dtt.Rows[0][1].ToString());
                         chkTarea.Checked = stado;
+
+                        if (stado)
+                        {
+                            pbGamification.Increment(1);
+                        }
                     }
                     chkTarea.AutoSize = true;
                     chkTarea.CheckedChanged += new EventHandler(chkTarea_CheckedChanged);
@@ -81,6 +88,7 @@ namespace FG_v2
 
         private void chkTarea_CheckedChanged(object sender, EventArgs e)
         {
+            chkTarea = (CheckBox)sender;
             bool checado = chkTarea.Checked;
             DataSourcePOI dsp = new DataSourcePOI();
 
@@ -92,6 +100,10 @@ namespace FG_v2
             if (checado)
             {
                 status = 1;
+                pbGamification.Increment(1);
+            }
+            else {
+                pbGamification.Value--;
             }
 
             DataTable dtt = dsp.getTareaAlumno(int.Parse(texto[0]), id);

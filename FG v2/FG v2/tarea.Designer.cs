@@ -35,6 +35,7 @@
             this.btnAgregarNueva = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreTarea = new System.Windows.Forms.TextBox();
+            this.pbGamification = new System.Windows.Forms.ProgressBar();
             this.pnlAdd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             this.flpTarea.AutoScroll = true;
             this.flpTarea.Location = new System.Drawing.Point(3, 32);
             this.flpTarea.Name = "flpTarea";
-            this.flpTarea.Size = new System.Drawing.Size(149, 337);
+            this.flpTarea.Size = new System.Drawing.Size(149, 285);
             this.flpTarea.TabIndex = 1;
             // 
             // pnlAdd
@@ -64,7 +65,7 @@
             this.pnlAdd.Controls.Add(this.txtNombreTarea);
             this.pnlAdd.Location = new System.Drawing.Point(3, 3);
             this.pnlAdd.Name = "pnlAdd";
-            this.pnlAdd.Size = new System.Drawing.Size(147, 366);
+            this.pnlAdd.Size = new System.Drawing.Size(147, 314);
             this.pnlAdd.TabIndex = 2;
             this.pnlAdd.Visible = false;
             // 
@@ -104,16 +105,24 @@
             this.txtNombreTarea.Size = new System.Drawing.Size(127, 20);
             this.txtNombreTarea.TabIndex = 0;
             // 
+            // pbGamification
+            // 
+            this.pbGamification.Location = new System.Drawing.Point(6, 323);
+            this.pbGamification.Name = "pbGamification";
+            this.pbGamification.Size = new System.Drawing.Size(144, 10);
+            this.pbGamification.TabIndex = 3;
+            // 
             // tarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.Controls.Add(this.pbGamification);
             this.Controls.Add(this.pnlAdd);
             this.Controls.Add(this.flpTarea);
             this.Controls.Add(this.btnaddTarea);
             this.Name = "tarea";
-            this.Size = new System.Drawing.Size(155, 376);
+            this.Size = new System.Drawing.Size(155, 368);
             this.pnlAdd.ResumeLayout(false);
             this.pnlAdd.PerformLayout();
             this.ResumeLayout(false);
@@ -129,5 +138,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombreTarea;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ProgressBar pbGamification;
     }
 }
