@@ -47,6 +47,7 @@
             // 
             // flp_conectados
             // 
+            this.flp_conectados.AutoScroll = true;
             this.flp_conectados.BackColor = System.Drawing.Color.Transparent;
             this.flp_conectados.Location = new System.Drawing.Point(1088, 87);
             this.flp_conectados.Name = "flp_conectados";
@@ -124,7 +125,7 @@
             this.rb_desconectado.AutoSize = true;
             this.rb_desconectado.BackColor = System.Drawing.Color.Transparent;
             this.rb_desconectado.ForeColor = System.Drawing.Color.White;
-            this.rb_desconectado.Location = new System.Drawing.Point(1088, 30);
+            this.rb_desconectado.Location = new System.Drawing.Point(1088, 32);
             this.rb_desconectado.Name = "rb_desconectado";
             this.rb_desconectado.Size = new System.Drawing.Size(95, 17);
             this.rb_desconectado.TabIndex = 7;

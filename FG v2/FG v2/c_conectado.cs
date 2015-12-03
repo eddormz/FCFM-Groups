@@ -32,15 +32,15 @@ namespace FG_v2
 
             if (this.estado == "Conectado")
             {
-                pb_estatus.BackColor = Color.Green;
+                pb_estatus.Image = System.Drawing.Image.FromFile("conectado.png");
             }
             if (this.estado == "Desconectado")
             {
-                pb_estatus.BackColor = Color.Red;
+                pb_estatus.Image = System.Drawing.Image.FromFile("desconectado.png");
             }
             if (this.estado == "Ausente")
             {
-                pb_estatus.BackColor = Color.Yellow;
+                pb_estatus.Image = System.Drawing.Image.FromFile("ausente.png");
             }
 
         }

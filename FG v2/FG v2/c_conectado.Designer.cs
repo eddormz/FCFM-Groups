@@ -36,6 +36,7 @@
             // txt_nombreConectado
             // 
             this.txt_nombreConectado.AutoSize = true;
+            this.txt_nombreConectado.ForeColor = System.Drawing.Color.White;
             this.txt_nombreConectado.Location = new System.Drawing.Point(34, 10);
             this.txt_nombreConectado.Name = "txt_nombreConectado";
             this.txt_nombreConectado.Size = new System.Drawing.Size(44, 13);
@@ -47,6 +48,7 @@
             this.pb_estatus.Location = new System.Drawing.Point(3, 3);
             this.pb_estatus.Name = "pb_estatus";
             this.pb_estatus.Size = new System.Drawing.Size(25, 25);
+            this.pb_estatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_estatus.TabIndex = 1;
             this.pb_estatus.TabStop = false;
             // 
@@ -54,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pb_estatus);
             this.Controls.Add(this.txt_nombreConectado);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

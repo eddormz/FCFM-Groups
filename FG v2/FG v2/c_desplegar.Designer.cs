@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(c_desplegar));
             this.nombre = new System.Windows.Forms.Label();
             this.publicacion = new System.Windows.Forms.Label();
             this.input_publicacion = new System.Windows.Forms.RichTextBox();
@@ -43,7 +42,7 @@
             this.nombre.AutoSize = true;
             this.nombre.BackColor = System.Drawing.Color.Transparent;
             this.nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre.ForeColor = System.Drawing.Color.White;
+            this.nombre.ForeColor = System.Drawing.Color.Red;
             this.nombre.Location = new System.Drawing.Point(3, 12);
             this.nombre.Name = "nombre";
             this.nombre.Size = new System.Drawing.Size(52, 18);
@@ -55,7 +54,7 @@
             this.publicacion.AutoSize = true;
             this.publicacion.BackColor = System.Drawing.Color.Transparent;
             this.publicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.publicacion.ForeColor = System.Drawing.Color.White;
+            this.publicacion.ForeColor = System.Drawing.Color.Red;
             this.publicacion.Location = new System.Drawing.Point(44, 30);
             this.publicacion.Name = "publicacion";
             this.publicacion.Size = new System.Drawing.Size(52, 18);
@@ -74,7 +73,7 @@
             // btn_Publicar
             // 
             this.btn_Publicar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Publicar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Publicar.Image")));
+            this.btn_Publicar.Image = global::FG_v2.Properties.Resources.comen;
             this.btn_Publicar.Location = new System.Drawing.Point(480, 82);
             this.btn_Publicar.Name = "btn_Publicar";
             this.btn_Publicar.Size = new System.Drawing.Size(71, 30);
