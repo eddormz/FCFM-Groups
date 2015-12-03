@@ -371,9 +371,11 @@
             // 
             // Zumbido
             // 
+            this.Zumbido.Image = global::FG_v2.Properties.Resources.loudspeaker171;
             this.Zumbido.Location = new System.Drawing.Point(258, 288);
             this.Zumbido.Name = "Zumbido";
             this.Zumbido.Size = new System.Drawing.Size(25, 25);
+            this.Zumbido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Zumbido.TabIndex = 10;
             this.Zumbido.TabStop = false;
             this.Zumbido.Click += new System.EventHandler(this.Zumbido_Click);

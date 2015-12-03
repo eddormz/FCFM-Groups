@@ -47,7 +47,7 @@
             // 
             // flp_conectados
             // 
-            this.flp_conectados.BackColor = System.Drawing.Color.White;
+            this.flp_conectados.BackColor = System.Drawing.Color.Transparent;
             this.flp_conectados.Location = new System.Drawing.Point(1088, 87);
             this.flp_conectados.Name = "flp_conectados";
             this.flp_conectados.Size = new System.Drawing.Size(129, 609);
@@ -70,7 +70,7 @@
             // flp_publicacion
             // 
             this.flp_publicacion.AutoScroll = true;
-            this.flp_publicacion.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flp_publicacion.BackColor = System.Drawing.Color.Transparent;
             this.flp_publicacion.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp_publicacion.Location = new System.Drawing.Point(383, 58);
             this.flp_publicacion.Name = "flp_publicacion";
@@ -81,7 +81,8 @@
             // test
             // 
             this.test.BackColor = System.Drawing.Color.DodgerBlue;
-            this.test.ForeColor = System.Drawing.Color.Black;
+            this.test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.test.ForeColor = System.Drawing.Color.White;
             this.test.Location = new System.Drawing.Point(1088, 58);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(126, 23);
@@ -163,6 +164,8 @@
             // btnCorreo
             // 
             this.btnCorreo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCorreo.ForeColor = System.Drawing.Color.White;
             this.btnCorreo.Location = new System.Drawing.Point(988, 58);
             this.btnCorreo.Name = "btnCorreo";
             this.btnCorreo.Size = new System.Drawing.Size(94, 23);

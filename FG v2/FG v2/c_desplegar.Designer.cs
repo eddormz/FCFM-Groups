@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.lnkNombreArchivo);
             this.Controls.Add(this.btn_Publicar);
             this.Controls.Add(this.input_publicacion);

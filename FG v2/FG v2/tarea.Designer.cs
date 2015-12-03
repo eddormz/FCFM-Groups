@@ -42,12 +42,15 @@
             // 
             // btnaddTarea
             // 
+            this.btnaddTarea.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnaddTarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnaddTarea.ForeColor = System.Drawing.Color.White;
             this.btnaddTarea.Location = new System.Drawing.Point(20, 3);
             this.btnaddTarea.Name = "btnaddTarea";
             this.btnaddTarea.Size = new System.Drawing.Size(122, 23);
             this.btnaddTarea.TabIndex = 0;
             this.btnaddTarea.Text = "Agregar Tarea";
-            this.btnaddTarea.UseVisualStyleBackColor = true;
+            this.btnaddTarea.UseVisualStyleBackColor = false;
             this.btnaddTarea.Click += new System.EventHandler(this.btnaddTarea_Click);
             // 
             // flpTarea
@@ -67,13 +70,14 @@
             this.pnlAdd.Controls.Add(this.txtNombreTarea);
             this.pnlAdd.Location = new System.Drawing.Point(3, 3);
             this.pnlAdd.Name = "pnlAdd";
-            this.pnlAdd.Size = new System.Drawing.Size(149, 314);
+            this.pnlAdd.Size = new System.Drawing.Size(149, 342);
             this.pnlAdd.TabIndex = 2;
             this.pnlAdd.Visible = false;
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(12, 84);
             this.btnCancel.Name = "btnCancel";
@@ -86,6 +90,7 @@
             // btnAgregarNueva
             // 
             this.btnAgregarNueva.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAgregarNueva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarNueva.ForeColor = System.Drawing.Color.White;
             this.btnAgregarNueva.Location = new System.Drawing.Point(12, 55);
             this.btnAgregarNueva.Name = "btnAgregarNueva";

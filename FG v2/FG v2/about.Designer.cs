@@ -123,7 +123,7 @@
             this.labelCompanyName.Name = "labelCompanyName";
             this.labelCompanyName.Size = new System.Drawing.Size(271, 17);
             this.labelCompanyName.TabIndex = 22;
-            this.labelCompanyName.Text = "Company Name";
+            this.labelCompanyName.Text = "Company Name: Quack en asociación con BLCR inc.";
             this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxDescription
@@ -137,7 +137,8 @@
             this.textBoxDescription.Size = new System.Drawing.Size(271, 126);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "Eduardo Antonio Ramirez de la Torre\r\nErick Alejandro Deharo Celestino\r\nBrenda";
+            this.textBoxDescription.Text = "Eduardo Antonio Ramirez de la Torre\r\nErick Alejandro De haro Celestino\r\nBrenda Li" +
+    "zbethee Cázares Rocha";
             // 
             // okButton
             // 

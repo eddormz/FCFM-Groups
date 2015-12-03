@@ -21,7 +21,7 @@ namespace FG_v2
 
             cmd.Connection = datos.conectarbase();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from grupo";
+            cmd.CommandText = "select * from grupo where nombreGrupo is not null";
             da.SelectCommand = cmd;
             da.Fill(dt);
             datos.desconectarbase();

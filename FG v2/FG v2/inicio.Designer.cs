@@ -158,6 +158,7 @@
             this.Controls.Add(this.tb_contra);
             this.Controls.Add(this.tb_correo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "inicio";
             this.Text = "inicio";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

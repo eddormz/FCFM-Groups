@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstSubgrupos = new System.Windows.Forms.ListView();
             this.lblGrupo = new System.Windows.Forms.Label();
             this.btnAddSubgrupo = new System.Windows.Forms.Button();
             this.pnlsubgrup = new System.Windows.Forms.Panel();
@@ -39,21 +38,12 @@
             this.pnlAgregarse = new System.Windows.Forms.Panel();
             this.btnCancelarAgregarse = new System.Windows.Forms.Button();
             this.lstAgregarse = new System.Windows.Forms.ListView();
+            this.lstSubgrupos = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlsubgrup.SuspendLayout();
             this.pnlAgregarse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstSubgrupos
-            // 
-            this.lstSubgrupos.BackColor = System.Drawing.SystemColors.Window;
-            this.lstSubgrupos.BackgroundImage = global::FG_v2.Properties.Resources.fondo1___copia;
-            this.lstSubgrupos.Location = new System.Drawing.Point(13, 70);
-            this.lstSubgrupos.Name = "lstSubgrupos";
-            this.lstSubgrupos.Size = new System.Drawing.Size(153, 210);
-            this.lstSubgrupos.TabIndex = 0;
-            this.lstSubgrupos.UseCompatibleStateImageBehavior = false;
             // 
             // lblGrupo
             // 
@@ -66,12 +56,15 @@
             // 
             // btnAddSubgrupo
             // 
+            this.btnAddSubgrupo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAddSubgrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSubgrupo.ForeColor = System.Drawing.Color.White;
             this.btnAddSubgrupo.Location = new System.Drawing.Point(0, 3);
             this.btnAddSubgrupo.Name = "btnAddSubgrupo";
             this.btnAddSubgrupo.Size = new System.Drawing.Size(131, 23);
             this.btnAddSubgrupo.TabIndex = 2;
             this.btnAddSubgrupo.Text = "Crear SubGrupo";
-            this.btnAddSubgrupo.UseVisualStyleBackColor = true;
+            this.btnAddSubgrupo.UseVisualStyleBackColor = false;
             this.btnAddSubgrupo.Click += new System.EventHandler(this.btnAddSubgrupo_Click);
             // 
             // pnlsubgrup
@@ -80,30 +73,38 @@
             this.pnlsubgrup.Controls.Add(this.btnAgregar);
             this.pnlsubgrup.Controls.Add(this.txtNombreSubgrupo);
             this.pnlsubgrup.Controls.Add(this.label1);
-            this.pnlsubgrup.Location = new System.Drawing.Point(0, 3);
+            this.pnlsubgrup.Location = new System.Drawing.Point(0, 0);
             this.pnlsubgrup.Name = "pnlsubgrup";
-            this.pnlsubgrup.Size = new System.Drawing.Size(169, 277);
+            this.pnlsubgrup.Size = new System.Drawing.Size(169, 280);
             this.pnlsubgrup.TabIndex = 3;
             this.pnlsubgrup.Visible = false;
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(3, 87);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(163, 23);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Location = new System.Drawing.Point(3, 58);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(163, 23);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtNombreSubgrupo
@@ -135,6 +136,7 @@
             // btnCancelarAgregarse
             // 
             this.btnCancelarAgregarse.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCancelarAgregarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarAgregarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarAgregarse.ForeColor = System.Drawing.Color.White;
             this.btnCancelarAgregarse.Location = new System.Drawing.Point(3, 9);
@@ -154,11 +156,23 @@
             this.lstAgregarse.UseCompatibleStateImageBehavior = false;
             this.lstAgregarse.DoubleClick += new System.EventHandler(this.lstAgregarse_DoubleClick);
             // 
+            // lstSubgrupos
+            // 
+            this.lstSubgrupos.BackColor = System.Drawing.SystemColors.Window;
+            this.lstSubgrupos.BackgroundImage = global::FG_v2.Properties.Resources.fondo1___copia;
+            this.lstSubgrupos.Location = new System.Drawing.Point(13, 70);
+            this.lstSubgrupos.Name = "lstSubgrupos";
+            this.lstSubgrupos.Size = new System.Drawing.Size(153, 210);
+            this.lstSubgrupos.TabIndex = 0;
+            this.lstSubgrupos.UseCompatibleStateImageBehavior = false;
+            // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::FG_v2.Properties.Resources.users36;
             this.pictureBox1.Location = new System.Drawing.Point(134, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);

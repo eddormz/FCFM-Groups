@@ -103,6 +103,16 @@ namespace FG_v2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loudspeaker171 {
+            get {
+                object obj = ResourceManager.GetObject("loudspeaker171", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap padlock114 {
             get {
                 object obj = ResourceManager.GetObject("padlock114", resourceCulture);
@@ -116,6 +126,16 @@ namespace FG_v2.Properties {
         internal static System.Drawing.Bitmap padlock46 {
             get {
                 object obj = ResourceManager.GetObject("padlock46", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users36 {
+            get {
+                object obj = ResourceManager.GetObject("users36", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

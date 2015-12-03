@@ -48,6 +48,7 @@
             // btn_enviar
             // 
             this.btn_enviar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_enviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_enviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_enviar.ForeColor = System.Drawing.Color.White;
             this.btn_enviar.Location = new System.Drawing.Point(432, 115);
@@ -77,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btn_addfile);
             this.Controls.Add(this.btn_enviar);
             this.Controls.Add(this.Publicacion);
