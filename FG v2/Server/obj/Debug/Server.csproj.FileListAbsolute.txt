@@ -10,9 +10,6 @@ D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\baseDatos.dll
 D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\EntityFramework.dll
 D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\baseDatos.pdb
 D:\Desktop\FCFM Groups\FG v2\Server\bin\Debug\EntityFramework.xml
-C:\Users\BrendaCázares\Desktop\FCFM-Groups\FG v2\Server\bin\Debug\Server.exe.config
-C:\Users\BrendaCázares\Desktop\FCFM-Groups\FG v2\Server\obj\Debug\Server.exe
-C:\Users\BrendaCázares\Desktop\FCFM-Groups\FG v2\Server\obj\Debug\Server.pdb
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Server\bin\Debug\Server.exe.config
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Server\bin\Debug\Server.exe
 D:\Desktop\FCFM Groups\FCFM-Groups\FG v2\Server\bin\Debug\Server.pdb

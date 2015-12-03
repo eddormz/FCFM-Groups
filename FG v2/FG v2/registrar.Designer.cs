@@ -42,7 +42,7 @@
             // 
             // bt_In
             // 
-            this.bt_In.BackColor = System.Drawing.SystemColors.Control;
+            this.bt_In.BackColor = System.Drawing.Color.DodgerBlue;
             this.bt_In.ForeColor = System.Drawing.SystemColors.ControlText;
             this.bt_In.Location = new System.Drawing.Point(230, 261);
             this.bt_In.Name = "bt_In";

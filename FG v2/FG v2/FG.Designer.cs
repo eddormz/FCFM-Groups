@@ -40,11 +40,14 @@
             this.rb_desconectado = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCorreo = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flp_conectados
             // 
-            this.flp_conectados.BackColor = System.Drawing.Color.Transparent;
+            this.flp_conectados.BackColor = System.Drawing.Color.White;
             this.flp_conectados.Location = new System.Drawing.Point(1088, 87);
             this.flp_conectados.Name = "flp_conectados";
             this.flp_conectados.Size = new System.Drawing.Size(129, 609);
@@ -69,9 +72,9 @@
             this.flp_publicacion.AutoScroll = true;
             this.flp_publicacion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flp_publicacion.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flp_publicacion.Location = new System.Drawing.Point(304, 58);
+            this.flp_publicacion.Location = new System.Drawing.Point(383, 58);
             this.flp_publicacion.Name = "flp_publicacion";
-            this.flp_publicacion.Size = new System.Drawing.Size(596, 638);
+            this.flp_publicacion.Size = new System.Drawing.Size(585, 638);
             this.flp_publicacion.TabIndex = 2;
             this.flp_publicacion.WrapContents = false;
             // 
@@ -146,6 +149,27 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(170, 338);
             this.flowLayoutPanel2.TabIndex = 9;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(193, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(184, 84);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnCorreo
+            // 
+            this.btnCorreo.Location = new System.Drawing.Point(988, 58);
+            this.btnCorreo.Name = "btnCorreo";
+            this.btnCorreo.Size = new System.Drawing.Size(94, 23);
+            this.btnCorreo.TabIndex = 11;
+            this.btnCorreo.Text = "Enviar Correo";
+            this.btnCorreo.UseVisualStyleBackColor = true;
+            this.btnCorreo.Click += new System.EventHandler(this.btnCorreo_Click);
+            // 
             // FG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +178,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1220, 700);
+            this.Controls.Add(this.btnCorreo);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.test);
@@ -170,6 +196,7 @@
             this.TransparencyKey = System.Drawing.SystemColors.WindowText;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FG_FormClosed);
             this.Load += new System.EventHandler(this.FG_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +214,7 @@
         private System.Windows.Forms.RadioButton rb_desconectado;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCorreo;
     }
 }
