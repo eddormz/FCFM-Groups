@@ -622,7 +622,8 @@ namespace FG_v2
 
         private void btnCorreo_Click(object sender, EventArgs e)
         {
-
+            correo mail = new correo();
+            mail.Show();
         }
     }
 }
