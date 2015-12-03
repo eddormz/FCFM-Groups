@@ -31,11 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(correo));
             this.btnEnviar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rtxtContenido = new System.Windows.Forms.RichTextBox();
             this.txtAsunto = new System.Windows.Forms.TextBox();
-            this.txtContra = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -56,21 +54,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(231, 83);
+            this.label5.Location = new System.Drawing.Point(234, 43);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Ausunto";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(234, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Contraseña";
+            this.label5.Text = "Asunto";
             // 
             // label3
             // 
@@ -84,28 +72,22 @@
             // 
             // rtxtContenido
             // 
-            this.rtxtContenido.Location = new System.Drawing.Point(175, 139);
+            this.rtxtContenido.Location = new System.Drawing.Point(175, 90);
             this.rtxtContenido.Name = "rtxtContenido";
-            this.rtxtContenido.Size = new System.Drawing.Size(458, 246);
+            this.rtxtContenido.Size = new System.Drawing.Size(458, 304);
             this.rtxtContenido.TabIndex = 15;
             this.rtxtContenido.Text = "";
             // 
             // txtAsunto
             // 
-            this.txtAsunto.Location = new System.Drawing.Point(301, 83);
+            this.txtAsunto.Location = new System.Drawing.Point(301, 43);
             this.txtAsunto.Name = "txtAsunto";
             this.txtAsunto.Size = new System.Drawing.Size(330, 20);
             this.txtAsunto.TabIndex = 14;
             // 
-            // txtContra
-            // 
-            this.txtContra.Location = new System.Drawing.Point(301, 47);
-            this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(330, 20);
-            this.txtContra.TabIndex = 13;
-            // 
             // txtCorreo
             // 
+            this.txtCorreo.Enabled = false;
             this.txtCorreo.Location = new System.Drawing.Point(301, 11);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(330, 20);
@@ -133,7 +115,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(184, 123);
+            this.label2.Location = new System.Drawing.Point(184, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 19;
@@ -150,11 +132,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rtxtContenido);
             this.Controls.Add(this.txtAsunto);
-            this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtCorreo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "correo";
@@ -168,11 +148,9 @@
 
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox rtxtContenido;
         private System.Windows.Forms.TextBox txtAsunto;
-        private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

@@ -482,5 +482,29 @@ namespace FG_v2
                 return null;
             }
         }
+
+        public DataTable getUsuariosMail(int idGrupo, int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            cmd.Connection = datos.conectarbase();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select correo from Usuario where idGrupo = " + idGrupo + " and idUsuario <> " + id;
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            datos.desconectarbase();
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
 }
