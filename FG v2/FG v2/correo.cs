@@ -16,5 +16,43 @@ namespace FG_v2
         {
             InitializeComponent();
         }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            sendMail();
+        }
+
+        public void sendMail()
+        {
+            String from = txtCorreo.Text;
+            //String to = txtPara.Text;
+            String to = "a";
+            String subject = txtAsunto.Text;
+            String body = rtxtContenido.Text;
+            String smtpClient = "smtp.gmail.com";
+            String username = from;
+            String password = txtContra.Text;
+
+            if (from == "" || to == "" || subject == "" || body == "" || username == "" || password == "")
+            {
+                MessageBox.Show("Faltan Campos");
+                return;
+            }
+
+            try
+            {
+                MailMessage mail = new MailMessage(from, to, subject, body);
+                //Ej: smtp.gmail.com por el puerto 507
+                SmtpClient client = new SmtpClient(smtpClient, 587);
+                //Ej: paco@gmail.com 12345
+                client.Credentials = new NetworkCredential(username, password);
+                client.EnableSsl = true;
+                client.Send(mail);
+                MessageBox.Show("Correo Enviado!", "El correo se ha enviado exitosamente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }
